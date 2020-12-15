@@ -1,0 +1,59 @@
+#HamMenu {
+  clear: both;
+}
+.icon {
+  clear: both;
+  width: 940px;
+  margin: 0 auto;
+}
+#HamMenu li {
+  float: left;
+  width: 23.8%;
+  margin: 1% 0 1% 1%;
+  background: #2c3e54;
+  padding: 80px 30px;
+  box-sizing: border-box;
+  width: 223px;
+  height: 207px;
+  position: relative;
+}
+#HamMenu label {
+  clear: both;
+  cursor: pointer;
+}
+#HamMenu li .line {
+  display: block;
+  width: 50px;
+  height: 5px;
+  margin: 8px auto;
+  background: #e3e8e2;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.6s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.3s;
+  transition: 0.5s;
+}
+
+#HamMenu .item5:hover {
+  transform: rotate(90deg);
+}
+#HamMenu .item5:hover .line:nth-child(2) {
+  transition: none;
+}
+#HamMenu .item5 .line:nth-child(2) {
+  transition-delay: 0.3s;
+}
+#HamMenu .item5:hover .line:nth-child(2) {
+  opacity: 0;
+}
+#HamMenu .item5:hover .line:nth-child(1),
+#HamMenu .item5:hover .line:nth-child(3) {
+  width: 35px;
+  transform-origin: right;
+}
+#HamMenu .item5:hover .line:nth-child(1) {
+  transform: translateY(15px) rotate(45deg);
+}
+#HamMenu .item5:hover .line:nth-child(3) {
+  transform: translateY(-15px) rotate(-45deg);
+}
