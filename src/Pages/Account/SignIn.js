@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../Account/SignIn.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import "../Account/SignIn.scss";
 
 class SignIn extends Component {
   state = {
@@ -12,29 +12,37 @@ class SignIn extends Component {
     checkPassword: false,
   };
   //백엔드 로그인 정보 가져오기
-  fetchLogin = (email, password) => {
-    fetch("http://192.168.219.191:8000/data/data.json", {
+  fetchLogin = () => {
+    fetch("http://192.168.219.191:8000/users/signin", {
       method: "POST",
       headers: {
-        "Content-Type": "data/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email,
-        password: password,
+        email: this.state.email,
+        password: this.state.password,
       }),
     })
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
+        if (res.TOKEN) {
+          localStorage.setItem("TOKEN", res.TOKEN);
+          console.log(res.TOKEN);
+        }
+      })
+      .catch((error) => {
+        localStorage.setItem("TOKEN", "통신불가");
+        console.log("통신불가");
       });
   };
-  // fetchInfo = () => {
-  //   const { checkId, checkPassword } = this.state;
-  //   if (checkId && checkPassword) {
-  //     postSignUp();
-  //   }
-  // };
-  handleInput = (e) => {
+  signIn = () => {
+    const { checkId, checkPassword } = this.state;
+    if (checkId && checkPassword) {
+      this.fetchLogin();
+    }
+  };
+  handleIdPasswordInput = (e) => {
     const { value, name } = e.target;
     this.setState(
       {
@@ -46,17 +54,14 @@ class SignIn extends Component {
 
   isVaildationIdPass = () => {
     const { email, password } = this.state;
-    if (email.includes("@")) {
-      this.setState({ checkId: true });
-    }
-    if (password.length >= 6) {
-      this.setState({ checkPassword: true });
-    }
+    this.setState({
+      checkId: email.includes("@"),
+      checkPassword: password.length >= 8,
+    });
   };
 
   render() {
-    const isCheckId = this.state.email.includes("@");
-    const isCheckPassword = this.state.password.length >= 6;
+    const { checkId, checkPassword } = this.state;
 
     return (
       <div className="SignIn">
@@ -76,10 +81,10 @@ class SignIn extends Component {
               type="text"
               name="email"
               placeholder="이메일을 입력해 주세요."
-              onChange={this.handleInput}
+              onChange={this.handleIdPasswordInput}
               required
             />
-            {isCheckId ? (
+            {checkId ? (
               <FontAwesomeIcon className="facheck check1" icon={faCheck} />
             ) : (
               <FontAwesomeIcon className="fatimes times1" icon={faTimes} />
@@ -93,10 +98,10 @@ class SignIn extends Component {
               type="password"
               name="password"
               placeholder="비밀번호를 입력해 주세요."
-              onChange={this.handleInput}
+              onChange={this.handleIdPasswordInput}
               required
             />
-            {isCheckPassword ? (
+            {checkPassword ? (
               <FontAwesomeIcon className="facheck check2" icon={faCheck} />
             ) : (
               <FontAwesomeIcon className="fatimes times2" icon={faTimes} />
@@ -104,7 +109,7 @@ class SignIn extends Component {
           </form>
 
           <div className="box-area">
-            <button className="send" onSubmit={this.fetchInfo}>
+            <button className="send" onClick={this.signIn}>
               로그인
             </button>
             <button className="close">닫기</button>

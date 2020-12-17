@@ -1,48 +1,55 @@
 import React, { Component } from "react";
-import "../Account/Account.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import "../Account/Account.scss";
 
 class Account extends Component {
-  state = {
-    email: "",
-    password: "",
-    nickname: "",
-    isChecked: false,
-    checkId: false,
-    checkPassword: false,
-    checkNickName: false,
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: "",
+      nickname: "",
+      isCheckBoxConfirm: false,
+      checkId: false,
+      checkPassword: false,
+      checkNickName: false,
+    };
+  }
+
+  postSignUp = () => {
+    fetch("http://192.168.219.191:8000/users/signup", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+        nickname: this.state.nickname,
+      }),
+    })
+      .then((res) => {
+        console.log(res.json());
+      })
+      .catch((error) => {
+        console.log("통신불가");
+      });
   };
-  // 백엔드에게 회원가입 정보 주기
-  // postSignUp = (nickname, email, password) => {
-  //   fetch("http://192.168.219.191:8000/data/data.json", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "data.json",
-  //     },
-  //     body: JSON.stringify({
-  //       email: email,
-  //       password: password,
-  //       nickname: nickname,
-  //     }),
-  //   })
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((error) => {
-  //       console.log("통신불가");
-  //     });
-  // };
 
-  // fetchInfo = () => {
-  //   const { isChecked, checkId, checkNickName, checkPassword } = this.state;
-  //   if (isChecked && checkId && checkPassword && checkNickName) {
-  //     this.postSignUp();
-  //   }
-  //   // postSignUp();
-  // };
+  fetchInfo = () => {
+    const {
+      isCheckBoxConfirm,
+      checkId,
+      checkNickName,
+      checkPassword,
+    } = this.state;
+    if (isCheckBoxConfirm && checkId && checkPassword && checkNickName) {
+      this.postSignUp();
+    }
+  };
 
-  handleInput = (e) => {
+  handleIdPasswordInput = (e) => {
     const { value, name } = e.target;
     this.setState(
       {
@@ -54,25 +61,23 @@ class Account extends Component {
 
   isVaildationIdPass = () => {
     const { email, password, nickname } = this.state;
-    if (email.includes("@")) {
-      this.setState({ checkId: true });
-    }
-    if (password.length >= 6) {
-      this.setState({ checkPassword: true });
-    }
-    if (nickname.length >= 5) {
-      this.setState({ checkNickName: true });
-    }
+    this.setState({
+      checkId: email.includes("@"),
+      checkPassword: password.length >= 8,
+      checkNickName: nickname.length >= 3,
+    });
   };
 
   handlechecked = () => {
-    this.setState({ isChecked: !this.state.isChecked });
+    this.setState({ isCheckBoxConfirm: !this.state.isCheckBoxConfirm });
   };
   render() {
-    const isCheckId = this.state.email.includes("@");
-    const isCheckPassword = this.state.password.length >= 6;
-    const isCheckNickName = this.state.nickname.length >= 5;
-    const { isChecked } = this.state;
+    const {
+      isCheckBoxConfirm,
+      checkId,
+      checkPassword,
+      checkNickName,
+    } = this.state;
 
     return (
       <div className="Account">
@@ -93,10 +98,10 @@ class Account extends Component {
               type="text"
               name="email"
               placeholder="이메일을 입력해 주세요."
-              onChange={this.handleInput}
+              onChange={this.handleIdPasswordInput}
               required
             />
-            {isCheckId ? (
+            {checkId ? (
               <FontAwesomeIcon className="facheck check1" icon={faCheck} />
             ) : (
               <FontAwesomeIcon className="fatimes times1" icon={faTimes} />
@@ -110,10 +115,10 @@ class Account extends Component {
               type="password"
               name="password"
               placeholder="비밀번호를 입력해 주세요."
-              onChange={this.handleInput}
+              onChange={this.handleIdPasswordInput}
               required
             />
-            {isCheckPassword ? (
+            {checkPassword ? (
               <FontAwesomeIcon className="facheck check2" icon={faCheck} />
             ) : (
               <FontAwesomeIcon className="fatimes times2" icon={faTimes} />
@@ -127,10 +132,10 @@ class Account extends Component {
               type="text"
               name="nickname"
               placeholder="닉네임을 입력해 주세요. (5자 이상)"
-              onChange={this.handleInput}
+              onChange={this.handleIdPasswordInput}
               required
             />
-            {isCheckNickName ? (
+            {checkNickName ? (
               <FontAwesomeIcon className="facheck check3" icon={faCheck} />
             ) : (
               <FontAwesomeIcon className="fatimes times3" icon={faTimes} />
@@ -211,12 +216,12 @@ class Account extends Component {
           </div>
           <div className="public-info">
             <button type="button" onClick={this.handlechecked}>
-              {isChecked ? "X" : ""}
+              {isCheckBoxConfirm && "X"}
             </button>
             <span>개인정보수집이용에 동의합니다.</span>
           </div>
           <div className="box-area">
-            <button className="send" onClick={this.postSignUp}>
+            <button className="send" onClick={this.fetchInfo}>
               회원가입
             </button>
             <button className="close">닫기</button>

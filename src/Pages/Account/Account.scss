@@ -1,4 +1,5 @@
 @import "../../styles/common.scss";
+
 .Account {
   letter-spacing: -0.05em;
   font-family: $title-font;
@@ -76,39 +77,39 @@
   }
   .check1 {
     position: absolute;
-    top: 20.5vh;
-    right: 7.25vw;
+    top: 25.5vh;
+    right: 4.25vw;
   }
   .times1 {
     position: absolute;
-    top: 20.5vh;
-    right: 7.25vw;
+    top: 25.5vh;
+    right: 4.25vw;
   }
   .password-input {
     position: relative;
   }
   .check2 {
     position: absolute;
-    top: 31vh;
-    right: 7.25vw;
+    top: 38.75vh;
+    right: 4.25vw;
   }
   .times2 {
     position: absolute;
-    top: 31vh;
-    right: 7.25vw;
+    top: 38.75vh;
+    right: 4.25vw;
   }
   .nickname-input {
     position: relative;
   }
   .check3 {
     position: absolute;
-    top: 41.25vh;
-    right: 7.25vw;
+    top: 51.75vh;
+    right: 4.25vw;
   }
   .times3 {
     position: absolute;
-    top: 41.25vh;
-    right: 7.25vw;
+    top: 51.75vh;
+    right: 4.25vw;
   }
   .notice-info {
     max-width: 600px;
