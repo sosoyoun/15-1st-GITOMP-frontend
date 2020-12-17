@@ -3,8 +3,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "../Community/Community.scss";
+import FreeBoard from "./FreeBoard";
 class Community extends Component {
+  state = {
+    freeBoardDate: [],
+  };
+  componentDidMount() {
+    fetch("http://localhost:3003/data/data.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          freeBoardDate: res.data,
+        });
+      });
+  }
   render() {
+    const { freeBoardDate } = this.state;
     return (
       <div className="Community">
         <div className="container">
@@ -48,8 +64,33 @@ class Community extends Component {
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+
+                <FreeBoard freeBoardDate={freeBoardDate} />
+              </table>
+            </div>
+            <div className="pages">
+              <div className="pages-num">
+                <Link className="on">1</Link>
+                <Link to="/">2</Link>
+                <Link to="/">3</Link>
+                <Link to="/">4</Link>
+                <Link to="/">5</Link>
+                <Link to="/">6</Link>
+                <Link to="/">7</Link>
+                <Link to="/">8</Link>
+                <Link to="/">9</Link>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Community;
+
+/* <tr>
                     <td className="table-number">150</td>
                     <td className="table-title">
                       <Link to="/">[티켓 오픈] 쇼팽으로 만나는 겨울왕국</Link>
@@ -159,28 +200,4 @@ class Community extends Component {
                     <td className="mob-none">thestomp</td>
                     <td>2020-07-16</td>
                     <td className="mob-none">235</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="pages">
-              <div className="pages-num">
-                <Link className="on">1</Link>
-                <Link to="/">2</Link>
-                <Link to="/">3</Link>
-                <Link to="/">4</Link>
-                <Link to="/">5</Link>
-                <Link to="/">6</Link>
-                <Link to="/">7</Link>
-                <Link to="/">8</Link>
-                <Link to="/">9</Link>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Community;
+                  </tr> */
