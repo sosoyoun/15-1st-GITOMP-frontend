@@ -4,7 +4,6 @@ import "./FreeBoard.scss";
 
 class FreeBoard extends Component {
   render() {
-    console.log(this.props);
     const { freeBoardDate } = this.props;
     return (
       <tbody>

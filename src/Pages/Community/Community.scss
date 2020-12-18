@@ -147,6 +147,16 @@
             }
           }
         }
+        button {
+          width: 112px;
+          height: 44px;
+          background-color: $brown-color;
+          color: #fff;
+          border: none;
+          font-size: 15px;
+          float: right;
+          margin-top: 20px;
+        }
       }
       .pages {
         width: 100%;

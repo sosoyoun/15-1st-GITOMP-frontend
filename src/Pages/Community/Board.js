@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class Board extends Component {
+  goToDetail = () => {
+    this.props.history.push(`/Community/detail/${this.props.id}`);
+  };
   render() {
-    console.log(this.props);
     const { id, title, author, created_at, view } = this.props;
     return (
       <tr>
         <td className="table-number">{id}</td>
-        <td className="table-title">
-          <Link>{title}</Link>
+        <td className="table-title" onClick={this.goToDetail}>
+          {title}
         </td>
         <td className="table-writer">{author}</td>
         <td className="table-when">{created_at}</td>
@@ -19,4 +21,4 @@ class Board extends Component {
   }
 }
 
-export default Board;
+export default withRouter(Board);

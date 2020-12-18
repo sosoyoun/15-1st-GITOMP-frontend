@@ -7,6 +7,8 @@ import Account from "./Pages/Account/Account";
 import Notice from "./Pages/Notice/Notice";
 import SignIn from "./Pages/Account/SignIn";
 import Community from "./Pages/Community/Community";
+import CommunityContent from "./Pages/Community/CommunityContent";
+import CommunityWrite from "./Pages/Community/CommunityWrite";
 
 class Routes extends Component {
   render() {
@@ -20,6 +22,12 @@ class Routes extends Component {
           <Route exact path="/SignIn" component={SignIn} />
           <Route exact path="/Notice" component={Notice} />
           <Route exact path="/Community" component={Community} />
+          <Route exact path="/Community/write" component={CommunityWrite} />
+          <Route
+            exact
+            path="/Community/detail/:id"
+            component={CommunityContent}
+          />
         </Switch>
       </Router>
     );

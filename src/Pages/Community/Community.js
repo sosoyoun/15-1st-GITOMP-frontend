@@ -4,9 +4,11 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "../Community/Community.scss";
 import FreeBoard from "./FreeBoard";
+
 class Community extends Component {
   state = {
     freeBoardDate: [],
+    searchInput: "",
   };
   componentDidMount() {
     fetch("http://localhost:3003/data/data.json", {
@@ -19,14 +21,24 @@ class Community extends Component {
         });
       });
   }
+  goToWrite = () => {
+    this.props.history.push(`/Community/write`);
+  };
+  handleInputChange = (e) => {
+    this.setState({ searchInput: e.target.value });
+  };
   render() {
-    const { freeBoardDate } = this.state;
+    const { freeBoardDate, searchInput } = this.state;
+    const filterBoardDate = freeBoardDate.filter((data) => {
+      const regexp = RegExp(searchInput, "gi");
+      return data.title.match(regexp);
+    });
     return (
       <div className="Community">
         <div className="container">
           <div className="headtitle">
             <h2>COMMUNITY</h2>
-            <span>스톰프뮤직의 자유게시판 입니다.</span>
+            <span>깃톰프뮤직의 자유게시판 입니다.</span>
           </div>
           <section className="notice-info">
             <form>
@@ -35,7 +47,11 @@ class Community extends Component {
                 <option value="name">제목</option>
                 <option value="content">내용</option>
               </select>
-              <input type="text" placeholder="검색어를 입력해 주세요"></input>
+              <input
+                type="text"
+                placeholder="검색어를 입력해 주세요"
+                onChange={this.handleInputChange}
+              />
               <button>
                 <FontAwesomeIcon className="fa-search" icon={faSearch} />
               </button>
@@ -65,8 +81,9 @@ class Community extends Component {
                   </tr>
                 </thead>
 
-                <FreeBoard freeBoardDate={freeBoardDate} />
+                <FreeBoard freeBoardDate={filterBoardDate} />
               </table>
+              <button onClick={this.goToWrite}>글쓰기</button>
             </div>
             <div className="pages">
               <div className="pages-num">
@@ -89,115 +106,3 @@ class Community extends Component {
 }
 
 export default Community;
-
-/* <tr>
-                    <td className="table-number">150</td>
-                    <td className="table-title">
-                      <Link to="/">[티켓 오픈] 쇼팽으로 만나는 겨울왕국</Link>
-                    </td>
-                    <td className="table-writer">thestomp</td>
-                    <td className="table-when">2020-11-24</td>
-                    <td className="table-howmany">22</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">149</td>
-                    <td className="title">
-                      <Link to="/">
-                        [티켓오픈] 아디오스 피아졸라 라이브 탱고{" "}
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-11-10</td>
-                    <td className="mob-none">21</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">148</td>
-                    <td className="title">
-                      <Link to="/">
-                        [티켓오픈] 북유럽 휘바클래식 - 시벨리우스 VS 그리그
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-10-23</td>
-                    <td className="mob-none">39</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">147</td>
-                    <td className="title">
-                      <Link to="/">
-                        [티켓오픈] 원피스 뮤직 심포니 필름 콘서트
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-10-16</td>
-                    <td className="mob-none">81</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">146</td>
-                    <td className="title">
-                      <Link to="/">
-                        [티켓오픈] &lt;쇼팽 탄생 210주년&gt; 오마주 투 쇼팽
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-09-29</td>
-                    <td className="mob-none">96</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">145</td>
-                    <td className="title">
-                      <Link to="/">
-                        [공연취소] &lt;신창용 &amp; 양인모 듀오 콘서트&gt; 공연
-                        취소 안내
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-08-20</td>
-                    <td className="mob-none">218</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">144</td>
-                    <td className="title">
-                      <Link to="/">
-                        [공연취소] &lt;피아졸라, 바흐를 만나다&gt; 공연 취소
-                        안내
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-08-20</td>
-                    <td className="mob-none">136</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">143</td>
-                    <td className="title">
-                      <Link to="/">
-                        [공연취소] '&lt;쇼팽 탄생 210주년&gt; 쇼팽 VS 리스트'
-                        공연 취소 안내
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-08-20</td>
-                    <td className="mob-none">149</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">142</td>
-                    <td className="title">
-                      <Link to="/">
-                        피아니스트 윤한과 '마세라티'의 콜라보레이션!
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-07-24</td>
-                    <td className="mob-none">275</td>
-                  </tr>
-                  <tr>
-                    <td className="mob-none">141</td>
-                    <td className="title">
-                      <Link to="/">
-                        [티켓오픈] 쇼팽으로 만나는 지브리 오케스트라
-                      </Link>
-                    </td>
-                    <td className="mob-none">thestomp</td>
-                    <td>2020-07-16</td>
-                    <td className="mob-none">235</td>
-                  </tr> */
