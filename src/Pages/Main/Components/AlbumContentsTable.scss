@@ -1,0 +1,70 @@
+@import "../../../styles/common.scss";
+
+.AlbumContentsTable {
+  width: 540px;
+  height: 178px;
+  margin: 20px 0 20px 0;
+  text-align: left;
+
+  div {
+    display: flex;
+
+    p {
+      height: 40px;
+      width: 80px;
+      font-size: 20px;
+      font-family: $title-font;
+      color: #2e2e2e;
+    }
+    div {
+      width: 1px;
+      background-color: #b6b6b6;
+      height: 12px;
+      float: left;
+      margin: 5px 10px;
+    }
+    span {
+      width: 300px;
+      font-size: 17px;
+      color: #5b5b5b;
+      margin-left: 20px;
+    }
+  }
+}
+
+.albumDetail {
+  width: 540px;
+  height: 60px;
+  font-family: $title-font;
+  font-size: 16px;
+  text-align: left;
+}
+
+.viewMoreButton {
+  height: 44px;
+  width: 169px;
+  background-color: black;
+  border: #666666 solid 1px;
+  position: relative;
+  top: 50px;
+  left: -205px;
+
+  p {
+    width: auto;
+    height: 20px;
+    font-size: 17px;
+    font-family: $title-font;
+    color: white;
+    position: relative;
+    top: 10px;
+    left: -40px;
+  }
+
+  .arrowImg {
+    position: relative;
+    top: -8px;
+    right: -60px;
+    width: 20px;
+    height: 20px;
+  }
+}

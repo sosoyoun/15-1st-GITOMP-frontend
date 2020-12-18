@@ -1,28 +1,32 @@
 import React, { Component } from "react";
+import SwiperCore, { Pagination, Scrollbar, A11y, Mousewheel } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import NavBar from "./Components/NavBar";
 import GitompSection from "./Components/GitompSection";
 import ConcertSection from "./Components/ConcertSection";
 import AlbumSection from "./Components/AlbumSection";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import "./Main.scss";
+import Footer from "./Components/Footer";
 import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
+import "./Main.scss";
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Pagination, Scrollbar, A11y, Mousewheel]);
 
 class Main extends Component {
   render() {
     return (
-      <>
+      <div className="Outline">
+        <NavBar />
         <Swiper
+          className="Swiper"
+          direction={"vertical"}
+          style={{ height: "88vh", width: "100%" }}
           spaceBetween={0}
+          speed={800}
+          mousewheel={true}
           slidesPerView={1}
-          Mousewheel={true}
-          navigation
           pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
@@ -36,7 +40,8 @@ class Main extends Component {
             <AlbumSection />
           </SwiperSlide>
         </Swiper>
-      </>
+        <Footer />
+      </div>
     );
   }
 }
