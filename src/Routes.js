@@ -6,6 +6,7 @@ import ConcertList from "./Pages/ConcertList/ConcertList";
 import Account from "./Pages/Account/Account";
 import Notice from "./Pages/Notice/Notice";
 import SignIn from "./Pages/Account/SignIn";
+import Footer from "./Components/Footer/Footer";
 
 class Routes extends Component {
   render() {
@@ -19,6 +20,7 @@ class Routes extends Component {
           <Route exact path="/SignIn" component={SignIn} />
           <Route exact path="/Notice" component={Notice} />
         </Switch>
+        <Footer />
       </Router>
     );
   }
