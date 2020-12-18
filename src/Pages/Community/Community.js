@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import "../Community/Community.scss";
 import FreeBoard from "./FreeBoard";
+import "../Community/Community.scss";
 
 class Community extends Component {
   state = {
@@ -40,7 +40,7 @@ class Community extends Component {
             <h2>COMMUNITY</h2>
             <span>깃톰프뮤직의 자유게시판 입니다.</span>
           </div>
-          <section className="notice-info">
+          <section className="notice_info">
             <form>
               <select name="findType" tabIndex="1">
                 <option value="all">전체</option>
@@ -53,10 +53,10 @@ class Community extends Component {
                 onChange={this.handleInputChange}
               />
               <button>
-                <FontAwesomeIcon className="fa-search" icon={faSearch} />
+                <FontAwesomeIcon className="fa_search" icon={faSearch} />
               </button>
             </form>
-            <div className="list-table">
+            <div className="list_table">
               <p className="total">
                 총<span>150</span>건
               </p>
@@ -86,7 +86,7 @@ class Community extends Component {
               <button onClick={this.goToWrite}>글쓰기</button>
             </div>
             <div className="pages">
-              <div className="pages-num">
+              <div className="pages_num">
                 <Link className="on">1</Link>
                 <Link to="/">2</Link>
                 <Link to="/">3</Link>

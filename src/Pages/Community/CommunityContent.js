@@ -36,8 +36,6 @@ class CommunityContent extends Component {
     );
   };
   render() {
-    console.log(this.state);
-
     return (
       <div className="CommunityContent">
         <div className="container">
