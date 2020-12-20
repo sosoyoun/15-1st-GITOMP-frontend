@@ -19,11 +19,10 @@ class Main extends Component {
       <div className="Outline">
         <NavBar />
         <Swiper
-          className="Swiper"
           direction={"vertical"}
           style={{ height: "88vh", width: "100%" }}
           spaceBetween={0}
-          speed={800}
+          speed={700}
           mousewheel={true}
           slidesPerView={1}
           pagination={{ clickable: true }}

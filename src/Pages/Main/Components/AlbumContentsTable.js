@@ -38,7 +38,7 @@ class AlbumContentsTable extends Component {
         </div>
         <div className="albumDetail">{data[0].detail}</div>
         <button className="viewMoreButton">
-          <p>VIEW MORE</p>
+          VIEW MORE
           <img src={rightArrow} className="arrowImg" alt="화살표" />
         </button>
       </>

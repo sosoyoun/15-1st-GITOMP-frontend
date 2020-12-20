@@ -1,4 +1,5 @@
 import React from "react";
+import ConcertSlideBar from "./ConcertSlideBar";
 import rightArrow from "./Images/icons8-right-arrow-50.png";
 import endIcon from "./Images/icons8-end-96.png";
 import startIcon from "./Images/icons8-skip-to-start-96.png";
@@ -28,7 +29,7 @@ class ConcertSection extends React.Component {
               <p>깃톰프뮤직의 콘서트를 안내합니다</p>
               <div className="buttonContainer">
                 <button className="viewMoreButton">
-                  <p>VIEW MORE</p>
+                  VIEW MORE
                   <img src={rightArrow} className="arrowImg" alt="화살표" />
                 </button>
                 <span className="swiperButton backward">
@@ -39,7 +40,7 @@ class ConcertSection extends React.Component {
                 </span>
               </div>
             </div>
-            <div className="concertSlideBar"></div>
+            <ConcertSlideBar />
           </div>
         </div>
       </>
