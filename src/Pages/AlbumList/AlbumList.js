@@ -58,7 +58,7 @@ class AlbumList extends Component {
   // 여러 키워드 검색 필터링
 
   moveToPages = (e) => {
-    this.setState({ currentPage: e.target.name }, window.scroll(0, 0));
+    this.setState({ currentPage: e.target.name });
     this.props.history.push(`/albumList/${e.target.name}`);
   };
 
@@ -67,8 +67,6 @@ class AlbumList extends Component {
     this.setState({ [name]: value });
   };
   render() {
-    console.log(this.props);
-    console.log(this.state);
     const { albumList, currentPage } = this.state;
     return (
       <div className="AlbumList">
