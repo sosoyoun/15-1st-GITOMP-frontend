@@ -1,26 +1,13 @@
 @import "../../../styles/common.scss";
 
-.backgroundLine {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-
-  span {
-    width: 16.7%;
-    height: 88vh;
-    float: left;
-    opacity: 1;
-    border-right: 1px solid #ececec;
-  }
-  .grayBackground {
-    background-color: #f7f7f7;
-  }
-}
-
 .AlbumSection {
   width: 100%;
   height: 100%;
   text-align: center;
+
+  .grayBackground {
+    background-color: #f7f7f7;
+  }
 
   .albumSectionOutline {
     height: 90%;
@@ -29,7 +16,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     left: 0;
     top: 10%;
 
@@ -41,44 +27,39 @@
       font-size: 70px;
       font-weight: 700;
       letter-spacing: 4px;
-      animation-name: albumFade;
-      animation-duration: 2s;
-      animation-duration: leaner;
+      animation-name: Fade;
+      animation-duration: 0.8s;
       animation-iteration-count: infinite;
 
-      @keyframes albumFade {
+      @keyframes Fade {
         0% {
           opacity: 0;
-          -webkit-transform: translate3d(0, 100%, 0);
-          transform: translate3d(0, 100%, 0);
+          transform: translateY(20%);
         }
         100% {
           opacity: 1;
-          -webkit-transform: translateZ(0);
-          transform: translateZ(0);
+          transform: translateY(0);
         }
       }
     }
 
-    .iconsOutline {
+    .IconsContainer {
       height: 100px;
       margin: 20px auto;
       float: left;
-      animation-name: albumFade;
-      animation-duration: 2s;
+      animation-name: Fade;
+      animation-duration: 0.8s;
       animation-duration: leaner;
-      animation-iteration-count: 1;
+      animation-iteration-count: infinite;
 
-      @keyframes albumFade {
+      @keyframes Fade {
         0% {
           opacity: 0;
-          -webkit-transform: translate3d(0, 100%, 0);
-          transform: translate3d(0, 100%, 0);
+          transform: translateY(20%);
         }
         100% {
           opacity: 1;
-          -webkit-transform: translateZ(0);
-          transform: translateZ(0);
+          transform: translateY(0);
         }
       }
 
@@ -158,7 +139,7 @@
         .discImg {
           width: 360px;
           height: 360px;
-          top: 27px;
+          top: 29px;
           left: 70px;
           animation-name: spinImage;
           animation-duration: 4s;

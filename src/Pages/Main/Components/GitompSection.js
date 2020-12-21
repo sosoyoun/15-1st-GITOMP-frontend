@@ -1,10 +1,9 @@
 import React from "react";
+import TitleAnimation from "./TitleAnimation";
 import github from "./Images/icons8-github-96 (1).png";
 import instagram from "./Images/icons8-instagram-104.png";
 import facebook from "./Images/icons8-facebook-f-96.png";
 import youtube from "./Images/icons8-play-button-96 (1).png";
-import TitleAnimation from "./TitleAnimation";
-
 import "./GitompSection.scss";
 
 class GitompSection extends React.Component {

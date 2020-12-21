@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import SwiperCore, { Pagination, Scrollbar, A11y, Mousewheel } from "swiper";
+import SwiperCore, { Scrollbar, A11y, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import poster from "./Images/post_3.jpg";
+import ConcertContents from "./ConcertContents";
 import "./ConcertSlideBar.scss";
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 
-SwiperCore.use([Pagination, Scrollbar, A11y, Mousewheel]);
+SwiperCore.use([Scrollbar, A11y, Navigation]);
 
 class ConcertSlideBar extends Component {
   render() {
@@ -23,44 +23,21 @@ class ConcertSlideBar extends Component {
             prevEl: ".swiper-button-prev",
           }}
           scrollbar={{ draggable: true }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
-            <div>
-              <img src={poster} alt="포스터" />
-              <p>쇼팽으로 만나는 겨울나라</p>
-            </div>
+            <ConcertContents />
           </SwiperSlide>
           <SwiperSlide>
-            <div>
-              <img src={poster} alt="포스터" />
-              <p>쇼팽으로 만나는 겨울나라</p>
-            </div>
+            <ConcertContents />
           </SwiperSlide>
           <SwiperSlide>
-            <div>
-              <img src={poster} alt="포스터" />
-              <p>쇼팽으로 만나는 겨울나라</p>
-            </div>
+            <ConcertContents />
           </SwiperSlide>
           <SwiperSlide>
-            <div>
-              <img src={poster} alt="포스터" />
-              <p>쇼팽으로 만나는 겨울나라</p>
-            </div>
+            <ConcertContents />
           </SwiperSlide>
           <SwiperSlide>
-            <div>
-              <img src={poster} alt="포스터" />
-              <p>쇼팽으로 만나는 겨울나라</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <img src={poster} alt="포스터" />
-              <p>쇼팽으로 만나는 겨울나라</p>
-            </div>
+            <ConcertContents />
           </SwiperSlide>
         </Swiper>
       </div>

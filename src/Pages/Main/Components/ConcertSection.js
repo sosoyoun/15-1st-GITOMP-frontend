@@ -1,4 +1,5 @@
 import React from "react";
+import BackgroundLine from "./BackgroundLine";
 import ConcertSlideBar from "./ConcertSlideBar";
 import rightArrow from "./Images/icons8-right-arrow-50.png";
 import endIcon from "./Images/icons8-end-96.png";
@@ -9,16 +10,11 @@ class ConcertSection extends React.Component {
   render() {
     return (
       <>
-        <div class="backgroundLine">
-          <span />
-          <span />
-          <span />
-          <span />
-          <span />
+        <BackgroundLine>
           <div class="backgroundTxt">
             <p>GITOMPMUSIC</p>
           </div>
-        </div>
+        </BackgroundLine>
         <div className="ConcertSection">
           <div className="concertSlideOutline">
             <div className="concertIntroduce">

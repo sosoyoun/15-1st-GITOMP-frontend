@@ -5,7 +5,7 @@ import NavBar from "./Components/NavBar";
 import GitompSection from "./Components/GitompSection";
 import ConcertSection from "./Components/ConcertSection";
 import AlbumSection from "./Components/AlbumSection";
-import Footer from "./Components/Footer";
+import Footer from "../../Components/Footer/Footer";
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
@@ -26,8 +26,6 @@ class Main extends Component {
           mousewheel={true}
           slidesPerView={1}
           pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           <SwiperSlide>
             <GitompSection />
