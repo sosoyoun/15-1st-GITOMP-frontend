@@ -1,116 +1,214 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import "./Category.scss";
 
 class Category extends Component {
   render() {
     return (
-      <div id="Category">
-        <div className="nav-bg">
-          <span></span>
-        </div>
-        <ul className="Nav-category">
-          <li>
+      <div className="Category">
+        <ul className="Nav-category1">
+          <li className="sub-plus">
             <Link to="/Nav">GITOMPMUSIC</Link>
-            <div className="Nav-sub-category">
-              <ul className="sub-box"></ul>
-              <li></li>
-              <li>
-                GITOMP 소개
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                연혁
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                오시는길
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
+            <div className="nav-bg"></div>
+            <div className="sub-category sub-one">
+              <div className="sub-intro">
+                <div className="sub-left-box">
+                  <div className="sub-list-left">
+                    <strong className="title">GITOMP</strong>
+                    <p>기톰프 소개</p>
+                  </div>
+                  <img
+                    src="./images/logo_bg.jpg"
+                    alt="GITOMPMUSIC"
+                    className="sub-nav-img"
+                  />
+                </div>
+                <ul className="Nav-category2 sub-line">
+                  <li>
+                    <span>GITOMP 소개</span>
+                  </li>
+                  <li>
+                    <span>연혁</span>
+                  </li>
+                  <li>
+                    <span>오시는길</span>
+                  </li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
           </li>
-          <li>
+          <li className="sub-plus">
             <Link to="/Nav">CONCERT</Link>
-            <div className="Nav-sub-category">
-              <li>{/* CategoryImg */}</li>
-              <li>
-                2021
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                2020
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                2019
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                2018
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                2017
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                2016
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                2015
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                2015이전
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
+            <div className="nav-bg"></div>
+            <div className="sub-category sub-two">
+              <div className="sub-intro">
+                <div className="sub-left-box">
+                  <div className="sub-list-left">
+                    <strong className="title">CONCERT</strong>
+                    <p>콘서트 소개</p>
+                  </div>
+                  <img
+                    src="./images/consert.jpg"
+                    alt="콘서트 소개"
+                    className="sub-nav-img"
+                  />
+                </div>
+                <ul className="Nav-category2 sub-add sub-line">
+                  <li>
+                    <span>2021</span>
+                  </li>
+                  <li>
+                    <span>2020</span>
+                  </li>
+                  <li>
+                    <span>2019</span>
+                  </li>
+                  <li>
+                    <span>2018</span>
+                  </li>
+                  <li>
+                    <span>2017</span>
+                  </li>
+                  <li>
+                    <span>2016</span>
+                  </li>
+                  <li>
+                    <span>2015</span>
+                  </li>
+                  <li>
+                    <span>2015 이전</span>
+                  </li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
           </li>
-          <li>
+          <li className="sub-plus">
             <Link to="/Nav">ARTIST</Link>
-            <div className="Nav-sub-category">
-              <li>{/* CategoryImg */}</li>
-              <li>
-                국내
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
-              <li>
-                해외
-                {/* <FontAwesomeIcon icon={faAngleRight} size="1x" /> */}
-              </li>
+            <div className="nav-bg"></div>
+            <div className="sub-category sub-thr">
+              <div className="sub-intro">
+                <div className="sub-left-box">
+                  <div className="sub-list-left">
+                    <strong className="title">ARTIST</strong>
+                    <p>아티스트 소개</p>
+                  </div>
+                  <img
+                    src="./images/artist.jpg"
+                    alt="아티스트 소개"
+                    className="sub-nav-img"
+                  />
+                </div>
+                <ul className="Nav-category2">
+                  <li>
+                    <span>국내</span>
+                  </li>
+                  <li>
+                    <span>해외</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
-          <li>
+          <li className="sub-plus">
             <Link to="/Nav">ALBUM</Link>
-            <div className="Nav-sub-category">
-              <li>{/* CategoryImg */}</li>
-              <li>BEST</li>
-              <li>2021</li>
-              <li>2020</li>
-              <li>2019</li>
-              <li>2018</li>
-              <li>2017</li>
-              <li>2016</li>
-              <li>2015</li>
-              <li>2015이전</li>
+            <div className="nav-bg"></div>
+            <div className="sub-category sub-for">
+              <div className="sub-intro">
+                <div className="sub-left-box">
+                  <div className="sub-list-left">
+                    <strong className="title">ALBUM</strong>
+                    <p>앨범 소개</p>
+                  </div>
+                  <img
+                    src="./images/album.jpg"
+                    alt="앨범 소개"
+                    className="sub-nav-img"
+                  />
+                </div>
+                <ul className="Nav-category2 sub-add">
+                  <li>
+                    <span>BEST</span>
+                  </li>
+                  <li>
+                    <span>2021</span>
+                  </li>
+                  <li>
+                    <span>2020</span>
+                  </li>
+                  <li>
+                    <span>2019</span>
+                  </li>
+                  <li>
+                    <span>2018</span>
+                  </li>
+                  <li>
+                    <span>2017</span>
+                  </li>
+                  <li>
+                    <span>2016</span>
+                  </li>
+                  <li>
+                    <span>2015</span>
+                  </li>
+                  <li>
+                    <span>2015 이전</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
-          <li>
-            <Link to="/Nav">NOTICE</Link>
-            <div className="Nav-sub-category">
-              <li>{/* CategoryImg */}</li>
-              <li>NOTICE</li>
+          <li className="sub-plus">
+            <Link to="/Nav">COMMUITY</Link>
+            <div className="nav-bg"></div>
+            <div className="sub-category sub-fiv">
+              <div className="sub-intro">
+                <div className="sub-left-box">
+                  <div className="sub-list-left">
+                    <strong className="title">COMMUITY</strong>
+                    <p>커뮤니티</p>
+                  </div>
+                  <img
+                    src="./images/commuity.jpg"
+                    alt="COMMUITY"
+                    className="sub-nav-img"
+                  />
+                </div>
+                <ul className="Nav-category2 sub-line">
+                  <li>
+                    <span>COMMUITY</span>
+                  </li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
           </li>
-          <li>
+          <li className="sub-plus">
             <Link to="/Nav">BUSINESS</Link>
-            <div className="Nav-sub-category">
-              <li>{/* CategoryImg */}</li>
-              <li>외부공연장</li>
-              <li>VIP행사대행</li>
+            <div className="nav-bg"></div>
+            <div className="sub-category sub-six">
+              <div className="sub-intro">
+                <div className="sub-left-box">
+                  <div className="sub-list-left">
+                    <strong className="title">BUSINESS</strong>
+                    <p>기톰프의 사업</p>
+                  </div>
+                  <img
+                    src="./images/logo_bg.jpg"
+                    alt="스톰프뮤직의 사업"
+                    className="sub-nav-img"
+                  />
+                </div>
+                <ul className="Nav-category2">
+                  <li>
+                    <span>외부공연장</span>
+                  </li>
+                  <li>
+                    <span>VIP행사대행</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
         </ul>

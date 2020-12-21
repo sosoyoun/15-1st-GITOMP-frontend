@@ -1,66 +1,232 @@
-@import "../../../styles/reset.scss";
 @import "../../../styles/common.scss";
 
-#Category {
+.Category {
   width: 50vw;
   height: 3.5rem;
   margin: 0 auto;
+  z-index: 100;
 
-  .nav-bg {
-    width: 100%;
-    // height: 0;
-    height: 310px;
-    background: rgba(0, 0, 0, 0.8);
-    // opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 152px;
-    transition: opacity 0.6s ease;
-
-    span {
-      width: 100%;
-      height: 0;
-      background: $Nav-bg-color;
-      transition: height 0.3s ease-out;
-    }
+  ul {
+    text-align: center;
   }
 
-  .Nav-category {
+  .Nav-category1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 0.5rem;
     width: 100%;
-    height: 100%;
+    opacity: 1;
+    height: 0;
     margin: 0 auto;
     text-align: center;
 
-    li {
+    .nav-bg {
+      position: absolute;
+      width: 100vw;
+      height: 0;
+      left: 0;
+      top: 152px;
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.8);
+      transition: opacity 0.1s ease;
+    }
+
+    &:hover .sub-category {
+      height: 100vh;
+      opacity: 1;
+    }
+
+    .sub-plus {
+      margin-top: 1rem;
       font-family: $title-font;
-      font-size: 1.4em;
+      font-weight: 600;
+      font-size: 1.4rem;
 
       a {
         letter-spacing: 1px;
       }
+
+      &:hover .nav-bg {
+        height: 100vh;
+        opacity: 1;
+      }
+
+      li {
+        display: inline-block;
+        padding: 0 37px;
+        margin: 0 -2px;
+      }
+
+      .sub-one,
+      .sub-two,
+      .sub-thr,
+      .sub-for,
+      .sub-fiv,
+      .sub-six {
+        transition: all ease 0.4s;
+        height: 0;
+        z-index: 101;
+        overflow: hidden;
+      }
+
+      &:hover .sub-one {
+        height: 20rem;
+      }
+
+      &:hover .sub-two {
+        height: 20rem;
+      }
+
+      &:hover .sub-thr {
+        height: 20rem;
+      }
+
+      &:hover .sub-for {
+        height: 20rem;
+      }
+      &:hover .sub-fiv {
+        height: 20rem;
+      }
+      &:hover .sub-six {
+        height: 20rem;
+      }
     }
 
-    .Nav-sub-category {
-      width: 100%;
-      //   height: 0px;
-      height: 310px;
+    .sub-category {
+      width: 100vw;
+      height: 100vh;
       position: absolute;
       top: 152px;
       left: 0;
-      //   opacity: 0;
       background: $Nav-bg-color;
-      transition: all ease 0.4s;
       z-index: 2;
-      overflow: hidden;
+    }
 
-      li {
-        font-family: $main-font;
-        font-size: 0.8em;
+    .sub-intro {
+      width: 67vw;
+      height: auto;
+      margin: 0 auto;
+      padding: 45px 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      transition: height 0.3s ease-out;
+
+      .sub-left-box {
+        width: 24vw;
+        height: 12rem;
+        padding: 20px 0 0 20px;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        align-items: flex-start;
+        background: #fff;
+
+        .sub-list-left {
+          padding: 18px 0 30px;
+          margin-right: 2rem;
+          text-align: left;
+
+          .title {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+            display: block;
+            color: $nomal-color;
+            margin-bottom: 15px;
+            padding-bottom: 1.3rem;
+          }
+          .title::after {
+            content: "";
+            position: absolute;
+            left: 1.45rem;
+            top: 5.2rem;
+            background: #ddd;
+            width: 20px;
+            height: 1px;
+          }
+        }
+
+        p {
+          width: 7rem;
+          font-size: 1.2rem;
+          color: #6f6f6f;
+          letter-spacing: -0.1em;
+        }
+
+        .sub-nav-img {
+          position: relative;
+          top: -20px;
+          left: 4.3rem;
+        }
+      }
+
+      &.open-intro {
+        height: 314px;
+      }
+
+      // sub-menu
+      .Nav-category2 {
+        position: relative;
+        left: -2rem;
+        width: 40vw;
+        overflow: hidden;
+
+        li {
+          display: inline-block;
+          width: calc(50% - 3.8em);
+          margin-right: 4%;
+          margin-bottom: 10px;
+          text-align: left;
+          padding: 0 0 0 3px;
+          border-bottom: 1px solid #cacaca;
+          background: url("../images/link-arr.png") no-repeat 95% 50%;
+          font-family: $sub-font;
+          color: #4a4a4a;
+          font-size: 1rem;
+          line-height: 2.8rem;
+          overflow: hidden;
+          cursor: pointer;
+
+          ::before {
+            content: "";
+            position: absolute;
+            background: $nomal-color;
+            width: 0;
+            height: 2px;
+            margin-top: 2.7rem;
+            margin-left: -2px;
+            transition: width 0.3s ease-out;
+          }
+
+          &:hover {
+            color: $nomal-color;
+          }
+          &:hover span::before {
+            width: calc(50% - 3.8em);
+          }
+        }
+      }
+      .sub-add {
+        li {
+          width: calc(31% - 1.8em);
+
+          &:hover span::before {
+            width: calc(31% - 1.8em);
+          }
+        }
+      }
+      .sub-line li:last-child {
+        border-bottom: none;
       }
     }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .Category {
+    display: none;
+    height: 2.5rem;
+    overflow: hidden;
   }
 }

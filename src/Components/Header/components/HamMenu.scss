@@ -1,59 +1,127 @@
-#HamMenu {
-  clear: both;
-}
-.icon {
-  clear: both;
-  width: 940px;
-  margin: 0 auto;
-}
-#HamMenu li {
-  float: left;
-  width: 23.8%;
-  margin: 1% 0 1% 1%;
-  background: #2c3e54;
-  padding: 80px 30px;
-  box-sizing: border-box;
-  width: 223px;
-  height: 207px;
-  position: relative;
-}
-#HamMenu label {
-  clear: both;
-  cursor: pointer;
-}
-#HamMenu li .line {
-  display: block;
-  width: 50px;
-  height: 5px;
-  margin: 8px auto;
-  background: #e3e8e2;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.6s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.3s;
-  transition: 0.5s;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap");
+@import "../../../styles/common.scss";
+
+.toggleMenu-appear {
+  opacity: 0;
+  height: 0;
+
+  .toggleMenu-appear-active {
+    opacity: 1;
+    height: 100vh;
+    transition: all 0.4s ease-in-out;
+  }
 }
 
-#HamMenu .item5:hover {
-  transform: rotate(90deg);
-}
-#HamMenu .item5:hover .line:nth-child(2) {
-  transition: none;
-}
-#HamMenu .item5 .line:nth-child(2) {
-  transition-delay: 0.3s;
-}
-#HamMenu .item5:hover .line:nth-child(2) {
-  opacity: 0;
-}
-#HamMenu .item5:hover .line:nth-child(1),
-#HamMenu .item5:hover .line:nth-child(3) {
-  width: 35px;
-  transform-origin: right;
-}
-#HamMenu .item5:hover .line:nth-child(1) {
-  transform: translateY(15px) rotate(45deg);
-}
-#HamMenu .item5:hover .line:nth-child(3) {
-  transform: translateY(-15px) rotate(-45deg);
+.HamMenu {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10vh;
+  text-align: center;
+  background: url("../images/hammenu_bg.jpg") center;
+  background-size: cover;
+
+  p {
+    padding-top: 3rem;
+    font-size: 1rem;
+    font-family: $sub-font;
+    color: #c1c1c1;
+  }
+
+  .sub-list {
+    font-family: $title-font;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    z-index: 2;
+    transform: translatey(0px);
+
+    li {
+      margin-bottom: 2rem;
+      opacity: 1;
+
+      span {
+        transition: all 1s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: #be9b71;
+          padding-left: 1.5rem;
+        }
+        &:hover::before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background: #be9b71;
+          border-radius: 100%;
+          position: relative;
+          bottom: 13px;
+          left: -15px;
+        }
+      }
+    }
+
+    &.active {
+      li {
+        opacity: 1;
+        transform: translate(0);
+      }
+      .sub-list-one {
+        transition-delay: 0;
+      }
+      .sub-list-two {
+        transition-delay: 0.1s;
+      }
+      .sub-list-three {
+        transition-delay: 0.15s;
+      }
+      .sub-list-for {
+        transition-delay: 0.2s;
+      }
+      .sub-list-fiv {
+        transition-delay: 0.25s;
+      }
+      .sub-list-six {
+        transition-delay: 0.3s;
+      }
+    }
+  }
+
+  .sns-icon {
+    width: 15rem;
+    height: auto;
+    margin: 1rem auto 0;
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      width: 40px;
+      height: 40px;
+      padding-top: 9px;
+      display: inline-block;
+      border: 1px solid #c1c1c1;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      color: #c1c1c1;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 3.7rem;
+    right: 4.8rem;
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    cursor: pointer;
+
+    .closeIcon {
+      opacity: 0.8;
+      font-size: 3rem;
+      color: #ddd;
+    }
+  }
 }
