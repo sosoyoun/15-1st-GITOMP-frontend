@@ -9,7 +9,6 @@ class List extends Component {
     );
   };
   render() {
-    console.log(this.props);
     const {
       album_id,
       title,
@@ -43,17 +42,11 @@ class List extends Component {
             <Link
               to={{
                 pathname: `/albumList/detail/${album_id}`,
-                state: {
-                  album_id,
-                  title,
-                  image_url,
-                  artist,
-                  release_date,
-                  release_type,
-                },
               }}
             >
-              <button>VIEW MORE </button>
+              <button>
+                <span> VIEW MORE </span>
+              </button>
             </Link>
           </dd>
         </div>

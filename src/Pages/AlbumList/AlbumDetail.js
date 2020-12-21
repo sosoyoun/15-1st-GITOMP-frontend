@@ -3,19 +3,41 @@ import "./AlbumDetail.scss";
 
 class AlbumDetail extends Component {
   state = {
-    albumList: [],
+    albumList: {},
   };
   componentDidMount() {
     fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ albumList: res }));
   }
+
+  componentDidUpdate(prevProps, _) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
+        .then((res) => res.json())
+        .then((res) => this.setState({ albumList: res }));
+    }
+  }
+
   goToMain = () => {
     this.props.history.push(`/albumList/`);
   };
+
+  goToNext = () => {
+    this.props.history.push(
+      `/albumList/detail/${+this.props.match.params.id + 1}`
+    );
+    window.scroll(0, 0);
+  };
+
+  goToBack = () => {
+    this.props.history.push(
+      `/albumList/detail/${+this.props.match.params.id - 1}`
+    );
+    window.scroll(0, 0);
+  };
+
   render() {
-    console.log(this.props);
-    console.log(this.state);
     const {
       artist,
       description,
@@ -23,17 +45,17 @@ class AlbumDetail extends Component {
       genre,
       image_url,
       next_album,
-      playlinks,
       release_date,
-      release_type,
       song,
       title,
+      previous_album,
     } = this.state.albumList;
+
     return (
       <div className="AlbumDetail">
         <div className="container">
           <div className="headtitle">
-            <img src="" alt="bgimg" />
+            <img src="/images/gitomp_bg.jpg" alt="bgimg" />
             <h2>AlbumList</h2>
             <span>깃톰프뮤직의 음악에 매료되어보세요.</span>
           </div>
@@ -93,13 +115,13 @@ class AlbumDetail extends Component {
               <dt className="prev" onClick={this.goToBack}>
                 이전 글 ▲
               </dt>
-              <dd>{} </dd>
+              <dd>{next_album && next_album.title}</dd>
             </dl>
             <dl>
               <dt className="next" onClick={this.goToNext}>
                 다음 글 ▼
               </dt>
-              <dd>{}</dd>
+              <dd>{previous_album && previous_album.title}</dd>
             </dl>
           </div>
         </div>

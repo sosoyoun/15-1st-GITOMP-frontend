@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import "./AlbumList.scss";
 import { Link, withRouter } from "react-router-dom";
 import AlbumCard from "./AlbumCard";
+import AlbumHeadTitle from "./AlbumHeadTitle";
+import "./AlbumList.scss";
 
 class AlbumList extends Component {
   state = {
@@ -18,6 +19,7 @@ class AlbumList extends Component {
     searchInput: "",
     isLoading: false,
   };
+
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
       fetch(`http://192.168.219.191:8000/albums?page=${this.state.currentPage}`)
@@ -37,11 +39,11 @@ class AlbumList extends Component {
         });
       });
   }
+
   searchInfo = (e) => {
     const { selectYear, selectGenre, selectKey, searchInput } = this.state;
     e.preventDefault();
     this.setState({ isLoading: true });
-
     this.state.filterAlbumList &&
       fetch(
         `http://192.168.219.191:8000/albums?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
@@ -52,7 +54,7 @@ class AlbumList extends Component {
           this.setState({ albumList: res.albums });
         })
         .catch((error) => {
-          console.log("Error fetch but will test");
+          console.log("에러발생!");
         });
   };
 
@@ -65,16 +67,13 @@ class AlbumList extends Component {
     const { value, name } = e.target;
     this.setState({ [name]: value });
   };
+
   render() {
     const { albumList, currentPage } = this.state;
     return (
       <div className="AlbumList">
         <div className="container">
-          <div className="headtitle">
-            <img src="/images/gitomp_bg.jpg" alt="bgimg" />
-            <h2>AlbumList</h2>
-            <span>깃톰프뮤직의 음악에 매료되어보세요.</span>
-          </div>
+          <AlbumHeadTitle />
           <section className="notice_info">
             <form
               onClick={(e) => {
