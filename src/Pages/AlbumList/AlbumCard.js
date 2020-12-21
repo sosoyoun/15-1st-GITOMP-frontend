@@ -7,19 +7,20 @@ class AlbumCard extends Component {
 
     return (
       <>
-        {albumList.map((e) => {
-          return (
-            <List
-              key={e.album_id}
-              album_id={e.album_id}
-              image_url={e.image_url}
-              title={e.title}
-              artist={e.artist}
-              release_date={e.release_date}
-              release_type={e.release_type}
-            />
-          );
-        })}
+        {this.props &&
+          albumList.map((e) => {
+            return (
+              <List
+                key={e.album_id}
+                album_id={e.album_id}
+                image_url={e.image_url}
+                title={e.title}
+                artist={e.artist}
+                release_date={e.release_date}
+                release_type={e.release_type}
+              />
+            );
+          })}
       </>
     );
   }

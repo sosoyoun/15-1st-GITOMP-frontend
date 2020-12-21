@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import "./List.scss";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class List extends Component {
   goToDetail = () => {
-    this.props.history.push(`/albumList/detail/${this.props.id}`);
+    this.props.history.push(
+      `/albumList/detail/${this.props.match.params.album_id}`
+    );
   };
   render() {
+    console.log(this.props);
     const {
       album_id,
       title,
@@ -37,7 +40,21 @@ class List extends Component {
                 <dd>형 태 : {release_type}</dd>
               </dl>
             </div>
-            <button onClick={this.goToDetail}>VIEW MORE </button>
+            <Link
+              to={{
+                pathname: `/albumList/detail/${album_id}`,
+                state: {
+                  album_id,
+                  title,
+                  image_url,
+                  artist,
+                  release_date,
+                  release_type,
+                },
+              }}
+            >
+              <button>VIEW MORE </button>
+            </Link>
           </dd>
         </div>
       </li>

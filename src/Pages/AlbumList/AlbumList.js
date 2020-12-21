@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./AlbumList.scss";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import AlbumCard from "./AlbumCard";
 
 class AlbumList extends Component {
@@ -11,13 +11,15 @@ class AlbumList extends Component {
     perPage: 10,
     currentPage: 1,
     albumList: [],
+    filterAlbumList: [],
     selectYear: "2020",
     selectGenre: "",
     selectKey: "?",
+    searchInput: "",
     isLoading: false,
   };
   componentDidUpdate(prevProps, _) {
-    if (prevProps.match.url !== this.props.match.url) {
+    if (prevProps.match.params !== this.props.match.params) {
       fetch(`http://192.168.219.191:8000/albums?page=${this.state.currentPage}`)
         .then((res) => res.json())
         .then((res) =>
@@ -35,27 +37,24 @@ class AlbumList extends Component {
         });
       });
   }
-
   searchInfo = (e) => {
-    const {
-      selectYear,
-      selectGenre,
-      isLoading,
-      selectKey,
-      searchInput,
-    } = this.state;
+    const { selectYear, selectGenre, selectKey, searchInput } = this.state;
     e.preventDefault();
     this.setState({ isLoading: true });
-    if (isLoading) {
-      fetch(`http://192.168.219.191:8000/albums?page=1&year=${selectYear}`)
+
+    this.state.filterAlbumList &&
+      fetch(
+        `http://192.168.219.191:8000/albums?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
+        `
+      )
         .then((res) => res.json())
         .then((res) => {
-          this.setState({ isLoading: true, albumList: res.albums });
+          this.setState({ albumList: res.albums });
+        })
+        .catch((error) => {
+          console.log("Error fetch but will test");
         });
-    }
   };
-
-  // 여러 키워드 검색 필터링
 
   moveToPages = (e) => {
     this.setState({ currentPage: e.target.name });
@@ -77,7 +76,11 @@ class AlbumList extends Component {
             <span>깃톰프뮤직의 음악에 매료되어보세요.</span>
           </div>
           <section className="notice_info">
-            <form>
+            <form
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
               <select
                 className="select_year"
                 name="selectYear"
@@ -168,4 +171,4 @@ class AlbumList extends Component {
   }
 }
 
-export default AlbumList;
+export default withRouter(AlbumList);
