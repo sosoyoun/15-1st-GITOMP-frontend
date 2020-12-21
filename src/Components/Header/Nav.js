@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import { withRouter } from 'react-router-dom';
-
 import { Link } from "react-router-dom";
 import Category from "./components/Category";
 import SearchBar from "./SearchBox/SearchBar";
