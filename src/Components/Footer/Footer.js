@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import "../Footer/Footer.scss";
 import { Link } from "react-router-dom";
+import "../Footer/Footer.scss";
+
 class Footer extends Component {
   render() {
     return (
       <footer className="Footer">
         <div className="ft">
           <h1 className="foot_logo">
-            <img src="./images/logo.png" alt="logo" />
+            <img src="/images/logo.png" alt="logo" />
           </h1>
           <div className="f_in">
             <nav>
