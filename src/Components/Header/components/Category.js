@@ -8,7 +8,7 @@ class Category extends Component {
       <div className="Category">
         <ul className="Nav-category1">
           <li className="sub-plus">
-            <Link to="/Nav">GITOMPMUSIC</Link>
+            <Link to="/Account">GITOMPMUSIC</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-one">
               <div className="sub-intro">
@@ -39,7 +39,7 @@ class Category extends Component {
             </div>
           </li>
           <li className="sub-plus">
-            <Link to="/Nav">CONCERT</Link>
+            <Link to="/ConcertList">CONCERT</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-two">
               <div className="sub-intro">
@@ -112,7 +112,7 @@ class Category extends Component {
             </div>
           </li>
           <li className="sub-plus">
-            <Link to="/Nav">ALBUM</Link>
+            <Link to="/AlbumList">ALBUM</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-for">
               <div className="sub-intro">

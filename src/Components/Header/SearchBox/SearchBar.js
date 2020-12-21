@@ -9,13 +9,11 @@ class SearchBar extends Component {
   }
 
   showSearchBox = (e) => {
-    document.getElementsByClassName("SearchBar")[0].style.height = "10rem";
-    document.getElementsByClassName("SearchBar")[0].style.opacity = "1";
+    document.getElementsByClassName("SearchBar")[0].style.display = "block";
   };
 
   handleDelete = () => {
-    document.getElementsByClassName("SearchBar")[0].style.height = "0";
-    document.getElementsByClassName("SearchBar")[0].style.opacity = "0";
+    document.getElementsByClassName("SearchBar")[0].style.display = "none";
   };
 
   render() {
@@ -23,7 +21,7 @@ class SearchBar extends Component {
     return (
       <>
         <div className="search-bar" onClick={this.showSearchBox}>
-          <img src="./images/search-icon_b.png" alt="검색창" />
+          <img src="/images/search-icon_b.png" alt="검색창" />
         </div>
         <div className="SearchBar">
           <form action="" className="search-from">

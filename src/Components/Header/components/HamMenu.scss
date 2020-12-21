@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&display=swap");
 @import "../../../styles/common.scss";
 
 .toggleMenu-appear {
   opacity: 0;
   height: 0;
+  z-index: 2000;
 
   .toggleMenu-appear-active {
     opacity: 1;
@@ -19,6 +19,7 @@
   text-align: center;
   background: url("../images/hammenu_bg.jpg") center;
   background-size: cover;
+  z-index: 2000;
 
   p {
     padding-top: 3rem;

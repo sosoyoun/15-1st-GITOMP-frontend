@@ -5,6 +5,7 @@
   position: fixed;
   background: white;
   transition: all 0.4s ease;
+  z-index: 1000;
 
   &.bottom {
     box-shadow: 1px 1px 17px rgba(0, 0, 0, 0.1);

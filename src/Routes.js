@@ -16,12 +16,12 @@ class Routes extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
+          <Route exact path="/HamMenu" component={HamMenu} />
           <Route exact path="/AlbumList" component={AlbumList} />
           <Route exact path="/ConcertList" component={ConcertList} />
           <Route exact path="/Account" component={Account} />
           {/* <Route exact path="/SignIn" component={SignIn} /> */}
           <Route exact path="/Notice" component={Notice} />
-          <Route exact path="/HamMenu" component={HamMenu} />;
         </Switch>
       </Router>
     );

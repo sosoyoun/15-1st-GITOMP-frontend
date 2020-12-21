@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { withRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import Category from "./components/Category";
 import SearchBar from "./SearchBox/SearchBar";
@@ -21,10 +20,14 @@ class Nav extends Component {
       <div className="Nav bottom">
         <div className="Nav-top">
           <Link to="/">
-            <img src="./images/logo.gif" alt="GITOMP" />
+            <img src="/images/logo.gif" alt="GITOMP" />
           </Link>
           <div className="right-icon">
             <SearchBar />
+            {/* <HamMenu />
+            <Link to="/components/HamMenu">
+              <img src="/images/Ham.png" alt="" className="toggle-menu" />
+            </Link> */}
             <div className="toggle-menu" onClick={this.goToHam}>
               <label className="menu-toggle" for="menu-toggle">
                 <span className="line line-1"></span>
