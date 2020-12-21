@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../Account/Account.scss";
-import Footer from "../../Components/Footer/Footer";
 
 class Account extends Component {
   constructor() {
