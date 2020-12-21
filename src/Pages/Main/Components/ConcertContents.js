@@ -5,7 +5,7 @@ import "./ConcertContents.scss";
 class ConcertContents extends Component {
   render() {
     return (
-      <div>
+      <div className="ConcertContents">
         <img src={poster} alt="포스터" />
         <p>쇼팽으로 만나는 겨울나라</p>
       </div>

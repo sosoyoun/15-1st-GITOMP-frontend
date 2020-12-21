@@ -7,6 +7,16 @@ import startIcon from "./Images/icons8-skip-to-start-96.png";
 import "./ConcertSection.scss";
 
 class ConcertSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.testRef = React.createRef();
+  }
+
+  componentDidMount() {
+    console.log("refs");
+    console.log(this.testRef);
+  }
+
   render() {
     return (
       <>
@@ -17,7 +27,7 @@ class ConcertSection extends React.Component {
         </BackgroundLine>
         <div className="ConcertSection">
           <div className="concertSlideOutline">
-            <div className="concertIntroduce">
+            <div className="concertIntroduce" ref={this.testRef}>
               <h2>
                 UPCOMING <br />
                 CONCERT

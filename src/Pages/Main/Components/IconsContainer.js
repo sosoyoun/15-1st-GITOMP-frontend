@@ -7,29 +7,23 @@ import recordIcon from "./Images/icons8-cymbals-100.png";
 
 class IconsContainer extends React.Component {
   render() {
+    const iconList = [
+      { img: guitar, alt: "기타", text: "Classical" },
+      { img: saxophone, alt: "색소폰", text: "Jazz" },
+      { img: piano, alt: "피아노", text: "Newage" },
+      { img: maracas, alt: "마라카스", text: "World Music" },
+      { img: recordIcon, alt: "레코드", text: "POP" },
+    ];
     return (
       <div className="IconsContainer">
-        {/*map과 toggle 기능 사용 예정 */}
-        <div className="albumIcon">
-          <img src={guitar} alt="기타" />
-          <p>Classical</p>
-        </div>
-        <div className="albumIcon">
-          <img src={saxophone} alt="색소폰" />
-          <p>Jazz</p>
-        </div>
-        <div className="albumIcon">
-          <img src={piano} alt="피아노" />
-          <p>Newage</p>
-        </div>
-        <div className="albumIcon">
-          <img src={maracas} alt="마라카스" />
-          <p>World Music</p>
-        </div>
-        <div className="albumIcon">
-          <img src={recordIcon} alt="레코드" />
-          <p>POP</p>
-        </div>
+        {iconList.map((el) => {
+          return (
+            <div className="albumIcon">
+              <img src={el.img} alt={el.alt} />
+              <p>{el.text}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }

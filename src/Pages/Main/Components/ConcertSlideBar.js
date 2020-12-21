@@ -27,18 +27,6 @@ class ConcertSlideBar extends Component {
           <SwiperSlide>
             <ConcertContents />
           </SwiperSlide>
-          <SwiperSlide>
-            <ConcertContents />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ConcertContents />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ConcertContents />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ConcertContents />
-          </SwiperSlide>
         </Swiper>
       </div>
     );

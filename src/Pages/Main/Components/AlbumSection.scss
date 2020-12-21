@@ -29,7 +29,7 @@
       letter-spacing: 4px;
       animation-name: Fade;
       animation-duration: 0.8s;
-      animation-iteration-count: infinite;
+      animation-iteration-count: 1;
 
       @keyframes Fade {
         0% {
@@ -50,7 +50,7 @@
       animation-name: Fade;
       animation-duration: 0.8s;
       animation-duration: leaner;
-      animation-iteration-count: infinite;
+      animation-iteration-count: 1;
 
       @keyframes Fade {
         0% {
@@ -90,79 +90,6 @@
           font-weight: Thin;
           margin-top: 20px;
           //active 시에만 visible 기능 구현 예정
-        }
-      }
-    }
-
-    .albumSlideOutline {
-      width: 1400px;
-      height: 374px;
-      display: flex;
-      margin: 80px auto;
-      align-items: center;
-
-      .swiperButton {
-        width: 45px;
-        height: 45px;
-        margin-left: 10px;
-        position: relative;
-        top: -40px;
-        right: 0px;
-        border-radius: 50%;
-        border: #666666 1px solid;
-
-        img {
-          width: 45px;
-          height: 45px;
-          padding: 13px;
-        }
-      }
-
-      .cover {
-        width: 640px;
-        height: 500px;
-        padding-left: 64px;
-        position: relative;
-        top: 10px;
-
-        img {
-          position: relative;
-        }
-
-        .albumCoverImg {
-          width: 374px;
-          height: 374px;
-          top: -340px;
-          left: -90px;
-        }
-
-        .discImg {
-          width: 360px;
-          height: 360px;
-          top: 29px;
-          left: 70px;
-          animation-name: spinImage;
-          animation-duration: 4s;
-          animation-duration: leaner;
-          animation-iteration-count: infinite;
-          @keyframes spinImage {
-            100% {
-              transform: rotate(360deg);
-            }
-          }
-          &:hover {
-            animation-name: pickDisc;
-            animation-duration: 1s;
-            animation-duration: leaner;
-            animation-fill-mode: forwards;
-            animation-direction: alternate;
-            animation-iteration-count: 1;
-            @keyframes pickDisc {
-              100% {
-                transform: translateX(45px);
-              }
-            }
-          }
         }
       }
     }

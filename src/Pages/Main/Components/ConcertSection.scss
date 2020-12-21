@@ -1,18 +1,18 @@
 @import "../../../styles/common.scss";
 
 .BackgroundLine {
-  .backgroundTxt {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 17%;
-    font-family: $title-font;
-    font-weight: 300;
-    font-size: 460px;
-    line-height: 0;
-    color: #ccc;
-    opacity: 0.2;
-  }
+}
+.backgroundTxt {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 17%;
+  font-family: $title-font;
+  font-weight: 300;
+  font-size: 460px;
+  line-height: 0;
+  color: #ccc;
+  opacity: 0.2;
 }
 
 .ConcertSection {
