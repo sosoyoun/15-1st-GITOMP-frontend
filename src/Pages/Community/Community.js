@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import FreeBoard from "./FreeBoard";
 import "../Community/Community.scss";
 
@@ -10,6 +10,7 @@ class Community extends Component {
     freeBoardDate: [],
     searchInput: "",
   };
+
   componentDidMount() {
     fetch("http://localhost:3003/data/data.json", {
       method: "GET",
@@ -21,18 +22,22 @@ class Community extends Component {
         });
       });
   }
+
   goToWrite = () => {
     this.props.history.push(`/Community/write`);
   };
+
   handleInputChange = (e) => {
     this.setState({ searchInput: e.target.value });
   };
+
   render() {
     const { freeBoardDate, searchInput } = this.state;
     const filterBoardDate = freeBoardDate.filter((data) => {
       const regexp = RegExp(searchInput, "gi");
       return data.title.match(regexp);
     });
+
     return (
       <div className="Community">
         <div className="container">

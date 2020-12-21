@@ -1,40 +1,42 @@
 import React, { Component } from "react";
 import "./CommunityContent.scss";
+import { COMMUNITYCONTENTAPI } from "../../config";
 
 class CommunityContent extends Component {
   state = {
     data: {},
   };
+
+  componentDidMount() {
+    fetch(COMMUNITYCONTENTAPI)
+      .then((res) => res.json())
+      .then((res) => this.setState({ data: res }));
+  }
+
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(
-        `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
-      )
+      fetch(COMMUNITYCONTENTAPI)
         .then((res) => res.json())
         .then((res) => this.setState({ data: res }));
     }
   }
 
-  componentDidMount() {
-    fetch(
-      `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
-    )
-      .then((res) => res.json())
-      .then((res) => this.setState({ data: res }));
-  }
   goToMain = () => {
     this.props.history.push(`/Community`);
   };
+
   goToBack = () => {
     this.props.history.push(
       `/community/detail/${+this.props.match.params.id - 1}`
     );
   };
+
   goToNext = () => {
     this.props.history.push(
       `/community/detail/${+this.props.match.params.id + 1}`
     );
   };
+
   render() {
     return (
       <div className="CommunityContent">

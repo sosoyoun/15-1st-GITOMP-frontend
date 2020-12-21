@@ -8,36 +8,45 @@ class CommunityWrite extends Component {
     write_nickName: "",
     write_token: "",
   };
+
   handleTitleInput = (e) => {
     this.setState({ write_title: e.target.value });
   };
+
   handleTextArea = (e) => {
     this.setState({ write_content: e.target.value });
   };
-  pushDataAndOut = () => {
-    this.postWriteData();
-    this.props.history.push(`/Community`);
-  };
+
   postWriteData = () => {
+    const {
+      write_content,
+      write_nickName,
+      write_title,
+      write_token,
+    } = this.state;
     fetch("http://192.168.219.191:8000/users/signup", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        write_title: this.state.write_title,
-        write_content: this.state.write_content,
-        write_nickName: this.state.write_nickName,
-        write_token: this.state.write_token,
+        write_title,
+        write_content,
+        write_nickName,
+        write_token,
       }),
     })
       .then((res) => {
         console.log(res.json());
       })
+      .then(() => {
+        this.props.history.push(`/Community`);
+      })
       .catch((error) => {
         console.log("통신불가");
       });
   };
+
   render() {
     return (
       <div className="CommunityWrite">
@@ -70,7 +79,7 @@ class CommunityWrite extends Component {
                 </div>
               </div>
               <div className="bottom_btn">
-                <button onClick={this.pushDataAndOut}>게시물 등록</button>
+                <button onClick={this.postWriteData}>게시물 등록</button>
               </div>
             </div>
           </section>

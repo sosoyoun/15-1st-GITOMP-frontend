@@ -6,15 +6,15 @@ class FreeBoard extends Component {
   render() {
     const { freeBoardDate } = this.props;
     return (
-      <tbody>
-        {freeBoardDate.map((e) => (
+      <tbody className="FreeBoard">
+        {freeBoardDate.map((data) => (
           <Board
-            key={e.id}
-            id={e.id}
-            title={e.title}
-            author={e.author}
-            created_at={e.created_at}
-            view={e.view}
+            key={data.id}
+            id={data.id}
+            title={data.title}
+            author={data.author}
+            created_at={data.created_at}
+            view={data.view}
           />
         ))}
       </tbody>

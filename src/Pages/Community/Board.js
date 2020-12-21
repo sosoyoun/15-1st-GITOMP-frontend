@@ -5,6 +5,7 @@ class Board extends Component {
   goToDetail = () => {
     this.props.history.push(`/Community/detail/${this.props.id}`);
   };
+
   render() {
     const { id, title, author, created_at, view } = this.props;
     return (
