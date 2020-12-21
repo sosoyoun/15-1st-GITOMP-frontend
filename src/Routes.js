@@ -5,6 +5,7 @@ import AlbumList from "./Pages/AlbumList/AlbumList";
 import ConcertList from "./Pages/ConcertList/ConcertList";
 import Account from "./Pages/Account/Account";
 import Notice from "./Pages/Notice/Notice";
+import AlbumDetail from "./Pages/AlbumList/AlbumDetail";
 class Routes extends Component {
   render() {
     return (
@@ -12,6 +13,8 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/AlbumList" component={AlbumList} />
+          <Route exact path="/AlbumList/detail/:id" component={AlbumDetail} />
+          <Route exact path="/AlbumList/:currentPage" component={AlbumList} />
           <Route exact path="/ConcertList" component={ConcertList} />
           <Route exact path="/Account" component={Account} />
           <Route exact path="/Notice" component={Notice} />

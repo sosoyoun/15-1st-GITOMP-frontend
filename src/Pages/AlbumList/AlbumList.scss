@@ -13,6 +13,13 @@
       height: 358px;
       text-align: center;
       letter-spacing: -0.1em;
+      img {
+        position: absolute;
+        left: 0;
+        max-width: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
       h2 {
         font-size: 70px;
         font-weight: 1000;
@@ -34,6 +41,7 @@
       text-align: center;
       box-sizing: border-box;
       padding: 30px 2%;
+
       form {
         display: flex;
         flex-direction: row;
@@ -43,8 +51,9 @@
         background: #f2f2f2;
         max-width: 1200px;
         margin: 0 auto;
+
         select {
-          max-width: 103px;
+          max-width: 105px;
           height: 41px;
           padding: 0 35px 0 10px;
           border: 1px solid #dddddd;
@@ -53,7 +62,7 @@
           z-index: 1;
           margin-right: 10px;
           font-weight: 300;
-          font-size: 16px;
+          font-size: 14px;
         }
         input {
           width: 20vw;
@@ -64,7 +73,6 @@
           box-sizing: border-box;
           -webkit-appearance: none;
           border-radius: 0;
-
           font-size: 16px;
           position: relative;
           &::placeholder {
@@ -76,11 +84,53 @@
           height: 41px;
           background-color: $brown-color;
           border: none;
-          .fa-search {
+          .fa_search {
             color: #fff;
             font-size: 20px;
           }
         }
+      }
+    }
+    .album_List {
+      max-width: 1152px;
+      margin: 0 auto;
+      height: 100%;
+      border-top: 2px solid #000;
+      ul {
+        margin-inline-start: 0;
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        list-style: none;
+        box-sizing: border-box;
+        padding: 30px 2%;
+      }
+    }
+    .pages_number {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      height: 100%;
+      a {
+        text-decoration: none;
+
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 100px;
+        line-height: 38px;
+        border: 1px solid #aaaaaa;
+        color: #777777;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 2px;
+        box-sizing: border-box;
+      }
+      a.on {
+        background: #000;
+        color: #fff;
+        border: none;
+        line-height: 38px;
       }
     }
   }
