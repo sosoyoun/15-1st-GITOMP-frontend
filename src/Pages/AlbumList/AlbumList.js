@@ -20,16 +20,6 @@ class AlbumList extends Component {
     isLoading: false,
   };
 
-  componentDidUpdate(prevProps, _) {
-    if (prevProps.match.params !== this.props.match.params) {
-      fetch(`http://192.168.219.191:8000/albums?page=${this.state.currentPage}`)
-        .then((res) => res.json())
-        .then((res) =>
-          this.setState({ albumList: res.albums }, window.scroll(0, 0))
-        );
-    }
-  }
-
   componentDidMount() {
     fetch(`http://192.168.219.191:8000/albums`)
       .then((res) => res.json())
@@ -38,6 +28,16 @@ class AlbumList extends Component {
           albumList: res.albums,
         });
       });
+  }
+
+  componentDidUpdate(prevProps, _) {
+    if (prevProps.match.params !== this.props.match.params) {
+      fetch(`http://192.168.219.191:8000/albums?page=${this.state.currentPage}`)
+        .then((res) => res.json())
+        .then((res) =>
+          this.setState({ albumList: res.albums }, window.scroll(0, 0))
+        );
+    }
   }
 
   searchInfo = (e) => {

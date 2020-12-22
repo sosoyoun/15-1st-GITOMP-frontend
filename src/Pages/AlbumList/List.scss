@@ -6,15 +6,18 @@
   flex-direction: row;
   width: 100%;
   padding: 40px 0;
+
   img {
     width: 290px;
     height: 290px;
     padding: 0 0 0 40px;
   }
+
   .album_info {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
+
     .album_title {
       margin-inline-start: 0;
       line-height: 1.6;
@@ -24,6 +27,7 @@
       font-weight: 700;
       color: #000;
     }
+
     .album_info {
       margin-inline-start: 0;
       margin: 10px 0;
@@ -31,12 +35,14 @@
 
       .album_subinfo {
         display: flex;
+
         dl {
           display: flex;
           flex-direction: row;
           margin-bottom: 15px;
           font-size: 17px;
           width: 18vw;
+
           dd {
             margin-inline-start: 0;
             font-family: "Noto Sans KR", Sans-serif;
@@ -68,6 +74,7 @@
         position: relative;
         overflow: hidden;
         transition: ease-out 0.3s 0.3s;
+
         &:after {
           width: 4px;
           height: 100%;
@@ -79,6 +86,7 @@
           transform: translateY(-100%);
           transition: 0.1s 0.1s;
         }
+
         &:before {
           width: 4px;
           height: 100%;
@@ -90,6 +98,7 @@
           transform: translateY(100%);
           transition: 0.1s 0.3s;
         }
+
         &:hover {
           color: white;
           background: rgba(255, 255, 255, 0);
@@ -100,6 +109,7 @@
             transform: translateX(0);
           }
         }
+
         span {
           &:before {
             width: 100%;
@@ -112,6 +122,7 @@
             transition: 0.1s;
             transform: translateX(-100%);
           }
+
           &:after {
             width: 100%;
             height: 4px;
