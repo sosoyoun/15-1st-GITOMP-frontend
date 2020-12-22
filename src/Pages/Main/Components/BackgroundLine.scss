@@ -1,0 +1,13 @@
+.BackgroundLine {
+  width: 100%;
+  height: 88vh;
+  position: absolute;
+
+  span {
+    width: 16.7%;
+    height: 100%;
+    float: left;
+    opacity: 1;
+    border-right: 1px solid #ececec;
+  }
+}
