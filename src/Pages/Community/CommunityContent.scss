@@ -11,7 +11,6 @@
     margin: 0 auto;
 
     .headtitle {
-      width: 100%;
       height: 358px;
       text-align: center;
       letter-spacing: -0.1em;
@@ -39,7 +38,6 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
-    box-sizing: border-box;
 
     .content {
       display: inline-block;
@@ -57,7 +55,7 @@
           padding-left: 20px;
 
           h4 {
-            font-family: "Noto Sans KR", Sans-serif;
+            font-family: $sub-font;
             line-height: 1.6;
             padding: 18px 20px 15px;
             font-size: 20px;
@@ -104,7 +102,6 @@
           width: 100%;
           margin: 15px 0;
           padding: 0;
-          box-sizing: border-box;
         }
 
         .content_prevnext {
