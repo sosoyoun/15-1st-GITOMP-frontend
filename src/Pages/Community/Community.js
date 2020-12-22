@@ -29,7 +29,7 @@ class Community extends Component {
         // })
       );
   }
-
+  //추가기능 구현중입니다.
   // componentDidMount() {
   //   fetch("http://192.168.219.191:8000/boards", {
   //     method: "POST",
@@ -88,13 +88,12 @@ class Community extends Component {
   };
 
   render() {
-    // console.log(this.state.check);
     const { freeBoardDate, searchInput, currentPage, boardCount } = this.state;
     const filterBoardDate = freeBoardDate.filter((data) => {
       const regexp = RegExp(searchInput, "gi");
       return data.title.match(regexp);
     });
-    // console.log(localStorage.Authorization);
+
     return (
       <div className="Community">
         <div className="container">

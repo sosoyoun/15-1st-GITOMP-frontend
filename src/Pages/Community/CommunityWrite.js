@@ -58,8 +58,6 @@ class CommunityWrite extends Component {
     this.props.history.push(`/boards`);
   };
   render() {
-    console.log(localStorage.Authorization);
-    console.log(this.props);
     return (
       <div className="CommunityWrite">
         <div className="container">

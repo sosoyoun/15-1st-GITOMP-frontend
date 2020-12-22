@@ -10,7 +10,6 @@ class Board extends Component {
   };
 
   render() {
-    console.log(this.props.check);
     const { id, title, author, created_at, view, category, check } = this.props;
 
     return (
@@ -21,7 +20,7 @@ class Board extends Component {
           {title}
           {/* {check &&
           <FontAwesomeIcon icon={faTrashAlt} />
-          <FontAwesomeIcon icon={faEdit} /> } */}
+          <FontAwesomeIcon icon={faEdit} /> } 추가기능 구현중 입니다.*/}
         </td>
         <td className="table-writer">{author}</td>
         <td className="table-when">{created_at}</td>
