@@ -18,6 +18,7 @@ class SearchBar extends Component {
 
   render() {
     const { currentSearchWord } = this.state;
+    const { handleDelete } = this;
     return (
       <>
         <div className="search-bar" onClick={this.showSearchBox}>
@@ -40,7 +41,7 @@ class SearchBar extends Component {
               <button
                 className="btn-layerClose"
                 type="button"
-                onClick={this.handleDelete}
+                onClick={handleDelete}
               ></button>
             </div>
           </form>
