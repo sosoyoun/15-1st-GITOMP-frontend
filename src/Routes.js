@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Pages/Main/Main";
+import AlbumList from "./Pages/AlbumList/AlbumList";
 import ConcertList from "./Pages/ConcertList/ConcertList";
 import Account from "./Pages/Account/Account";
 import Notice from "./Pages/Notice/Notice";
-import AlbumDetail from "./Pages/AlbumList/AlbumDetail";
-import AlbumList from "./Pages/AlbumList/AlbumList";
+import SignIn from "./Pages/Account/SignIn";
+import Footer from "./Components/Footer/Footer";
 
 class Routes extends Component {
   render() {
