@@ -1,58 +1,53 @@
 @import "../../styles/common.scss";
 
 .ConcerList {
-  font-family: $main-font;
-  color: $nomal-color;
   width: 100%;
+  font-family: $main-font;
   line-height: 1.5;
-  box-sizing: border-box;
+  color: $nomal-color;
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
 
     section {
       width: 100%;
-      margin: 0 auto;
-      margin-bottom: 40px;
+      margin: 0 auto 40px;
       text-align: center;
-      box-sizing: border-box;
       padding: 30px 2%;
 
       form {
+        max-width: 1200px;
+        height: 100px;
+        margin: 0 auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        height: 100px;
         background: #f2f2f2;
-        max-width: 1200px;
-        margin: 0 auto;
 
         select {
           max-width: 105px;
           height: 41px;
-          padding: 0 35px 0 10px;
-          border: 1px solid #dddddd;
-          background: #fff;
-          outline: none;
-          z-index: 1;
           margin-right: 10px;
+          padding: 0 35px 0 10px;
+          border: $nomal-border;
           font-weight: 300;
           font-size: 14px;
           outline: none;
+          background: #fff;
+          z-index: 1;
         }
 
         input {
           width: 20vw;
-          padding: 5px;
-          border: 1px solid #d8d8d8;
           height: 41px;
-          font-size: 14px;
-          box-sizing: border-box;
-          -webkit-appearance: none;
-          border-radius: 0;
-          font-size: 16px;
           position: relative;
+          padding: 5px 5px 5px 10px;
+          border: 1px solid #d8d8d8;
+          border-radius: 0;
+          -webkit-appearance: none;
+          font-size: 16px;
           outline: none;
 
           &::placeholder {
@@ -63,8 +58,8 @@
         button {
           width: 41px;
           height: 41px;
-          background-color: $brown-color;
           border: none;
+          background-color: $brown-color;
 
           .fa_search {
             color: #fff;
@@ -74,54 +69,50 @@
       }
     }
 
-    .album_List {
+    .concert_List {
       max-width: 1152px;
-      margin: 0 auto;
       height: 100%;
-      border-top: 2px solid #222;
+      margin: 0 auto;
+      border-top: 2px solid $nomal-color;
 
       ul {
-        margin-inline-start: 0;
         width: 100%;
-        margin: 0 auto;
-        margin-bottom: 40px;
-        list-style: none;
+        margin: 0 auto 40px;
         padding: 30px 2%;
+        margin-inline-start: 0;
       }
     }
 
     .pages_number {
       width: 100%;
+      height: 100%;
       margin: 0 auto;
       text-align: center;
-      height: 100%;
 
       a {
-        text-decoration: none;
         width: 40px;
         height: 40px;
+        margin: 0 2px;
         display: inline-block;
+        border: 1px solid #aaaaaa;
         border-radius: 100px;
         line-height: 38px;
-        border: 1px solid #aaaaaa;
         color: #777777;
         font-size: 14px;
         font-weight: 400;
-        margin: 0 2px;
-        box-sizing: border-box;
 
         &:hover {
-          color: #fff;
-          background-color: #222;
           border: none;
+          color: #fff;
+          background-color: $nomal-color;
         }
       }
 
       a.on {
-        color: #fff;
-        line-height: 38px;
         border: none;
-        background: #222;
+        line-height: 38px;
+        color: #fff;
+        background: $nomal-color;
       }
     }
   }

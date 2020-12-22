@@ -1,11 +1,9 @@
 @import "../../../styles/common.scss";
 
 .ConcertDetail {
-  background-color: white;
-  position: fixed;
+  width: 100%;
   font-family: $main-font;
   color: $nomal-color;
-  width: 100%;
   line-height: 1.5;
   letter-spacing: -0.05em;
 
@@ -14,17 +12,13 @@
     margin: 0 auto;
 
     article {
-      margin: 0 auto;
-      max-width: 1200px;
-
       .concert_content {
+        height: 600px;
         display: flex;
         flex-direction: row;
-        height: 600px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: $nomal-border;
 
         img {
-          padding-bottom: 31%;
           width: 385px;
           height: 524px;
         }
@@ -34,20 +28,40 @@
           padding-left: 4%;
 
           .concert_title {
-            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: $nomal-border;
+
+            .border_line {
+              position: relative;
+              top: 17px;
+              width: 10rem;
+              height: 0.5px;
+              background-color: $nomal-color;
+            }
 
             h3 {
+              margin-right: 7px;
               font-size: 32px;
               font-weight: 500;
               font-family: $sub-font;
-              color: #222;
-              margin-right: 7px;
+              color: $nomal-color;
             }
           }
 
           dl {
             display: flex;
             flex-direction: row;
+            padding: 8px 0;
+
+            dd {
+              color: rgb(116, 116, 116);
+              font-weight: bold;
+              span {
+                color: #ddd;
+                padding-right: 1rem;
+              }
+            }
 
             dt {
               width: 6vw;
@@ -56,10 +70,31 @@
           }
         }
       }
+
+      .concert_profile {
+        padding: 2rem 0 4rem;
+
+        .concert_profile-post {
+          font-size: 22px;
+          color: #666;
+          font-weight: 600;
+        }
+
+        img {
+          padding-top: 2rem;
+          display: block;
+          margin: 0 auto;
+        }
+      }
     }
+
     .content_prevnext {
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
+      border-top: $nomal-border;
+      border-bottom: $nomal-border;
+
+      .bottom {
+        border-bottom: 1px solid rgb(236, 236, 236);
+      }
 
       dl {
         padding: 18px 35px 16px;
@@ -67,12 +102,12 @@
         flex-direction: row;
 
         dt {
-          float: left;
-          line-height: 1.6;
           padding-right: 30px;
           margin-right: 15px;
+          float: left;
           font-size: 13px;
-          color: #333;
+          line-height: 1.6;
+          color: $nomal-color;
           cursor: pointer;
         }
 
@@ -80,23 +115,25 @@
           line-height: 1.6;
           font-size: 13px;
           color: #666;
+          cursor: pointer;
         }
       }
     }
   }
+
   .bottom_btn {
-    display: inline-block;
     width: 100%;
+    display: inline-block;
     margin: 20px 0 40px;
     text-align: center;
 
     button {
       width: 112px;
       height: 44px;
-      background-color: $brown-color;
-      color: #fff;
       border: none;
       font-size: 15px;
+      color: #fff;
+      background-color: $brown-color;
     }
   }
 }

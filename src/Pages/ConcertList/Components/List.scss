@@ -1,1 +1,154 @@
 @import "../../../styles/common.scss";
+
+.List {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 40px 0;
+  border-bottom: 2px solid #ddd;
+
+  img {
+    width: 240px;
+    height: auto;
+    padding: 0 0 0 40px;
+  }
+
+  .concert_info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+
+    .concert_title {
+      margin-inline-start: 0;
+      line-height: 1.6;
+      margin: 20px 0;
+      font-size: 27px;
+      font-weight: 500;
+      color: $nomal-color;
+    }
+
+    .concert_info {
+      margin: 10px 0;
+      margin-bottom: 30px;
+      margin-inline-start: 0;
+
+      .concert_subinfo {
+        display: flex;
+        flex-direction: column;
+
+        dl {
+          width: 18vw;
+          display: flex;
+          flex-direction: row;
+          font-size: 17px;
+          line-height: 40px;
+
+          dd {
+            margin-bottom: 0;
+            margin-inline-start: 0;
+            font-family: $sub-font;
+            color: $nomal-color;
+
+            span {
+              padding-left: 5px;
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      padding-top: 20px;
+      width: 170px;
+
+      button {
+        position: relative;
+        min-width: 169px;
+        height: 44px;
+        display: inline-block;
+        margin: 5px 10px 5px 0;
+        padding: 0 15px;
+        border: none;
+        letter-spacing: -0.5px;
+        font-family: $title-font;
+        font-size: 17px;
+        font-weight: 300;
+        text-align: left;
+        cursor: pointer;
+        overflow: hidden;
+        transition: ease-out 0.3s 0.3s;
+        color: $brown-color;
+        outline: none;
+        background-color: white;
+        vertical-align: middle;
+        box-shadow: inset 0 0 0 1px #decdb8;
+
+        &:before {
+          box-sizing: inherit;
+          content: "";
+          position: absolute;
+          border: 1px solid #caa476;
+          border-left: 0;
+          width: 30%;
+          height: 46px;
+          bottom: 0;
+          right: 0;
+        }
+
+        &:after {
+          box-sizing: inherit;
+          content: "";
+          position: absolute;
+          border: 1px solid #caa476;
+          width: 60%;
+          height: 1px;
+          top: -1px;
+          right: 0;
+        }
+
+        &:hover {
+          &:before {
+            border: 2px solid #caa476;
+            border-left: 0;
+            width: 100%;
+            transition: width 0.2s ease-out, height 0.3s ease-out 0.3s;
+          }
+
+          &:after {
+            border: 2px solid #caa476;
+            border-left: 0;
+            top: -2px;
+            width: 100%;
+            transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+          }
+          & span::after {
+            height: 100%;
+            border: 2px solid #caa476;
+            top: 0;
+            left: -2px;
+
+            transition: all 0.2s 0.2s;
+          }
+        }
+
+        span {
+          display: inline-block;
+          width: 145px;
+          background: url("images/arr-icon-c.png") no-repeat center right 15px;
+
+          &:after {
+            box-sizing: inherit;
+            content: "";
+            position: absolute;
+            border: 2px solid #caa476;
+            height: 100%;
+            width: 1px;
+            left: -10px;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

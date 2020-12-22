@@ -1,8 +1,29 @@
 import React, { Component } from "react";
+import List from "./List";
 
 class ConcertCard extends Component {
   render() {
-    return <div></div>;
+    const { concertList } = this.props;
+
+    return (
+      <>
+        {this.props &&
+          concertList.map((e) => {
+            return (
+              <List
+                key={e.id}
+                id={e.id}
+                post_url={e.post_url}
+                title={e.title}
+                date_performance={e.date_performance}
+                location={e.location}
+                date_ticketing={e.date_ticketing}
+                host={e.host}
+              />
+            );
+          })}
+      </>
+    );
   }
 }
 

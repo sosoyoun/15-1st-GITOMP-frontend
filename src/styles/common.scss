@@ -3,10 +3,6 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 
-html {
-  overflow: hidden;
-}
-
 $main-font: "Nanum Gothic", Dotum, Helvetica, AppleGothic, Gulim, "Roboto",
   "굴림", Sans-serif;
 $sub-font: "Noto Sans KR", Dotum, Helvetica, AppleGothic, Gulim, "Roboto",
@@ -17,6 +13,8 @@ $brown-color: #be9b71;
 $nomal-color: #222222;
 $background-subcolor: #f7f7f7;
 $Nav-bg-color: #f3f3f3;
+
+$nomal-border: 1px solid #ddd;
 
 a {
   color: $nomal-color;

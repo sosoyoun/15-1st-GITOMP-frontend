@@ -7,19 +7,21 @@ class ConcertDetail extends Component {
     concertList: {},
   };
 
-  // componentDidMount() {
-  //   fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
-  //     .then((res) => res.json())
-  //     .then((res) => this.setState({ albumList: res }));
-  // }
+  componentDidMount() {
+    fetch(`http://192.168.219.191:8000/concerts/${this.props.match.params.id}`)
+      .then((res) => res.json())
+      .then((res) => this.setState({ concertList: res }));
+  }
 
-  // componentDidUpdate(prevProps, _) {
-  //   if (prevProps.match.params.id !== this.props.match.params.id) {
-  //     fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
-  //       .then((res) => res.json())
-  //       .then((res) => this.setState({ albumList: res }));
-  //   }
-  // }
+  componentDidUpdate(prevProps, _) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(
+        `http://192.168.219.191:8000/concerts/${this.props.match.params.id}`
+      )
+        .then((res) => res.json())
+        .then((res) => this.setState({ concertList: res }));
+    }
+  }
 
   goToMain = () => {
     this.props.history.push(`/concertList/`);
@@ -41,15 +43,15 @@ class ConcertDetail extends Component {
 
   render() {
     const {
-      image_url,
+      post_url,
+      thumbnail_url,
       title,
-      open_day,
-      phone,
-      price,
-      reserve,
-      place,
-      post,
-      description_detail,
+      date_performance,
+      host,
+      date_ticketing,
+      seats,
+      location,
+      info_detail,
       next_concert,
       previous_concert,
     } = this.state.concertList;
@@ -60,50 +62,69 @@ class ConcertDetail extends Component {
           <ConcertHeadTitle />
           <article>
             <div className="concert_content">
-              <img src={image_url} alt="concertImg" />
+              {/* <img src="" alt="concertImg" /> */}
               <div className="detail_info">
                 <div className="concert_title">
-                  <h3>{title}</h3>
+                  <h3>{/* {title && title} */}</h3>
+                  <div className="border_line"></div>
                 </div>
                 <dl>
-                  <dt>· 일&emsp;&emsp;시 </dt>
-                  <dd>: {open_day}</dd>
+                  <dt>· 일&emsp;&emsp;&emsp;시 </dt>
+                  <dd>
+                    <span>|</span>
+                    {/* {date_performance && date_performance} */}
+                  </dd>
                 </dl>
                 <dl>
-                  <dt>· 장&emsp;&emsp;소 </dt>
-                  <dd>: {place}</dd>
+                  <dt>· 장&emsp;&emsp;&emsp;소 </dt>
+                  <dd>
+                    <span>|</span>
+                    {/* {location && location} */}
+                  </dd>
                 </dl>
                 <dl>
-                  <dt>· 티&emsp;&emsp;켓 </dt>
-                  <dd>: {price}</dd>
+                  <dt>· 티&emsp;&emsp;&emsp;켓 </dt>
+                  <dd>
+                    <span>|</span>
+                    {/* {} */}
+                  </dd>
                 </dl>
                 <dl>
-                  <dt>· 예매처 </dt>
-                  <dd>: {reserve}</dd>
+                  <dt>· 예&emsp;매&emsp;처 </dt>
+                  <dd>
+                    <span>|</span>
+                    {/* {seats && seats} */}
+                  </dd>
                 </dl>
                 <dl>
-                  <dt>· 주최 / 문의 </dt>
-                  <dd>: {phone} </dd>
+                  <dt>· 주최&nbsp;&nbsp;/&nbsp;&nbsp;문의 </dt>
+                  <dd>
+                    <span>|</span>
+                    {/* {host && host.name} */}
+                  </dd>
                 </dl>
               </div>
             </div>
             <div className="concert_profile">
-              <p>{post}</p>
-              <p>{description_detail}</p>
+              <p className="concert_profile-post">
+                {/* {thumbnail_url && thumbnail_url} */}
+              </p>
+              <p>{/* {info_detail && info_detail} */}</p>
             </div>
           </article>
           <div className="content_prevnext">
-            <dl className="bbottom">
+            <dl className="bottom">
               <dt className="prev" onClick={this.goToBack}>
-                이전 글 ▲
+                이전글&emsp;&emsp;▲
               </dt>
-              <dd>{next_concert && next_concert.title}</dd>
+              <dd>{/* {next_concert && next_concert.title} */}</dd>
             </dl>
+            <span></span>
             <dl>
               <dt className="next" onClick={this.goToNext}>
-                다음 글 ▼
+                다음글&emsp;&emsp;▼
               </dt>
-              <dd>{previous_concert && previous_concert.title}</dd>
+              <dd>{/* {previous_concert && previous_concert.title} */}</dd>
             </dl>
           </div>
         </div>
