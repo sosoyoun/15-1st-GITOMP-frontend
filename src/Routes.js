@@ -21,11 +21,11 @@ class Routes extends Component {
           <Route exact path="/Account" component={Account} />
           <Route exact path="/SignIn" component={SignIn} />
           <Route exact path="/Notice" component={Notice} />
-          <Route exact path="/Community" component={Community} />
-          <Route exact path="/Community/write" component={CommunityWrite} />
+          <Route exact path="/boards" component={Community} />
+          <Route exact path="/boards/write" component={CommunityWrite} />
           <Route
             exact
-            path="/Community/detail/:id"
+            path="/Community/boards/:id"
             component={CommunityContent}
           />
         </Switch>

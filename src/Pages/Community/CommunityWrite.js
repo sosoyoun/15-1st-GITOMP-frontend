@@ -1,12 +1,45 @@
 import React, { Component } from "react";
 import "./CommunityWrite.scss";
+const token =
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.zs60cFZQH0YeZFIZnXTy2Gql8lpGAa3FlUauYpT0iZA";
 
 class CommunityWrite extends Component {
   state = {
     write_title: "",
     write_content: "",
-    write_nickName: "",
+    write_category: "review",
     write_token: "",
+  };
+
+  postWriteData = () => {
+    const {
+      write_content,
+      write_title,
+      write_token,
+      write_category,
+    } = this.state;
+    if (write_content && write_title) {
+      fetch("http://192.168.219.191:8000/boards", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({
+          title: write_title,
+          content: write_content,
+          category: write_category,
+        }),
+      })
+        .then(() => {
+          this.props.history.push(`/boards`);
+        })
+        .catch((error) => {
+          alert("통신불가");
+        });
+    } else {
+      alert("제목과 내용을 입력해 주세요.");
+    }
   };
 
   handleTitleInput = (e) => {
@@ -17,37 +50,16 @@ class CommunityWrite extends Component {
     this.setState({ write_content: e.target.value });
   };
 
-  postWriteData = () => {
-    const {
-      write_content,
-      write_nickName,
-      write_title,
-      write_token,
-    } = this.state;
-    fetch("http://192.168.219.191:8000/users/signup", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        write_title,
-        write_content,
-        write_nickName,
-        write_token,
-      }),
-    })
-      .then((res) => {
-        console.log(res.json());
-      })
-      .then(() => {
-        this.props.history.push(`/Community`);
-      })
-      .catch((error) => {
-        console.log("통신불가");
-      });
+  handleCategory = (e) => {
+    this.setState({ write_category: e.target.value });
   };
 
+  goToMain = () => {
+    this.props.history.push(`/boards`);
+  };
   render() {
+    console.log(localStorage.Authorization);
+    console.log(this.props);
     return (
       <div className="CommunityWrite">
         <div className="container">
@@ -59,10 +71,17 @@ class CommunityWrite extends Component {
             <div className="content">
               <div className="content_area">
                 <div className="content_title">
-                  <input
-                    placeholder="제목을 입력해 주세요."
-                    onChange={this.handleTitleInput}
-                  />
+                  <div className="title">
+                    <select onChange={this.handleCategory}>
+                      <option value="review">Review</option>
+                      <option value="qna">Q & A</option>
+                    </select>
+                    <input
+                      placeholder="제목을 입력해 주세요."
+                      onChange={this.handleTitleInput}
+                    />
+                  </div>
+
                   <div className="subinfo">
                     <ul>
                       <li>
@@ -80,6 +99,7 @@ class CommunityWrite extends Component {
               </div>
               <div className="bottom_btn">
                 <button onClick={this.postWriteData}>게시물 등록</button>
+                <button onClick={this.goToMain}>취소</button>
               </div>
             </div>
           </section>

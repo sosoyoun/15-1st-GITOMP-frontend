@@ -9,12 +9,14 @@ class FreeBoard extends Component {
       <tbody className="FreeBoard">
         {freeBoardDate.map((data) => (
           <Board
-            key={data.id}
-            id={data.id}
+            key={data.board_id}
+            id={data.board_id}
             title={data.title}
             author={data.author}
             created_at={data.created_at}
-            view={data.view}
+            view={data.views}
+            category={data.category}
+            check={data.check}
           />
         ))}
       </tbody>

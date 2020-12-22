@@ -7,40 +7,45 @@ class CommunityContent extends Component {
   };
 
   componentDidMount() {
-    fetch(
-      `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
-    )
+    fetch(`http://192.168.219.191:8000/boards/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ data: res }));
   }
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(
-        `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
-      )
+      fetch(`http://192.168.219.191:8000/boards/${this.props.match.params.id}`)
         .then((res) => res.json())
         .then((res) => this.setState({ data: res }));
     }
   }
 
   goToMain = () => {
-    this.props.history.push(`/Community`);
+    this.props.history.push(`/boards`);
   };
 
   goToBack = () => {
     this.props.history.push(
-      `/community/detail/${+this.props.match.params.id - 1}`
+      `/community/boards/${+this.props.match.params.id - 1}`
     );
   };
 
   goToNext = () => {
     this.props.history.push(
-      `/community/detail/${+this.props.match.params.id + 1}`
+      `/community/boards/${+this.props.match.params.id + 1}`
     );
   };
 
   render() {
+    const {
+      title,
+      author,
+      created_at,
+      views,
+      content,
+      next_board,
+      previous_board,
+    } = this.state.data;
     return (
       <div className="CommunityContent">
         <div className="container">
@@ -52,45 +57,45 @@ class CommunityContent extends Component {
             <div className="content">
               <div className="content_area">
                 <div className="content_title">
-                  <h4>{this.state.data.phone}</h4>
+                  <h4>{title}</h4>
                   <div className="subinfo">
                     <ul>
                       <li>
                         <dl>
                           <dt>날짜 :</dt>
-                          <dd>{this.state.data.name}</dd>
+                          <dd>{created_at}</dd>
                         </dl>
                       </li>
                       <li>
                         <dl>
                           <dt>조회수 :</dt>
-                          <dd>{this.state.data.phone}</dd>
+                          <dd>{views}</dd>
                         </dl>
                       </li>
 
                       <li>
                         <dl>
                           <dt>작성자 :</dt>
-                          <dd>{this.state.data.username}</dd>
+                          <dd>{author}</dd>
                         </dl>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="content_view">{this.state.data.website}</div>
+                <div className="content_view">{content}</div>
                 <div className="content_reply"></div>
                 <div className="content_prevnext">
                   <dl className="bbottom">
                     <dt className="prev" onClick={this.goToBack}>
                       이전 글 ▲
                     </dt>
-                    <dd>[티켓오픈] 아디오스 피아졸라 라이브 탱고 </dd>
+                    <dd>{previous_board?.title}</dd>
                   </dl>
                   <dl>
                     <dt className="next" onClick={this.goToNext}>
                       다음 글 ▼
                     </dt>
-                    <dd>다음글이 없습니다.</dd>
+                    <dd>{next_board?.title}</dd>
                   </dl>
                 </div>
               </div>
