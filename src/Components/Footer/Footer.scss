@@ -1,5 +1,88 @@
-#Footer {
+@import "../../styles/common.scss";
+
+.Footer {
   width: 100%;
-  height: 10vh;
-  background-color: red;
-}
+  height: 332px;
+  padding: 0;
+  background-color: #161616;
+  display: block;
+  line-height: 1.5;
+  color: #666;
+  position: fixed;
+  bottom: 0;
+  .ft {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 80px 0;
+    .foot_logo {
+      float: left;
+      margin-right: 4%;
+    }
+    .f_in {
+      display: flex;
+      flex-direction: column;
+      nav ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+          margin-right: 20px;
+          a {
+            color: #fff;
+          }
+          ::after {
+            margin-left: 20px;
+            color: #4e4e4e;
+            content: " | ";
+          }
+        }
+      }
+      .f_contact {
+        margin: 29px 0 29px 0;
+        li {
+          font-family: "Noto Sans KR", Sans-serif;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+        ::after {
+          margin: 0 20px 0 20px;
+          color: #4e4e4e;
+          content: " | ";
+        }
+      }
+      p {
+        font-size: 14px;
+        color: #848484;
+        letter-spacing: 0.05em;
+        span {
+          color: #be9b71;
+        }
+      }
+    }
+    .f_sns {
+      float: right;
+      li {
+        display: inline-block;
+        margin-right: 15px;
+        width: calc(24% - 0.9em);
+        span {
+          position: relative;
+          display: block;
+          width: 40px;
+          height: 40px;
+          border: 1px solid #666;
+          border-radius: 100%;
+          margin-right: 10px;
+          img {
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+          }
+        }
+      }
+    }
+  }
