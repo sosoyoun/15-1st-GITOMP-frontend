@@ -6,9 +6,9 @@ class Category extends Component {
   render() {
     return (
       <div className="Category">
-        <ul className="Nav-category1">
+        <ul className="Nav-category-title">
           <li className="sub-plus">
-            <Link to="/Account">GITOMPMUSIC</Link>
+            <Link to="/">GITOMPMUSIC</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-one">
               <div className="sub-intro">
@@ -23,7 +23,7 @@ class Category extends Component {
                     className="sub-nav-img"
                   />
                 </div>
-                <ul className="Nav-category2 sub-line">
+                <ul className="Nav-category-sub sub-line">
                   <li>
                     <span>GITOMP 소개</span>
                   </li>
@@ -54,7 +54,7 @@ class Category extends Component {
                     className="sub-nav-img"
                   />
                 </div>
-                <ul className="Nav-category2 sub-add sub-line">
+                <ul className="Nav-category-sub sub-add sub-line">
                   <li>
                     <span>2021</span>
                   </li>
@@ -85,7 +85,7 @@ class Category extends Component {
             </div>
           </li>
           <li className="sub-plus">
-            <Link to="/Nav">ARTIST</Link>
+            <Link to="/">ARTIST</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-thr">
               <div className="sub-intro">
@@ -100,7 +100,7 @@ class Category extends Component {
                     className="sub-nav-img"
                   />
                 </div>
-                <ul className="Nav-category2">
+                <ul className="Nav-category-sub">
                   <li>
                     <span>국내</span>
                   </li>
@@ -127,7 +127,7 @@ class Category extends Component {
                     className="sub-nav-img"
                   />
                 </div>
-                <ul className="Nav-category2 sub-add">
+                <ul className="Nav-category-sub sub-add">
                   <li>
                     <span>BEST</span>
                   </li>
@@ -160,7 +160,7 @@ class Category extends Component {
             </div>
           </li>
           <li className="sub-plus">
-            <Link to="/Nav">COMMUITY</Link>
+            <Link to="/Commuity">COMMUITY</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-fiv">
               <div className="sub-intro">
@@ -175,7 +175,7 @@ class Category extends Component {
                     className="sub-nav-img"
                   />
                 </div>
-                <ul className="Nav-category2 sub-line">
+                <ul className="Nav-category-sub sub-line">
                   <li>
                     <span>COMMUITY</span>
                   </li>
@@ -185,7 +185,7 @@ class Category extends Component {
             </div>
           </li>
           <li className="sub-plus">
-            <Link to="/Nav">BUSINESS</Link>
+            <Link to="/">BUSINESS</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-six">
               <div className="sub-intro">
@@ -200,7 +200,7 @@ class Category extends Component {
                     className="sub-nav-img"
                   />
                 </div>
-                <ul className="Nav-category2">
+                <ul className="Nav-category-sub">
                   <li>
                     <span>외부공연장</span>
                   </li>

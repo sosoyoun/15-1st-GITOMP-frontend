@@ -1,21 +1,12 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import Category from "./components/Category";
 import SearchBar from "./SearchBox/SearchBar";
 import "./Nav.scss";
 
 class Nav extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  goToHam = () => {
-    this.props.history.push("./HamMenu");
-  };
-
   render() {
-    const { userName } = this.state;
     return (
       <div className="Nav bottom">
         <div className="Nav-top">
@@ -24,11 +15,12 @@ class Nav extends Component {
           </Link>
           <div className="right-icon">
             <SearchBar />
-            {/* <HamMenu />
-            <Link to="/components/HamMenu">
-              <img src="/images/Ham.png" alt="" className="toggle-menu" />
-            </Link> */}
-            <div className="toggle-menu" onClick={this.goToHam}>
+            <div
+              className="toggle-menu"
+              onClick={() => {
+                this.props.history.push("HamMenu");
+              }}
+            >
               <label className="menu-toggle" for="menu-toggle">
                 <span className="line line-1"></span>
                 <span className="line line-2"></span>
@@ -39,10 +31,10 @@ class Nav extends Component {
             </div>
           </div>
         </div>
-        <Category userName={userName} onSearchBox={this.handleSearchBox} />
+        <Category onSearchBox={this.handleSearchBox} />
       </div>
     );
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

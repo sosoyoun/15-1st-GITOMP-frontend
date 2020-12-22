@@ -10,7 +10,7 @@
     text-align: center;
   }
 
-  .Nav-category1 {
+  .Nav-category-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -167,7 +167,7 @@
       }
 
       // sub-menu
-      .Nav-category2 {
+      .Nav-category-sub {
         position: relative;
         left: -2rem;
         width: 40vw;
@@ -176,8 +176,7 @@
         li {
           display: inline-block;
           width: calc(50% - 3.8em);
-          margin-right: 4%;
-          margin-bottom: 10px;
+          margin: 0 4% 10px 0;
           text-align: left;
           padding: 0 0 0 3px;
           border-bottom: 1px solid #cacaca;
@@ -195,8 +194,7 @@
             background: $nomal-color;
             width: 0;
             height: 2px;
-            margin-top: 2.7rem;
-            margin-left: -2px;
+            margin: 2.7rem 0 0 -2px;
             transition: width 0.3s ease-out;
           }
 

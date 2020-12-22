@@ -87,6 +87,7 @@ video {
   vertical-align: baseline;
   box-sizing: border-box;
 }
+
 article,
 aside,
 details,
@@ -115,7 +116,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: “”;
+  content: "";
   content: none;
 }
 table {

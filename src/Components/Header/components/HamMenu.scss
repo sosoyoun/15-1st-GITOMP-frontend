@@ -3,7 +3,7 @@
 .toggleMenu-appear {
   opacity: 0;
   height: 0;
-  z-index: 2000;
+  z-index: 20000;
 
   .toggleMenu-appear-active {
     opacity: 1;
@@ -13,13 +13,14 @@
 }
 
 .HamMenu {
+  position: fixed;
   width: 100vw;
   height: 100vh;
   padding-top: 10vh;
   text-align: center;
   background: url("../images/hammenu_bg.jpg") center;
   background-size: cover;
-  z-index: 2000;
+  z-index: 20000;
 
   p {
     padding-top: 3rem;
