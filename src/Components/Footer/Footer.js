@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../Footer/Footer.scss";
 
-class Footer extends Component {
+class Footer extends React.Component {
   render() {
     return (
       <footer className="Footer">
@@ -80,5 +80,4 @@ class Footer extends Component {
     );
   }
 }
-
 export default Footer;
