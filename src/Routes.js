@@ -6,8 +6,6 @@ import Account from "./Pages/Account/Account";
 import Notice from "./Pages/Notice/Notice";
 import AlbumDetail from "./Pages/AlbumList/AlbumDetail";
 import AlbumList from "./Pages/AlbumList/AlbumList";
-import Footer from "./Components/Footer/Footer";
-import SignIn from "./Pages/Account/SignIn";
 
 class Routes extends Component {
   render() {
@@ -23,7 +21,6 @@ class Routes extends Component {
           <Route exact path="/Account" component={Account} />
           <Route exact path="/Notice" component={Notice} />
         </Switch>
-        <Footer />
       </Router>
     );
   }
