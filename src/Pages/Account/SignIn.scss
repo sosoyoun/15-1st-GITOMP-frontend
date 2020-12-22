@@ -1,13 +1,12 @@
 @import "../../styles/common.scss";
-
-.Account {
+.SignIn {
   letter-spacing: -0.05em;
   font-family: $title-font;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 90%;
-  max-width: 40vw;
+  max-width: 30vw;
   background: #fff;
   border-radius: 6px;
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
@@ -77,94 +76,39 @@
   }
   .check1 {
     position: absolute;
-    top: 25.5vh;
-    right: 4.25vw;
+    top: 22.4vh;
+    right: 3.75vw;
   }
   .times1 {
     position: absolute;
-    top: 25.5vh;
-    right: 4.25vw;
+    top: 22.4vh;
+    right: 3.75vw;
   }
   .password-input {
     position: relative;
   }
   .check2 {
     position: absolute;
-    top: 38.75vh;
-    right: 4.25vw;
+    top: 35.5vh;
+    right: 3.75vw;
   }
   .times2 {
     position: absolute;
-    top: 38.75vh;
-    right: 4.25vw;
+    top: 35.5vh;
+    right: 3.75vw;
   }
   .nickname-input {
     position: relative;
   }
-  .check3 {
-    position: absolute;
-    top: 51.75vh;
-    right: 4.25vw;
-  }
-  .times3 {
-    position: absolute;
-    top: 51.75vh;
-    right: 4.25vw;
-  }
-  .notice-info {
-    max-width: 600px;
-    margin: 0 auto;
-    margin-top: 30px;
-    height: 130px;
-    border: 1px solid #dddddd;
-    overflow: hidden;
-    overflow-y: auto;
 
-    color: #919090;
-    p {
-      margin-left: 15px;
-      line-height: 1.5;
-      .notice-title {
-        margin-top: 20px;
-        font-size: 18px;
-        font-weight: 800;
-        color: #000;
-        display: block;
-      }
-      .notice-subtitle {
-        font-size: 16px;
-        display: block;
-        font-weight: 600;
-        color: rgb(57, 55, 55);
-        margin-top: 20px;
-      }
-    }
-  }
-  .public-info {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    margin-top: 30px;
-    button {
-      margin-right: 10px;
-      width: 20px;
-      height: 20px;
-      padding: 0;
-    }
-    span {
-      font-size: 18px;
-    }
-  }
   .box-area {
     text-align: center;
     margin-top: 80px;
     button {
-      width: 170px;
+      width: 10vw;
       height: 43px;
       color: #fff;
-      font-size: 16px;
+      font-size: 17px;
       border: none;
       cursor: pointer;
     }

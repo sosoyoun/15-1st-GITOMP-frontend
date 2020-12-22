@@ -1,0 +1,22 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swiper-container-vertical
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  margin: 20px 20px 20px 0;
+  border-radius: 100%;
+}
+:root {
+  --swiper-theme-color: #4a5663;
+}
+
+button {
+  outline: none;
+}
