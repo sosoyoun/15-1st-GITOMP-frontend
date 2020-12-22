@@ -15,6 +15,7 @@ class GitompSection extends React.Component {
       { img: facebook, alt: "페이스북 링크", url: "facebook.com" },
       { img: youtube, alt: "유튜브 링크", url: "youtube.com" },
     ];
+
     return (
       <div className="GitompSection">
         <div className="backgroundOutline">

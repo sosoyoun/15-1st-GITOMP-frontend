@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import SwiperCore, { Scrollbar, A11y, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ConcertContents from "./ConcertContents";
 import "./ConcertSlideBar.scss";
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -10,11 +9,30 @@ import "swiper/components/scrollbar/scrollbar.scss";
 SwiperCore.use([Scrollbar, A11y, Navigation]);
 
 class ConcertSlideBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      concertData: [],
+    };
+  }
+  componentDidMount() {
+    fetch("http://192.168.219.141:8000/concerts/upcomming", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          concertData: res.concerts,
+        });
+      });
+  }
+
   render() {
+    console.log(this.state.concertData);
     return (
       <div className="ConcertSlideBar">
         <Swiper
-          style={{ height: "60%", width: "65%" }}
+          style={{ height: "65%", width: "65%" }}
           spaceBetween={300}
           speed={700}
           slidesPerView={4}
@@ -24,9 +42,18 @@ class ConcertSlideBar extends Component {
           }}
           scrollbar={{ draggable: true }}
         >
-          <SwiperSlide>
-            <ConcertContents />
-          </SwiperSlide>
+          <>
+            {this.state.concertData.map((el) => {
+              return (
+                <SwiperSlide>
+                  <div className="ConcertContents">
+                    <img src={el.thumbnail_url} alt="포스터" />
+                    <p>{el.title}</p>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </>
         </Swiper>
       </div>
     );
