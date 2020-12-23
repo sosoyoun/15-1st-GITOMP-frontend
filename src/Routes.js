@@ -19,6 +19,9 @@ class Routes extends Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/HamMenu" component={HamMenu} />
           <Route exact path="/AlbumList" component={AlbumList} />
+          <Route exact path="/SignIn" component={SignIn} />
+          <Route exact path="/AlbumList/detail/:id" component={AlbumDetail} />
+          <Route exact path="/AlbumList/:currentPage" component={AlbumList} />
           <Route exact path="/ConcertList" component={ConcertList} />
           <Route exact path="/Account" component={Account} />
           <Route exact path="/SignIn" component={SignIn} />
