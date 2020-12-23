@@ -1,4 +1,4 @@
-@import url ("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;500;600;700;900&display=swap");
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
@@ -12,4 +12,8 @@ $script-font: "Dancing Script", cursive;
 $brown-color: #be9b71;
 $nomal-color: #222222;
 $background-subcolor: #f7f7f7;
-$nomal-border: 1px solid #ddd;
+$Nav-bg-color: #f3f3f3;
+
+a {
+  color: $nomal-color;
+}

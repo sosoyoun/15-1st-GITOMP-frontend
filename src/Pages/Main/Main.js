@@ -37,7 +37,6 @@ class Main extends Component {
             <AlbumSection />
           </SwiperSlide>
         </Swiper>
-        <Footer />
       </div>
     );
   }
