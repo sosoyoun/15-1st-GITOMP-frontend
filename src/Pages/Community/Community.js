@@ -50,7 +50,7 @@ class Community extends Component {
         this.setState({ freeBoardDate: res.boards });
       })
       .catch((error) => {
-        console.log("에러발생!");
+        alert("에러발생!");
       });
   };
 
