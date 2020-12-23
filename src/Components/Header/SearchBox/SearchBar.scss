@@ -1,0 +1,61 @@
+@import "../../../styles/common.scss";
+
+.SearchBar.searchBarOn {
+  display: block;
+}
+
+.SearchBar {
+  position: absolute;
+  right: -83px;
+  display: none;
+  width: 100vw;
+  margin-top: 8.2rem;
+  background-color: $nomal-color;
+
+  form {
+    width: 100%;
+    padding: 44px;
+    text-align: center;
+    font-family: $title-font;
+
+    .sch_box {
+      position: relative;
+      width: 70vw;
+      line-height: 1.5;
+      margin: 0 auto;
+
+      input[type="search"] {
+        width: 37vw;
+        margin-right: 0.5rem;
+        padding: 5px;
+        font-size: 20px;
+        letter-spacing: 0.04em;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        background: none;
+        color: #696969;
+      }
+
+      button[type="submit"] {
+        width: 40px;
+        height: 40px;
+        border: none;
+        outline: none;
+        background: none;
+        background: url("../images/search-icon.png") no-repeat 0.5rem;
+        cursor: pointer;
+      }
+      button {
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: 0;
+        outline: none;
+        background: url("../images/close-icon.png") no-repeat 0 0;
+        background-size: 2.7rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
