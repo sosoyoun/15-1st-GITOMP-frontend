@@ -5,26 +5,34 @@ import "./SearchBar.scss";
 class SearchBar extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      isSearchShown: false,
+    };
   }
 
   showSearchBox = (e) => {
-    document.getElementsByClassName("SearchBar")[0].style.display = "block";
+    this.setState({ isSearchShown: true });
   };
 
-  handleDelete = () => {
-    document.getElementsByClassName("SearchBar")[0].style.display = "none";
+  handleDelete = (e) => {
+    this.setState({ isSearchShown: false });
   };
 
   render() {
     const { currentSearchWord } = this.state;
-    const { handleDelete } = this;
+    const { showSearchBox, handleDelete } = this;
+
+    console.log(this.state.isSearchShown);
     return (
       <>
-        <div className="search-bar" onClick={this.showSearchBox}>
+        <div className="search-bar" onClick={showSearchBox}>
           <img src="/images/search-icon_b.png" alt="검색창" />
         </div>
-        <div className="SearchBar">
+        <div
+          className={
+            this.state.isSearchShown ? "SearchBar searchBarOn" : "SearchBar"
+          }
+        >
           <form action="" className="search-from">
             <div className="sch_box">
               <input

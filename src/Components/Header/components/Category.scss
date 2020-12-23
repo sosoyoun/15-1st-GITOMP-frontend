@@ -70,26 +70,15 @@
         overflow: hidden;
       }
 
-      &:hover .sub-one {
-        height: 20rem;
-      }
-
-      &:hover .sub-two {
-        height: 20rem;
-      }
-
-      &:hover .sub-thr {
-        height: 20rem;
-      }
-
-      &:hover .sub-for {
-        height: 20rem;
-      }
-      &:hover .sub-fiv {
-        height: 20rem;
-      }
-      &:hover .sub-six {
-        height: 20rem;
+      &:hover {
+        & .sub-one,
+        .sub-two,
+        .sub-thr,
+        .sub-for,
+        .sub-fiv,
+        .sub-six {
+          height: 20rem;
+        }
       }
     }
 
@@ -174,18 +163,18 @@
         overflow: hidden;
 
         li {
-          display: inline-block;
           width: calc(50% - 3.8em);
           margin: 0 4% 10px 0;
-          text-align: left;
           padding: 0 0 0 3px;
           border-bottom: 1px solid #cacaca;
           background: url("../images/link-arr.png") no-repeat 95% 50%;
+          display: inline-block;
           font-family: $sub-font;
           color: #4a4a4a;
           font-size: 1rem;
           line-height: 2.8rem;
           overflow: hidden;
+          text-align: left;
           cursor: pointer;
 
           ::before {

@@ -1,13 +1,16 @@
 @import "../../../styles/common.scss";
 
+.SearchBar.searchBarOn {
+  display: block;
+}
+
 .SearchBar {
   position: absolute;
   right: -83px;
-  width: 100vw;
-  margin-top: 8.5rem;
-  background-color: $nomal-color;
-  transition: opacity 0.5s ease;
   display: none;
+  width: 100vw;
+  margin-top: 8.2rem;
+  background-color: $nomal-color;
 
   form {
     width: 100%;
@@ -16,13 +19,14 @@
     font-family: $title-font;
 
     .sch_box {
+      position: relative;
       width: 70vw;
       line-height: 1.5;
       margin: 0 auto;
-      position: relative;
 
       input[type="search"] {
         width: 37vw;
+        margin-right: 0.5rem;
         padding: 5px;
         font-size: 20px;
         letter-spacing: 0.04em;
@@ -31,7 +35,6 @@
         outline: none;
         background: none;
         color: #696969;
-        margin-right: 0.5rem;
       }
 
       button[type="submit"] {
