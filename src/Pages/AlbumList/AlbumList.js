@@ -44,18 +44,18 @@ class AlbumList extends Component {
     const { selectYear, selectGenre, selectKey, searchInput } = this.state;
     e.preventDefault();
     this.setState({ isLoading: true });
-    this.state.filterAlbumList &&
-      fetch(
-        `http://192.168.219.191:8000/albums?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
+
+    fetch(
+      `http://192.168.219.191:8000/albums?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
         `
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          this.setState({ albumList: res.albums });
-        })
-        .catch((error) => {
-          console.log("에러발생!");
-        });
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ albumList: res.albums });
+      })
+      .catch((error) => {
+        console.log("에러발생!");
+      });
   };
 
   moveToPages = (e) => {
