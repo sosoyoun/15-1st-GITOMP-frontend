@@ -48,7 +48,7 @@ class Community extends Component {
         this.setState({ freeBoardDate: res.boards });
       })
       .catch((error) => {
-        console.log("에러발생!");
+        alert("에러발생!");
       });
   };
 
@@ -67,7 +67,6 @@ class Community extends Component {
   };
 
   render() {
-    console.log(this.state);
     const { freeBoardDate, searchInput, currentPage, boardCount } = this.state;
     const filterBoardDate = freeBoardDate.filter((data) => {
       const regexp = RegExp(searchInput, "gi");
