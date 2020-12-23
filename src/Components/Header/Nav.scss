@@ -29,7 +29,7 @@
       display: flex;
       flex-direction: row;
 
-      .login_user-nickname {
+      .Nickname {
         position: absolute;
         top: 4.5rem;
         right: 0.1rem;
@@ -121,13 +121,13 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only all and (max-width: 1200px) {
   .Nav {
     height: 5.7rem;
 
     .Nav-top {
       .right-icon {
-        .login_user-nickname {
+        .Nickname {
           position: absolute;
           top: 1rem;
           right: 8rem;
@@ -138,6 +138,28 @@
           p {
             display: none;
           }
+        }
+      }
+    }
+  }
+}
+
+@media only all and (max-width: 650px) {
+  .Nav {
+    .Nav-top {
+      .right-icon {
+        .Nickname {
+          display: none;
+        }
+        .search-bar {
+          display: none;
+        }
+
+        .toggle-menu {
+          padding: 9px 0;
+          position: absolute;
+          top: 5px;
+          right: -4.5rem;
         }
       }
     }
