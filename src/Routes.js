@@ -7,6 +7,7 @@ import Account from "./Pages/Account/Account";
 import Notice from "./Pages/Notice/Notice";
 import SignIn from "./Pages/Account/SignIn";
 import Footer from "./Components/Footer/Footer";
+import AlbumDetail from "./Pages/AlbumList/AlbumDetail";
 
 class Routes extends Component {
   render() {
