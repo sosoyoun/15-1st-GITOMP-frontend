@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CommunityContent.scss";
 import { COMMUNITYAPI } from "../../config";
+import CommuityHeadTitle from "./CommuityHeadTitle";
 
 class CommunityContent extends Component {
   state = {
@@ -50,10 +51,7 @@ class CommunityContent extends Component {
     return (
       <div className="CommunityContent">
         <div className="container">
-          <div className="headtitle">
-            <h2>COMMUNITY</h2>
-            <span>깃톰프뮤직의 자유게시판 입니다.</span>
-          </div>
+          <CommuityHeadTitle />
           <section>
             <div className="content">
               <div className="content_area">
