@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import ConcertCard from "./Components/ConcertCard";
-import ConcertHeadTitle from "./Components/ConcertHeadTitle";
+import ConcertCard from "./ConcertCard";
+import ConcertHeadTitle from "./ConcertHeadTitle";
 import "./ConcertList.scss";
 
 class ConcertList extends Component {
