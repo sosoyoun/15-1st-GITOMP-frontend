@@ -36,7 +36,7 @@ class Routes extends Component {
           <Route exact path="/SignIn" component={SignIn} />
           <Route exact path="/Commuity" component={Commuity} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     );
   }
