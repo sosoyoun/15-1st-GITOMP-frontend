@@ -1,3 +1,5 @@
+@import "../../styles/common.scss";
+
 .Nav {
   position: fixed;
   width: 100%;
@@ -26,6 +28,34 @@
       right: 5.2rem;
       display: flex;
       flex-direction: row;
+
+      .login_user-nickname {
+        position: absolute;
+        top: 4.5rem;
+        right: 0.1rem;
+        display: flex;
+        justify-content: space-between;
+        transition: all ease 0.4s;
+
+        .user-nickname-icon {
+          color: rgb(122, 122, 122);
+        }
+
+        p {
+          width: 75px;
+          height: 50px;
+          margin: -1.9rem 0 10px 10px;
+          border-bottom: 1px solid rgb(195, 195, 195);
+          opacity: 0.8;
+
+          span {
+            display: inline-block;
+            margin: 30px 0 0 5px;
+            font-weight: 700;
+            font-family: $main-font;
+          }
+        }
+      }
 
       .search-bar {
         margin-top: 0.5rem;
@@ -90,8 +120,26 @@
     }
   }
 }
+
 @media only screen and (max-width: 1200px) {
   .Nav {
     height: 5.7rem;
+
+    .Nav-top {
+      .right-icon {
+        .login_user-nickname {
+          position: absolute;
+          top: 1rem;
+          right: 8rem;
+          font-size: 1.5rem;
+          color: $nomal-color;
+          opacity: 1;
+
+          p {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
