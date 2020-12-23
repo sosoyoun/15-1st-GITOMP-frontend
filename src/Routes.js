@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Pages/Main/Main";
-import AlbumList from "./Pages/AlbumList/AlbumList";
+// import AlbumList from "./Pages/AlbumList/AlbumList";
+// import AlbumDetail from "./Pages/AlbumList/AlbumList";
+
 import ConcertList from "./Pages/ConcertList/ConcertList";
-import Account from "./Pages/Account/Account";
-import Notice from "./Pages/Notice/Notice";
-import SignIn from "./Pages/Account/SignIn";
-import Footer from "./Components/Footer/Footer";
-import ConcertDetail from "./Pages/ConcertList/Components/ConcertDetail";
-import List from "./Pages/ConcertList/Components/List";
+import ConcertDetail from "./Pages/ConcertList/ConcertDetail";
 
 class Routes extends Component {
   render() {
@@ -16,7 +13,9 @@ class Routes extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
-          <Route exact path="/AlbumList" component={AlbumList} />
+
+          {/* <Route exact path="/AlbumList" component={AlbumList} />
+          <Route exact path="/AlbumList/detail/:id" component={AlbumDetail} /> */}
           <Route exact path="/ConcertList" component={ConcertList} />
           <Route
             exact
@@ -28,15 +27,9 @@ class Routes extends Component {
             path="/ConcertList/detail/:id"
             component={ConcertDetail}
           />
-          <Route exact path="/List" component={List} />
-          <Route exact path="/Account" component={Account} />
-          <Route exact path="/SignIn" component={SignIn} />
-          <Route exact path="/Notice" component={Notice} />
         </Switch>
-        {/* <Footer /> */}
       </Router>
     );
   }
 }
-
 export default Routes;
