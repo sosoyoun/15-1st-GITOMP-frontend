@@ -1,0 +1,179 @@
+@import "../../styles/common.scss";
+
+.Account {
+  letter-spacing: -0.05em;
+  font-family: $title-font;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 40vw;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+
+  .container {
+    margin: 0 auto;
+    .head-title {
+      display: flex;
+      flex-direction: column;
+      .title {
+        font-family: $title-font;
+        font-size: 54px;
+        margin: 0 auto;
+      }
+      .subtitle {
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.5;
+        font-size: 20px;
+        color: rgb(52, 51, 51);
+      }
+    }
+  }
+  form {
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    line-height: 4;
+    span {
+      font-size: 18px;
+      display: inline;
+      ::after {
+        content: "";
+      }
+    }
+    input {
+      height: 50px;
+      background-color: #eeeeee;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      padding-left: 20px;
+    }
+    input::placeholder {
+      margin-left: 10px;
+      font-size: 16px;
+    }
+    .requried {
+      color: $brown-color;
+    }
+    .facheck {
+      font-size: 20px;
+      color: rgb(109, 182, 109);
+    }
+    .fatimes {
+      font-size: 20px;
+      color: rgb(213, 106, 106);
+    }
+  }
+  .email-input {
+    position: relative;
+  }
+  .check1 {
+    position: absolute;
+    top: 25.5vh;
+    right: 4.25vw;
+  }
+  .times1 {
+    position: absolute;
+    top: 25.5vh;
+    right: 4.25vw;
+  }
+  .password-input {
+    position: relative;
+  }
+  .check2 {
+    position: absolute;
+    top: 38.75vh;
+    right: 4.25vw;
+  }
+  .times2 {
+    position: absolute;
+    top: 38.75vh;
+    right: 4.25vw;
+  }
+  .nickname-input {
+    position: relative;
+  }
+  .check3 {
+    position: absolute;
+    top: 51.75vh;
+    right: 4.25vw;
+  }
+  .times3 {
+    position: absolute;
+    top: 51.75vh;
+    right: 4.25vw;
+  }
+  .notice-info {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 130px;
+    border: 1px solid #dddddd;
+    overflow: hidden;
+    overflow-y: auto;
+
+    color: #919090;
+    p {
+      margin-left: 15px;
+      line-height: 1.5;
+      .notice-title {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 800;
+        color: #000;
+        display: block;
+      }
+      .notice-subtitle {
+        font-size: 16px;
+        display: block;
+        font-weight: 600;
+        color: rgb(57, 55, 55);
+        margin-top: 20px;
+      }
+    }
+  }
+  .public-info {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-top: 30px;
+    button {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+    }
+    span {
+      font-size: 18px;
+    }
+  }
+  .box-area {
+    text-align: center;
+    margin-top: 80px;
+    button {
+      width: 170px;
+      height: 43px;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    .send {
+      background-color: $brown-color;
+      margin-right: 20px;
+    }
+    .close {
+      background-color: $nomal-color;
+    }
+  }
+}

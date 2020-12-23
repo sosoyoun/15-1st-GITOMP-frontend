@@ -1,5 +1,4 @@
-export const COMMUNITYCONTENTAPI = `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`;
+export const SERVER = "http://192.168.219.191:8000";
 
-//board 카테고리 Api
-export const BOARDSAPI = `http://192.168.219.191:8000/boards`;
-export const BOARDSEARCHAPI = `http://192.168.219.191:8000/boards?&category=${category}&search_key=${key}search=${searchInput}`;
+export const ALBUMDETAILAPI = `${SERVER}/albums/${this.props.match.params.id}`;
+export const ALBUMLISTAPI = `${SERVER}/albums`;
