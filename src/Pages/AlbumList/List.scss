@@ -1,0 +1,141 @@
+@import "../../styles/common.scss";
+
+.List {
+  border-bottom: 2px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 40px 0;
+
+  img {
+    width: 290px;
+    height: 290px;
+    padding: 0 0 0 40px;
+  }
+
+  .album_info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+
+    .album_title {
+      margin-inline-start: 0;
+      line-height: 1.6;
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 27px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .album_info {
+      margin-inline-start: 0;
+      margin: 10px 0;
+      margin-bottom: 30px;
+
+      .album_subinfo {
+        display: flex;
+
+        dl {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 15px;
+          font-size: 17px;
+          width: 18vw;
+
+          dd {
+            margin-inline-start: 0;
+            font-family: "Noto Sans KR", Sans-serif;
+            color: #5b5b5b;
+            box-sizing: border-box;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    a {
+      button {
+        height: 44px;
+        background-color: $brown-color;
+        color: #fff;
+        outline: none;
+        display: inline-block;
+        width: 169px;
+        height: 44px;
+        margin: 35px 10px 5px 0;
+        padding: 0 15px;
+        border: 0.1px solid $brown-color;
+        letter-spacing: 0.08em;
+        font-family: $title-font;
+        font-size: 20px;
+        text-align: left;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: ease-out 0.3s 0.3s;
+
+        &:after {
+          width: 4px;
+          height: 100%;
+          background: white;
+          content: "";
+          position: absolute;
+          right: 0px;
+          bottom: 0;
+          transform: translateY(-100%);
+          transition: 0.1s 0.1s;
+        }
+
+        &:before {
+          width: 4px;
+          height: 100%;
+          background: white;
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translateY(100%);
+          transition: 0.1s 0.3s;
+        }
+
+        &:hover {
+          color: white;
+          background: rgba(255, 255, 255, 0);
+          &:before,
+          &:after,
+          span::before,
+          span::after {
+            transform: translateX(0);
+          }
+        }
+
+        span {
+          &:before {
+            width: 100%;
+            height: 4px;
+            background: white;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 0.1s;
+            transform: translateX(-100%);
+          }
+
+          &:after {
+            width: 100%;
+            height: 4px;
+            background: white;
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transition: 0.1s 0.2s;
+            transform: translateX(100%);
+          }
+        }
+      }
+    }
+  }
+}
