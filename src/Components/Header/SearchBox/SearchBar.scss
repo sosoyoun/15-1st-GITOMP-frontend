@@ -5,11 +5,11 @@
 }
 
 .SearchBar {
+  width: 100vw;
+  margin-top: 8.2rem;
   position: absolute;
   right: -83px;
   display: none;
-  width: 100vw;
-  margin-top: 8.2rem;
   background-color: $nomal-color;
 
   form {
@@ -19,10 +19,10 @@
     font-family: $title-font;
 
     .sch_box {
-      position: relative;
-      width: 70vw;
-      line-height: 1.5;
       margin: 0 auto;
+      width: 70vw;
+      position: relative;
+      line-height: 1.5;
 
       input[type="search"] {
         width: 37vw;

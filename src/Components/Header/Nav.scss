@@ -43,14 +43,14 @@
       //햄버거 메뉴 아이콘
 
       .toggle-menu {
+        width: 46px;
+        height: 46px;
+        padding: 9px 0;
         position: absolute;
         top: 5px;
         right: 0;
         display: inline-block;
         text-align: center;
-        width: 46px;
-        height: 46px;
-        padding: 9px 0;
         border-radius: 100%;
         transition: all ease 0.4s;
         background: #000;
@@ -64,9 +64,9 @@
           }
 
           .line {
-            display: inline-block;
             width: 2px;
             height: 17px;
+            display: inline-block;
             background: #fff;
             border-radius: 6px;
             transition: transform 0.3s ease;
