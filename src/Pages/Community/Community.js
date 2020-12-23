@@ -19,17 +19,16 @@ class Community extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.144:8000//concerts`)
+    fetch(`http://192.168.219.191:8000/boards`)
       .then((res) => res.json())
-      .then(
-        (res) => console.log(res)
-        // this.setState({
-        //   freeBoardDate: res.boards,
-        //   boardCount: res.board_count,
-        // })
+      .then((res) =>
+        this.setState({
+          freeBoardDate: res.boards,
+          boardCount: res.board_count,
+        })
       );
   }
-  //추가기능 구현중입니다.
+  // 추가기능 구현중입니다.
   // componentDidMount() {
   //   fetch("http://192.168.219.191:8000/boards", {
   //     method: "POST",
@@ -37,7 +36,11 @@ class Community extends Component {
   //       "content-type": "application/json",
   //       Authorization: token,
   //     },
-  //   });
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
   // }
 
   componentDidUpdate(prevProps, _) {
@@ -88,6 +91,7 @@ class Community extends Component {
   };
 
   render() {
+    console.log(this.state);
     const { freeBoardDate, searchInput, currentPage, boardCount } = this.state;
     const filterBoardDate = freeBoardDate.filter((data) => {
       const regexp = RegExp(searchInput, "gi");
