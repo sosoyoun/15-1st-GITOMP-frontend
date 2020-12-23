@@ -21,9 +21,7 @@ class AlbumSection extends React.Component {
     };
   }
   componentDidMount() {
-    fetch("http://192.168.219.191:8000/albums/main-page", {
-      method: "GET",
-    })
+    fetch("http://192.168.219.191:8000/albums/main-page")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -61,6 +59,7 @@ class AlbumSection extends React.Component {
                 {this.state.albumData.map((el) => {
                   return (
                     <SwiperSlide>
+                      {/* 기존 "AlbumSlideOutline" 컴포넌트 부분 */}
                       <div className="AlbumSlideOutline">
                         <div className="cover album">
                           <img
@@ -75,23 +74,28 @@ class AlbumSection extends React.Component {
                           />
                         </div>
                         <div className="cover contents">
+                          {/* 기존 "AlbumContentsTable" 컴포넌트 부분 */}
                           <div className="AlbumContentsTable">
-                            <div>
+                            <div className="artistValue">
                               <p>아티스트</p>
-                              <div class="vertical-line" />
-                              <span>{el.artist}</span>
+                              <div class="verticalLine" />
+                              <span className="dataContainer">{el.artist}</span>
                             </div>
-                            <div>
-                              <p>앨범명</p> <div class="vertical-line" />
-                              <span>{el.title}</span>
+                            <div className="artistValue">
+                              <p>앨범명</p> <div class="verticalLine" />
+                              <span className="dataContainer">{el.title}</span>
                             </div>
-                            <div>
-                              <p>발매일</p> <div class="vertical-line" />
-                              <span>{el.release_date}</span>
+                            <div className="artistValue">
+                              <p>발매일</p> <div class="verticalLine" />
+                              <span className="dataContainer">
+                                {el.release_date}
+                              </span>
                             </div>
-                            <div>
-                              <p>형식</p> <div class="vertical-line" />
-                              <span>{el.release_type}</span>
+                            <div className="artistValue">
+                              <p>형식</p> <div class="verticalLine" />
+                              <span className="dataContainer">
+                                {el.release_type}
+                              </span>
                             </div>
                           </div>
                           <div className="albumDetail">{el.description}</div>

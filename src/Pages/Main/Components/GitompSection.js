@@ -34,9 +34,9 @@ class GitompSection extends React.Component {
               </button>
             </div>
             <div className="snsOutline">
-              {snsList.map((el) => {
+              {snsList.map((el, index) => {
                 return (
-                  <div className="snsLink">
+                  <div className="snsLink" key={index}>
                     <img src={el.img} alt={el.alt} />
                     <Link to={el.url} />
                   </div>

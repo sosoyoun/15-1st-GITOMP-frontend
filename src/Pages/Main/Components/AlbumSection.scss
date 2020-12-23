@@ -143,22 +143,16 @@
       height: 360px;
       top: 29px;
       left: 70px;
-      animation-name: spinImage;
-      animation-duration: 4s;
-      animation-duration: leaner;
-      animation-iteration-count: infinite;
+      animation: spinImage 4s, linear infinite;
+
       @keyframes spinImage {
         100% {
           transform: rotate(360deg);
         }
       }
       &:hover {
-        animation-name: pickDisc;
-        animation-duration: 1s;
-        animation-duration: leaner;
-        animation-fill-mode: forwards;
-        animation-direction: alternate;
-        animation-iteration-count: 1;
+        animation: pickDisc 1s 1 alternate forwards;
+
         @keyframes pickDisc {
           100% {
             transform: translateX(45px);
@@ -175,7 +169,7 @@
   margin: 20px 0 20px 0;
   text-align: left;
 
-  div {
+  .artistValue {
     display: flex;
 
     p {
@@ -185,14 +179,14 @@
       font-family: $title-font;
       color: #2e2e2e;
     }
-    div {
+    .verticalLine {
       width: 1px;
       background-color: #b6b6b6;
       height: 12px;
       float: left;
       margin: 5px 10px;
     }
-    span {
+    .dataContainer {
       width: 300px;
       font-size: 17px;
       color: #5b5b5b;
