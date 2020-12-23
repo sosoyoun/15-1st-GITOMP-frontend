@@ -1,0 +1,182 @@
+@import "../../styles/common.scss";
+
+.Community {
+  font-family: $main-font;
+  color: $nomal-color;
+  width: 100%;
+  line-height: 1.5;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 152px;
+
+    section {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      text-align: center;
+      padding: 30px 2%;
+
+      form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background: #f2f2f2;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        select {
+          max-width: 103px;
+          height: 41px;
+          padding: 0 35px 0 10px;
+          border: 1px solid #dddddd;
+          background: #fff;
+          outline: none;
+          z-index: 1;
+          margin-right: 10px;
+          font-weight: 300;
+          font-size: 13px;
+        }
+
+        input {
+          padding: 0 5px;
+          width: 20vw;
+          border: 1px solid #d8d8d8;
+          height: 41px;
+          font-size: 14px;
+          border-radius: 0;
+          font-size: 16px;
+          position: relative;
+          &::placeholder {
+            font-size: 14px;
+          }
+        }
+
+        button {
+          width: 41px;
+          height: 41px;
+          background-color: $brown-color;
+          border: none;
+
+          .fa_search {
+            color: #fff;
+            font-size: 20px;
+          }
+        }
+      }
+
+      .list_table {
+        letter-spacing: -0.05em;
+
+        .total {
+          padding: 0;
+          font-size: 15px;
+          line-height: 71px;
+          color: #666;
+          float: left;
+        }
+
+        table {
+          width: 100%;
+          font-size: 15px;
+          table-layout: fixed;
+          border-bottom: 1px solid #ddd;
+          display: table;
+
+          thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
+            border-top: 2px solid #000;
+            border-bottom: 1px solid #ddd;
+
+            th {
+              font-family: "Noto Sans KR", sans-serif;
+              font-weight: 500;
+              color: #222;
+              border-top: 2px solid #000;
+              padding: 20px 0;
+              line-height: 1.5;
+            }
+
+            .head_no,
+            .head_athor,
+            .head_when,
+            .head_view {
+              width: 6vw;
+            }
+
+            .head_title {
+              width: 20vw;
+            }
+          }
+
+          tbody {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            line-height: 4;
+
+            td {
+              border-bottom: 1px solid #ddd;
+
+              a {
+                color: $nomal-color;
+                text-align: left;
+              }
+            }
+          }
+        }
+
+        button {
+          width: 112px;
+          height: 44px;
+          background-color: $brown-color;
+          color: #fff;
+          border: none;
+          font-size: 15px;
+          float: right;
+          margin-top: 20px;
+        }
+      }
+
+      .pages {
+        width: 100%;
+        margin: 50px auto 0;
+        text-align: center;
+        display: inline-block;
+
+        .pages_num {
+          display: inline-block;
+
+          a {
+            width: 40px;
+            height: 40px;
+            border-radius: 100px;
+            line-height: 38px;
+            border: 1px solid #aaaaaa;
+            color: #777777;
+            font-size: 14px;
+            font-weight: 400;
+            float: left;
+            margin: 0 2px;
+            display: block;
+            position: relative;
+          }
+
+          .on {
+            background: #000;
+            color: #fff;
+            border: none;
+            line-height: 38px;
+          }
+        }
+      }
+    }
+  }
+}

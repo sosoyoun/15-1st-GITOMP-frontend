@@ -8,7 +8,11 @@ import Commuity from "./Pages/Commuity/Commuity";
 import Nav from "./Components/Header/Nav";
 import HamMenu from "./Components/Header/components/HamMenu";
 import SignIn from "./Pages/Account/SignIn";
+import Community from "./Pages/Community/Community";
+import CommunityContent from "./Pages/Community/CommunityContent";
+import CommunityWrite from "./Pages/Community/CommunityWrite";
 import Footer from "./Components/Footer/Footer";
+
 import ConcertList from "./Pages/ConcertList/ConcertList";
 
 class Routes extends Component {
@@ -26,6 +30,13 @@ class Routes extends Component {
           <Route exact path="/ConcertList" component={ConcertList} />
           <Route exact path="/Account" component={Account} />
           <Route exact path="/SignIn" component={SignIn} />
+          <Route exact path="/boards" component={Community} />
+          <Route exact path="/boards/write" component={CommunityWrite} />
+          <Route
+            exact
+            path="/Community/boards/:id"
+            component={CommunityContent}
+          />
           <Route exact path="/Commuity" component={Commuity} />
         </Switch>
         <Footer />

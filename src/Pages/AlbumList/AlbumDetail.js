@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./AlbumDetail.scss";
+import CommuityHeadTitle from "../Community/CommuityHeadTitle";
 
 class AlbumDetail extends Component {
   state = {
@@ -54,11 +55,7 @@ class AlbumDetail extends Component {
     return (
       <div className="AlbumDetail">
         <div className="container">
-          <div className="headtitle">
-            <img src="/images/gitomp_bg.jpg" alt="bgimg" />
-            <h2>AlbumList</h2>
-            <span>깃톰프뮤직의 음악에 매료되어보세요.</span>
-          </div>
+          <CommuityHeadTitle />
           <article>
             <div className="album_content">
               <img src={image_url} alt="albumImg" />
