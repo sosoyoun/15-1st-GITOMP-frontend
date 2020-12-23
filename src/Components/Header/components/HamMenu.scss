@@ -1,0 +1,128 @@
+@import "../../../styles/common.scss";
+
+.toggleMenu-appear {
+  opacity: 0;
+  height: 0;
+
+  .toggleMenu-appear-active {
+    opacity: 1;
+    height: 100vh;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+.HamMenu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10vh;
+  text-align: center;
+  background: url("../images/hammenu_bg.jpg") center;
+  background-size: cover;
+  z-index: 20000;
+
+  p {
+    padding-top: 3rem;
+    font-size: 1rem;
+    font-family: $sub-font;
+    color: #c1c1c1;
+  }
+
+  .sub-list {
+    font-family: $title-font;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    z-index: 2;
+    transform: translatey(0px);
+
+    li {
+      margin-bottom: 2rem;
+      opacity: 1;
+
+      span {
+        transition: all 1s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: #be9b71;
+          padding-left: 1.5rem;
+        }
+        &:hover::before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background: #be9b71;
+          border-radius: 100%;
+          position: relative;
+          bottom: 13px;
+          left: -15px;
+        }
+      }
+    }
+
+    &.active {
+      li {
+        opacity: 1;
+        transform: translate(0);
+      }
+      .sub-list-one {
+        transition-delay: 0;
+      }
+      .sub-list-two {
+        transition-delay: 0.1s;
+      }
+      .sub-list-three {
+        transition-delay: 0.15s;
+      }
+      .sub-list-for {
+        transition-delay: 0.2s;
+      }
+      .sub-list-fiv {
+        transition-delay: 0.25s;
+      }
+      .sub-list-six {
+        transition-delay: 0.3s;
+      }
+    }
+  }
+
+  .sns-icon {
+    width: 15rem;
+    height: auto;
+    margin: 1rem auto 0;
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      width: 40px;
+      height: 40px;
+      padding-top: 9px;
+      display: inline-block;
+      border: 1px solid #c1c1c1;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      color: #c1c1c1;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 3.7rem;
+    right: 4.8rem;
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    cursor: pointer;
+
+    .closeIcon {
+      opacity: 0.8;
+      font-size: 3rem;
+      color: #ddd;
+    }
+  }
+}

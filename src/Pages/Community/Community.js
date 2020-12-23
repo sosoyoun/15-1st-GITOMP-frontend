@@ -5,6 +5,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import FreeBoard from "./FreeBoard";
 import "../Community/Community.scss";
 import { COMMUNITYAPI } from "../../config";
+import CommuityHeadTitle from "./CommuityHeadTitle";
 
 class Community extends Component {
   state = {
@@ -77,10 +78,7 @@ class Community extends Component {
     return (
       <div className="Community">
         <div className="container">
-          <div className="headtitle">
-            <h2>COMMUNITY</h2>
-            <span>깃톰프뮤직의 자유게시판 입니다.</span>
-          </div>
+          <CommuityHeadTitle />
           <section className="notice_info">
             <form
               onChange={(e) => {
