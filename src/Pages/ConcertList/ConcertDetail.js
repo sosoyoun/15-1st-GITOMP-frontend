@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ConcertHeadTitle from "./ConcertHeadTitle";
 import "./ConcertDetail.scss";
+import { CONCERTAPI } from "../../config";
 
 class ConcertDetail extends Component {
   state = {
@@ -8,16 +9,14 @@ class ConcertDetail extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/concerts/${this.props.match.params.id}`)
+    fetch(`${CONCERTAPI}/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ concertList: res }));
   }
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(
-        `http://192.168.219.191:8000/concerts/${this.props.match.params.id}`
-      )
+      fetch(`${CONCERTAPI}/${this.props.match.params.id}`)
         .then((res) => res.json())
         .then((res) => this.setState({ concertList: res }));
     }

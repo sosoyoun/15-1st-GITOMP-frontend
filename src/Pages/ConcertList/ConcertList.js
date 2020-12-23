@@ -5,6 +5,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import ConcertCard from "./ConcertCard";
 import ConcertHeadTitle from "./ConcertHeadTitle";
 import "./ConcertList.scss";
+import { CONCERTAPI, CONCERTAPIPAGE } from "../../config";
 
 class ConcertList extends Component {
   state = {
@@ -17,7 +18,7 @@ class ConcertList extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/concerts`)
+    fetch(CONCERTAPI)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -28,9 +29,7 @@ class ConcertList extends Component {
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
-      fetch(
-        `http://192.168.219.191:8000/concerts?page=${this.state.currentPage}`
-      )
+      fetch(`${CONCERTAPIPAGE}=${this.state.currentPage}`)
         .then((res) => res.json())
         .then((res) =>
           this.setState({ concertList: res.concert }, window.scroll(0, 0))
@@ -41,9 +40,7 @@ class ConcertList extends Component {
   searchInfo = (e) => {
     const { selectYear, selectKey } = this.state;
     e.preventDefault();
-    fetch(
-      `http://192.168.219.191:8000/concerts?&page=1&year=${selectYear}&search_key=${selectKey}`
-    )
+    fetch(`${CONCERTAPIPAGE}=1&year=${selectYear}&search_key=${selectKey}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({ concertList: res.concert });

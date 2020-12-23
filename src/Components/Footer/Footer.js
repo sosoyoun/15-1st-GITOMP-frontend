@@ -17,7 +17,7 @@ class Footer extends Component {
                   <a href="/stomp/about.php">회사소개</a>
                 </li>
                 <li>
-                  <a href="/bbs/?so_table=notice">공지사항</a>
+                  <a href="/boards">커뮤니티</a>
                 </li>
                 <li>
                   <a href="/sub/privacy.php">개인정보처리방침</a>
@@ -38,7 +38,7 @@ class Footer extends Component {
           </div>
           <ul className="f_sns sns_link">
             <li>
-              <Link to="./images/awd_mark.png" target="_blank">
+              <Link to="/images/awd_mark.png" target="_blank">
                 <span>
                   <img
                     src="/images/sns_insta.png"
