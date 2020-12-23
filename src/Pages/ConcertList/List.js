@@ -4,21 +4,12 @@ import "./List.scss";
 
 class List extends Component {
   goToDetail = () => {
-    this.props.history.push(
-      `/concertList/detail/${this.props.match.params.concert_id}`
-    );
+    this.props.history.push(`/concerts/${this.props.match.params.id}`);
   };
 
   render() {
-    const {
-      concert_id,
-      title,
-      post_url,
-      date_performance,
-      location,
-      date_ticketing,
-    } = this.props;
-    console.log(this.props);
+    const { concert_id, title, post_url, date_performance } = this.props;
+
     return (
       <li className="List" key={concert_id}>
         <img src={post_url} alt="concertImg" />
@@ -33,21 +24,21 @@ class List extends Component {
               </dl>
               <dl>
                 <dd>
-                  · 장소 : <span>{location}</span>
+                  · 장소 : <span>선릉</span>
                 </dd>
               </dl>
               <dl>
                 <dd>
-                  · 티켓 : <span>{date_ticketing}</span>
+                  · 티켓 : <span>매진</span>
                 </dd>
               </dl>
             </div>
             <Link
               to={{
-                pathname: `/concertList/detail/${concert_id}`,
+                pathname: `/concerts/${concert_id}`,
               }}
             >
-              <button>
+              <button onClick={this.goToDetail}>
                 <span> VIEW MORE </span>
               </button>
             </Link>

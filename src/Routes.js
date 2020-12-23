@@ -19,12 +19,8 @@ class Routes extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
-          <Route exact path="/ConcertList" component={ConcertList} />
-          <Route
-            exact
-            path="/ConcertList/detail/:id"
-            component={ConcertDetail}
-          />
+          <Route exact path="/concerts" component={ConcertList} />
+          <Route exact path="/concerts/:id" component={ConcertDetail} />
           <Route
             exact
             path="/ConcertList/:currentPage"
@@ -33,7 +29,7 @@ class Routes extends Component {
           <Route exact path="/HamMenu" component={HamMenu} />
           <Route exact path="/AlbumList" component={AlbumList} />
           <Route exact path="/SignIn" component={SignIn} />
-          <Route exact path="/AlbumList/detail/:id" component={AlbumDetail} />
+          <Route exact path="/AlbumList/:id" component={AlbumDetail} />
           <Route exact path="/AlbumList/:currentPage" component={AlbumList} />
           <Route exact path="/ConcertList" component={ConcertList} />
           <Route exact path="/Account" component={Account} />

@@ -42,6 +42,7 @@
 
             h3 {
               margin-right: 7px;
+              // font: 32px 500 $sub-font $nomal-color;
               font-size: 32px;
               font-weight: 500;
               font-family: $sub-font;
@@ -50,13 +51,15 @@
           }
 
           dl {
+            padding: 8px 0;
             display: flex;
             flex-direction: row;
-            padding: 8px 0;
 
             dd {
+              padding-left: 5px;
               color: rgb(116, 116, 116);
               font-weight: bold;
+
               span {
                 color: #ddd;
                 padding-right: 1rem;
@@ -76,14 +79,23 @@
 
         .concert_profile-post {
           font-size: 22px;
-          color: #666;
           font-weight: 600;
+          color: #666;
         }
 
         img {
-          padding-top: 2rem;
           display: block;
+          padding: 2rem 0 3rem;
           margin: 0 auto;
+        }
+
+        .concert_profile_detail {
+          width: 60%;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 14px;
+          letter-spacing: -1px;
+          color: #666;
         }
       }
     }
@@ -122,18 +134,19 @@
   }
 
   .bottom_btn {
-    width: 100%;
     display: inline-block;
     margin: 20px 0 40px;
+    width: 100%;
     text-align: center;
 
     button {
       width: 112px;
       height: 44px;
       border: none;
+      background-color: $brown-color;
       font-size: 15px;
       color: #fff;
-      background-color: $brown-color;
+      cursor: pointer;
     }
   }
 }

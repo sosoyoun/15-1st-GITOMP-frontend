@@ -8,24 +8,20 @@ import "./ConcertList.scss";
 
 class ConcertList extends Component {
   state = {
-    offset: 0,
-    perPage: 10,
     currentPage: 1,
     concertList: [],
     filterConcertList: [],
-    selectYear: "2020",
-    selectGenre: "",
-    selectKey: "?",
+    selectYear: "2019",
+    selectKey: "",
     searchInput: "",
-    isLoading: false,
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/concerts/`)
+    fetch(`http://192.168.219.141:8000/concerts`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          concertList: res.concerts,
+          concertList: res.concert,
         });
       });
   }
@@ -33,31 +29,28 @@ class ConcertList extends Component {
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
       fetch(
-        `http://192.168.219.191:8000/concerts?page=${this.state.currentPage}`
+        `http://192.168.219.141:8000/concerts?page=${this.state.currentPage}`
       )
         .then((res) => res.json())
         .then((res) =>
-          this.setState({ concertList: res.concerts }, window.scroll(0, 0))
+          this.setState({ concertList: res.concert }, window.scroll(0, 0))
         );
     }
   }
 
   searchInfo = (e) => {
-    const { selectYear, selectGenre, selectKey, searchInput } = this.state;
+    const { selectYear, selectKey } = this.state;
     e.preventDefault();
-    this.setState({ isLoading: true });
-    this.state.filterConcertList &&
-      fetch(
-        `http://192.168.219.191:8000/concerts?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
-        `
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          this.setState({ concertList: res.concerts });
-        })
-        .catch((error) => {
-          console.log("에러발생!");
-        });
+    fetch(
+      `http://192.168.219.141:8000/concerts?&page=1&year=${selectYear}&search_key=${selectKey}`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ concertList: res.concert });
+      })
+      .catch((error) => {
+        alert("에러발생!");
+      });
   };
 
   moveToPages = (e) => {
@@ -71,8 +64,13 @@ class ConcertList extends Component {
   };
 
   render() {
-    const { concertList, currentPage } = this.state;
+    const { concertList, currentPage, searchInput } = this.state;
     const { handleInputChange, searchInfo, moveToPages } = this;
+    const filterconcertList = concertList.filter((data) => {
+      const regexp = RegExp(searchInput, "gi");
+      return data.title.match(regexp);
+    });
+
     return (
       <div className="ConcerList">
         <div className="container">
@@ -122,7 +120,7 @@ class ConcertList extends Component {
           </section>
           <main className="concert_List">
             <ul>
-              <ConcertCard concertList={concertList} />
+              <ConcertCard concertList={filterconcertList} />
             </ul>
           </main>
           <div className="pages_number">

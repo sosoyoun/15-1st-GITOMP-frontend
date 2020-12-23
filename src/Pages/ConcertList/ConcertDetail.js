@@ -8,9 +8,8 @@ class ConcertDetail extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/concerts/${this.props.match.params.id}`)
-      // http://192.168.219.141:8000/concerts
-      // http://192.168.219.191:8000/concerts
+    fetch(`http://192.168.219.141:8000/concerts/${this.props.match.params.id}`)
+      // 192.168.219.191
       .then((res) => res.json())
       .then((res) => this.setState({ concertList: res }));
   }
@@ -18,7 +17,7 @@ class ConcertDetail extends Component {
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       fetch(
-        `http://192.168.219.191:8000/concerts/${this.props.match.params.id}`
+        `http://192.168.219.141:8000/concerts/${this.props.match.params.id}`
       )
         .then((res) => res.json())
         .then((res) => this.setState({ concertList: res }));
@@ -30,16 +29,12 @@ class ConcertDetail extends Component {
   };
 
   goToNext = () => {
-    this.props.history.push(
-      `/concertList/detail/${+this.props.match.params.id + 1}`
-    );
+    this.props.history.push(`/concerts/${+this.props.match.params.id + 1}`);
     window.scroll(0, 0);
   };
 
   goToBack = () => {
-    this.props.history.push(
-      `/concertList/detail/${+this.props.match.params.id - 1}`
-    );
+    this.props.history.push(`/concerts/${+this.props.match.params.id - 1}`);
     window.scroll(0, 0);
   };
 
@@ -49,15 +44,14 @@ class ConcertDetail extends Component {
       thumbnail_url,
       title,
       date_performance,
-      host,
-      date_ticketing,
-      seats,
       location,
       info_detail,
       next_concert,
       previous_concert,
     } = this.state.concertList;
+
     const { goToBack, goToNext, goToMain } = this;
+
     return (
       <div className="ConcertDetail">
         <div className="container">
@@ -88,28 +82,31 @@ class ConcertDetail extends Component {
                   <dt>· 티&emsp;&emsp;&emsp;켓 </dt>
                   <dd>
                     <span>|</span>
-                    {date_ticketing}
+                    매진
                   </dd>
                 </dl>
                 <dl>
                   <dt>· 예&emsp;매&emsp;처 </dt>
                   <dd>
                     <span>|</span>
-                    {seats}
+                    {location}
                   </dd>
                 </dl>
                 <dl>
                   <dt>· 주최&nbsp;&nbsp;/&nbsp;&nbsp;문의 </dt>
                   <dd>
                     <span>|</span>
-                    {host}
+                    위코두
                   </dd>
                 </dl>
               </div>
             </div>
             <div className="concert_profile">
-              <p className="concert_profile-post">{thumbnail_url}</p>
-              <p>{info_detail}</p>
+              <p className="concert_profile-post">
+                상세보기
+                <img src={thumbnail_url} alt="img" />
+              </p>
+              <p className="concert_profile_detail">{info_detail}</p>
             </div>
           </article>
           <div className="content_prevnext">
