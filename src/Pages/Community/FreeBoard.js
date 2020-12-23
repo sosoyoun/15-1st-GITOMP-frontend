@@ -16,7 +16,6 @@ class FreeBoard extends Component {
             created_at={data.created_at}
             view={data.views}
             category={data.category}
-            check={data.check}
           />
         ))}
       </tbody>

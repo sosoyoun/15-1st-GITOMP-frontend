@@ -10,6 +10,7 @@ import Community from "./Pages/Community/Community";
 import CommunityContent from "./Pages/Community/CommunityContent";
 import CommunityWrite from "./Pages/Community/CommunityWrite";
 import Footer from "./Components/Footer/Footer";
+import AlbumDetail from "./Pages/AlbumList/AlbumDetail";
 
 class Routes extends Component {
   render() {

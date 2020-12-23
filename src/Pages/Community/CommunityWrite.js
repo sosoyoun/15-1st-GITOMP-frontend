@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./CommunityWrite.scss";
+import { COMMUNITYAPI } from "../../config";
 const token =
   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.zs60cFZQH0YeZFIZnXTy2Gql8lpGAa3FlUauYpT0iZA";
 
@@ -14,7 +15,7 @@ class CommunityWrite extends Component {
   postWriteData = () => {
     const { write_content, write_title, write_category } = this.state;
     if (write_content && write_title) {
-      fetch("http://192.168.219.191:8000/boards", {
+      fetch(COMMUNITYAPI, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -71,13 +72,12 @@ class CommunityWrite extends Component {
                       onChange={this.handleInputChange}
                     />
                   </div>
-
                   <div className="subinfo">
                     <ul>
                       <li>
                         <dl>
                           <dt>작성자 :</dt>
-                          <dd>{}</dd>
+                          <dd>seungjae</dd>
                         </dl>
                       </li>
                     </ul>

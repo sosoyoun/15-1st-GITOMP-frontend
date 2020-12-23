@@ -1,10 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-
-class Account extends Component {
-  render() {
-    return <div>gh2sdfsdfsdf</div>;
-=======
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../Account/Account.scss";
@@ -240,7 +234,6 @@ class Account extends Component {
         </div>
       </>
     );
->>>>>>> 7a4737b593675ba43717b8483e3d9ca06a4f8d29
   }
 }
 

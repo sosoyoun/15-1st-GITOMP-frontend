@@ -1,10 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-
-class SignIn extends Component {
-  render() {
-    return <div>gh2sdfsdfsdf</div>;
-=======
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../Account/SignIn.scss";
@@ -123,7 +117,6 @@ class SignIn extends Component {
         </div>
       </div>
     );
->>>>>>> 7a4737b593675ba43717b8483e3d9ca06a4f8d29
   }
 }
 

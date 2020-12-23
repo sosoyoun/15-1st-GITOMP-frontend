@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import FreeBoard from "./FreeBoard";
 import "../Community/Community.scss";
+import { COMMUNITYAPI } from "../../config";
 
 class Community extends Component {
   state = {
@@ -16,7 +17,7 @@ class Community extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/boards`)
+    fetch(COMMUNITYAPI)
       .then((res) => res.json())
       .then((res) =>
         this.setState({
@@ -28,7 +29,7 @@ class Community extends Component {
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
-      fetch(`http://192.168.219.191:8000/boards?page=${this.state.currentPage}`)
+      fetch(`${COMMUNITYAPI}?page=${this.state.currentPage}`)
         .then((res) => res.json())
         .then((res) =>
           this.setState({ freeBoardDate: res.boards }, window.scroll(0, 0))
@@ -40,7 +41,7 @@ class Community extends Component {
     const { category, key, searchInput } = this.state;
     e.preventDefault();
     fetch(
-      `http://192.168.219.191:8000/boards?&category=${category}&search_key=${key}search=${searchInput}
+      `${COMMUNITYAPI}?&category=${category}&search_key=${key}search=${searchInput}
       `
     )
       .then((res) => res.json())
@@ -67,7 +68,6 @@ class Community extends Component {
   };
 
   render() {
-    console.log(this.state);
     const { freeBoardDate, searchInput, currentPage, boardCount } = this.state;
     const filterBoardDate = freeBoardDate.filter((data) => {
       const regexp = RegExp(searchInput, "gi");

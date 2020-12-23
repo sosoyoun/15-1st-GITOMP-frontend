@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./CommunityContent.scss";
+import { COMMUNITYAPI } from "../../config";
 
 class CommunityContent extends Component {
   state = {
@@ -7,14 +8,14 @@ class CommunityContent extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/boards/${this.props.match.params.id}`)
+    fetch(`${COMMUNITYAPI}/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ data: res }));
   }
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`http://192.168.219.191:8000/boards/${this.props.match.params.id}`)
+      fetch(`${COMMUNITYAPI}/${this.props.match.params.id}`)
         .then((res) => res.json())
         .then((res) => this.setState({ data: res }));
     }
