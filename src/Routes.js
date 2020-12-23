@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./Pages/Main/Main";
 import AlbumList from "./Pages/AlbumList/AlbumList";
+import AlbumDetail from "./Pages/AlbumList/AlbumList";
 import Account from "./Pages/Account/Account";
 import Commuity from "./Pages/Commuity/Commuity";
 import Nav from "./Components/Header/Nav";
