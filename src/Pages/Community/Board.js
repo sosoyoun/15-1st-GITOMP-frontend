@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./Board.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 class Board extends Component {
   goToDetail = () => {
@@ -10,7 +8,7 @@ class Board extends Component {
   };
 
   render() {
-    const { id, title, author, created_at, view, category, check } = this.props;
+    const { id, title, author, created_at, view, category } = this.props;
 
     return (
       <tr className="Board">
@@ -18,9 +16,6 @@ class Board extends Component {
         <td className="table-title" onClick={this.goToDetail}>
           <span>{category}</span>
           {title}
-          {/* {check &&
-          <FontAwesomeIcon icon={faTrashAlt} />
-          <FontAwesomeIcon icon={faEdit} /> } 추가기능 구현중 입니다.*/}
         </td>
         <td className="table-writer">{author}</td>
         <td className="table-when">{created_at}</td>

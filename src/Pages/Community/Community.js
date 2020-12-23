@@ -5,9 +5,6 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import FreeBoard from "./FreeBoard";
 import "../Community/Community.scss";
 
-const token =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.zs60cFZQH0YeZFIZnXTy2Gql8lpGAa3FlUauYpT0iZA";
-
 class Community extends Component {
   state = {
     freeBoardDate: [],
@@ -28,20 +25,6 @@ class Community extends Component {
         })
       );
   }
-  // 추가기능 구현중입니다.
-  // componentDidMount() {
-  //   fetch("http://192.168.219.191:8000/boards", {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //       Authorization: token,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       console.log(res);
-  //     });
-  // }
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
@@ -74,15 +57,8 @@ class Community extends Component {
   };
 
   handleInputChange = (e) => {
-    this.setState({ searchInput: e.target.value });
-  };
-
-  handleOptionChange = (e) => {
-    this.setState({ category: e.target.value });
-  };
-
-  handleKeyChange = (e) => {
-    this.setState({ category: e.target.value });
+    const { value, name } = e.target;
+    this.setState({ [name]: value });
   };
 
   moveToPages = (e) => {
@@ -111,12 +87,12 @@ class Community extends Component {
                 e.preventDefault();
               }}
             >
-              <select onChange={this.handleOptionChange}>
+              <select name="category" onChange={this.handleInputChange}>
                 <option value="0">타입</option>
                 <option value="1">Review</option>
                 <option value="2">Q & A</option>
               </select>
-              <select onChange={this.handleKeyChange}>
+              <select name="key" onChange={this.handleInputChange}>
                 <option value="0">전체</option>
                 <option value="1">제목</option>
                 <option value="2">내용</option>
@@ -124,6 +100,7 @@ class Community extends Component {
               <input
                 type="text"
                 placeholder="검색어를 입력해 주세요"
+                name="searchInput"
                 onChange={this.handleInputChange}
               />
               <button>

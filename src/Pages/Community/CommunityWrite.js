@@ -12,12 +12,7 @@ class CommunityWrite extends Component {
   };
 
   postWriteData = () => {
-    const {
-      write_content,
-      write_title,
-      write_token,
-      write_category,
-    } = this.state;
+    const { write_content, write_title, write_category } = this.state;
     if (write_content && write_title) {
       fetch("http://192.168.219.191:8000/boards", {
         method: "POST",
@@ -42,16 +37,9 @@ class CommunityWrite extends Component {
     }
   };
 
-  handleTitleInput = (e) => {
-    this.setState({ write_title: e.target.value });
-  };
-
-  handleTextArea = (e) => {
-    this.setState({ write_content: e.target.value });
-  };
-
-  handleCategory = (e) => {
-    this.setState({ write_category: e.target.value });
+  handleInputChange = (e) => {
+    const { value, name } = e.target;
+    this.setState({ [name]: value });
   };
 
   goToMain = () => {
@@ -70,13 +58,17 @@ class CommunityWrite extends Component {
               <div className="content_area">
                 <div className="content_title">
                   <div className="title">
-                    <select onChange={this.handleCategory}>
+                    <select
+                      name="write_category"
+                      onChange={this.handleInputChange}
+                    >
                       <option value="review">Review</option>
                       <option value="qna">Q & A</option>
                     </select>
                     <input
+                      name="write_title"
                       placeholder="제목을 입력해 주세요."
-                      onChange={this.handleTitleInput}
+                      onChange={this.handleInputChange}
                     />
                   </div>
 
@@ -92,7 +84,10 @@ class CommunityWrite extends Component {
                   </div>
                 </div>
                 <div className="content_view">
-                  <textarea onChange={this.handleTextArea}></textarea>
+                  <textarea
+                    name="write_content"
+                    onChange={this.handleInputChange}
+                  ></textarea>
                 </div>
               </div>
               <div className="bottom_btn">
