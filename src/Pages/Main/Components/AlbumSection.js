@@ -74,6 +74,8 @@ class AlbumSection extends React.Component {
                           />
                         </div>
                         <div className="cover contents">
+                          {/* ----- */}
+
                           {/* 기존 "AlbumContentsTable" 컴포넌트 부분 */}
                           <div className="AlbumContentsTable">
                             <div className="artistValue">
@@ -107,6 +109,7 @@ class AlbumSection extends React.Component {
                               alt="화살표"
                             />
                           </button>
+                          {/* ----- */}
                         </div>
                       </div>
                     </SwiperSlide>

@@ -16,9 +16,9 @@ class IconsContainer extends React.Component {
     ];
     return (
       <div className="IconsContainer">
-        {iconList.map((el) => {
+        {iconList.map((el, index) => {
           return (
-            <div className="albumIcon">
+            <div className="albumIcon" key={index}>
               <img src={el.img} alt={el.alt} />
               <p>{el.text}</p>
             </div>

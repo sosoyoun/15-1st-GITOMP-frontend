@@ -14,7 +14,7 @@ class ConcertSection extends React.Component {
     return (
       <>
         <BackgroundLine>
-          <div class="backgroundTxt">
+          <div className="backgroundTxt">
             <p>GITOMPMUSIC</p>
           </div>
         </BackgroundLine>

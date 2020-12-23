@@ -42,10 +42,10 @@ class ConcertSlideBar extends Component {
           scrollbar={{ draggable: true }}
         >
           <>
-            {this.state.concertData.map((el) => {
+            {this.state.concertData.map((el, index) => {
               return (
                 <SwiperSlide>
-                  <div className="ConcertContents">
+                  <div className="ConcertContents" key={index}>
                     <img src={el.thumbnail_url} alt="포스터" />
                     <p>{el.title}</p>
                   </div>
