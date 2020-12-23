@@ -29,7 +29,7 @@ class List extends Component {
               </dl>
               <dl>
                 <dd>
-                  · 티켓 : <span>매진</span>
+                  · 티켓 : <span>센터 문의</span>
                 </dd>
               </dl>
             </div>

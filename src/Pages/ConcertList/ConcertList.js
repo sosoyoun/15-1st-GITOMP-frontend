@@ -17,7 +17,7 @@ class ConcertList extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.141:8000/concerts`)
+    fetch(`http://192.168.219.191:8000/concerts`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -29,7 +29,7 @@ class ConcertList extends Component {
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
       fetch(
-        `http://192.168.219.141:8000/concerts?page=${this.state.currentPage}`
+        `http://192.168.219.191:8000/concerts?page=${this.state.currentPage}`
       )
         .then((res) => res.json())
         .then((res) =>
@@ -42,7 +42,7 @@ class ConcertList extends Component {
     const { selectYear, selectKey } = this.state;
     e.preventDefault();
     fetch(
-      `http://192.168.219.141:8000/concerts?&page=1&year=${selectYear}&search_key=${selectKey}`
+      `http://192.168.219.191:8000/concerts?&page=1&year=${selectYear}&search_key=${selectKey}`
     )
       .then((res) => res.json())
       .then((res) => {

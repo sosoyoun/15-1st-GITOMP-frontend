@@ -8,8 +8,7 @@ class ConcertDetail extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.141:8000/concerts/${this.props.match.params.id}`)
-      // 192.168.219.191
+    fetch(`http://192.168.219.191:8000/concerts/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ concertList: res }));
   }
@@ -17,7 +16,7 @@ class ConcertDetail extends Component {
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       fetch(
-        `http://192.168.219.141:8000/concerts/${this.props.match.params.id}`
+        `http://192.168.219.191:8000/concerts/${this.props.match.params.id}`
       )
         .then((res) => res.json())
         .then((res) => this.setState({ concertList: res }));
@@ -82,7 +81,7 @@ class ConcertDetail extends Component {
                   <dt>· 티&emsp;&emsp;&emsp;켓 </dt>
                   <dd>
                     <span>|</span>
-                    매진
+                    센터 문의
                   </dd>
                 </dl>
                 <dl>
