@@ -11,7 +11,7 @@ class List extends Component {
 
   render() {
     const {
-      id,
+      concert_id,
       title,
       post_url,
       date_performance,
@@ -20,7 +20,7 @@ class List extends Component {
     } = this.props;
     console.log(this.props);
     return (
-      <li className="List" key={id}>
+      <li className="List" key={concert_id}>
         <img src={post_url} alt="concertImg" />
         <div className="concert_info">
           <dd className="concert_title">{title}</dd>
@@ -44,7 +44,7 @@ class List extends Component {
             </div>
             <Link
               to={{
-                pathname: `/concertList/detail/${id}`,
+                pathname: `/concertList/detail/${concert_id}`,
               }}
             >
               <button>

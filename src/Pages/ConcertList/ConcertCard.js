@@ -11,8 +11,8 @@ class ConcertCard extends Component {
           concertList.map((e) => {
             return (
               <List
-                key={e.id}
-                id={e.id}
+                key={e.concert_id}
+                concert_id={e.concert_id}
                 post_url={e.post_url}
                 title={e.title}
                 date_performance={e.date_performance}

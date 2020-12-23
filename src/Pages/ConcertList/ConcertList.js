@@ -21,11 +21,11 @@ class ConcertList extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.141:8000/concerts/`)
+    fetch(`http://192.168.219.191:8000/concerts/`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          concertList: res.concert,
+          concertList: res.concerts,
         });
       });
   }
@@ -33,11 +33,11 @@ class ConcertList extends Component {
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
       fetch(
-        `http://192.168.219.141:8000/concerts?page=${this.state.currentPage}`
+        `http://192.168.219.191:8000/concerts?page=${this.state.currentPage}`
       )
         .then((res) => res.json())
         .then((res) =>
-          this.setState({ concertList: res.concert }, window.scroll(0, 0))
+          this.setState({ concertList: res.concerts }, window.scroll(0, 0))
         );
     }
   }
@@ -48,12 +48,12 @@ class ConcertList extends Component {
     this.setState({ isLoading: true });
     this.state.filterConcertList &&
       fetch(
-        `http://192.168.219.141:8000/concerts?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
+        `http://192.168.219.191:8000/concerts?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
         `
       )
         .then((res) => res.json())
         .then((res) => {
-          this.setState({ concertList: res.concert });
+          this.setState({ concertList: res.concerts });
         })
         .catch((error) => {
           console.log("에러발생!");
@@ -71,8 +71,8 @@ class ConcertList extends Component {
   };
 
   render() {
-    console.log(this.state);
     const { concertList, currentPage } = this.state;
+    const { handleInputChange, searchInfo, moveToPages } = this;
     return (
       <div className="ConcerList">
         <div className="container">
@@ -86,7 +86,7 @@ class ConcertList extends Component {
               <select
                 className="select_year"
                 name="selectYear"
-                onChange={this.handleInputChange}
+                onChange={handleInputChange}
               >
                 <option value="2021">2021</option>
                 <option value="2020">2020</option>
@@ -99,7 +99,7 @@ class ConcertList extends Component {
               <select
                 tabIndex="1"
                 name="selectKey"
-                onChange={this.handleInputChange}
+                onChange={handleInputChange}
               >
                 <option value="0">전체</option>
                 <option value="1">제목</option>
@@ -109,48 +109,48 @@ class ConcertList extends Component {
                 type="text"
                 placeholder="검색어를 입력해 주세요"
                 name="searchInput"
-                onChange={this.handleInputChange}
+                onChange={handleInputChange}
               />
               <button>
                 <FontAwesomeIcon
                   className="fa_search"
                   icon={faSearch}
-                  onClick={this.searchInfo}
+                  onClick={searchInfo}
                 />
               </button>
             </form>
           </section>
           <main className="concert_List">
             <ul>
-              <ConcertCard concertList={this.state && concertList} />
+              <ConcertCard concertList={concertList} />
             </ul>
           </main>
           <div className="pages_number">
             <Link
               name="1"
               className={currentPage === "1" ? "on" : ""}
-              onClick={this.moveToPages}
+              onClick={moveToPages}
             >
               1
             </Link>
             <Link
               name="2"
               className={currentPage === "2" ? "on" : ""}
-              onClick={this.moveToPages}
+              onClick={moveToPages}
             >
               2
             </Link>
             <Link
               name="3"
               className={currentPage === "3" ? "on" : ""}
-              onClick={this.moveToPages}
+              onClick={moveToPages}
             >
               3
             </Link>
             <Link
               name="4"
               className={currentPage === "4" ? "on" : ""}
-              onClick={this.moveToPages}
+              onClick={moveToPages}
             >
               4
             </Link>

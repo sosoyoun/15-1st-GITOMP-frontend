@@ -10,16 +10,16 @@ class Routes extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
-          <Route exact path="/concertList" component={ConcertList} />
+          <Route exact path="/ConcertList" component={ConcertList} />
           <Route
             exact
-            path="/concertList/:currentPage"
-            component={ConcertList}
+            path="/ConcertList/detail/:id"
+            component={ConcertDetail}
           />
           <Route
             exact
-            path="/concertList/detail/:id"
-            component={ConcertDetail}
+            path="/ConcertList/:currentPage"
+            component={ConcertList}
           />
         </Switch>
       </Router>
