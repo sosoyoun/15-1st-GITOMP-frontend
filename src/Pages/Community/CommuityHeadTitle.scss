@@ -6,11 +6,12 @@
   height: 358px;
   text-align: center;
   letter-spacing: -0.1em;
-  margin-top: 152px;
+  margin-bottom: 50px;
+
   img {
     position: absolute;
     left: 0;
-    top: 152px;
+    top: 160px;
     max-width: 100%;
     overflow: hidden;
     z-index: -1;
@@ -26,7 +27,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 70px;
+      padding-top: 100px;
       margin-bottom: 0;
 
       span {

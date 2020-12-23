@@ -8,6 +8,7 @@ class List extends Component {
       `/albumList/detail/${this.props.match.params.album_id}`
     );
   };
+
   render() {
     const {
       album_id,
