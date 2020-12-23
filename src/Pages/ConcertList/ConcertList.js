@@ -21,7 +21,7 @@ class ConcertList extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/concerts`)
+    fetch(`http://192.168.219.141:8000/concerts/`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -33,7 +33,7 @@ class ConcertList extends Component {
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
       fetch(
-        `http://192.168.219.191:8000/concerts?page=${this.state.currentPage}`
+        `http://192.168.219.141:8000/concerts?page=${this.state.currentPage}`
       )
         .then((res) => res.json())
         .then((res) =>
@@ -48,7 +48,7 @@ class ConcertList extends Component {
     this.setState({ isLoading: true });
     this.state.filterConcertList &&
       fetch(
-        `http://192.168.219.191:8000/concerts?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
+        `http://192.168.219.141:8000/concerts?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
         `
       )
         .then((res) => res.json())
@@ -122,7 +122,7 @@ class ConcertList extends Component {
           </section>
           <main className="concert_List">
             <ul>
-              {/* <ConcertCard concertList={this.state && concertList} /> */}
+              <ConcertCard concertList={this.state && concertList} />
             </ul>
           </main>
           <div className="pages_number">
