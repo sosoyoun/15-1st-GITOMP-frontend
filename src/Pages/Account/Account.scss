@@ -19,6 +19,7 @@
     .head-title {
       display: flex;
       flex-direction: column;
+
       .title {
         font-family: $title-font;
         font-size: 54px;
@@ -145,12 +146,14 @@
     height: 100%;
     align-items: center;
     margin-top: 30px;
+
     button {
       margin-right: 10px;
       width: 20px;
       height: 20px;
       padding: 0;
     }
+
     span {
       font-size: 18px;
     }
@@ -158,6 +161,7 @@
   .box-area {
     text-align: center;
     margin-top: 80px;
+
     button {
       width: 170px;
       height: 43px;

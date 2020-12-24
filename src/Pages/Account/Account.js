@@ -17,7 +17,7 @@ class Account extends Component {
     };
   }
   postSignUp = () => {
-    fetch("http://192.168.219.191:8000/users/signup", {
+    fetch("http://3.36.48.224/users/signup", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,12 +39,6 @@ class Account extends Component {
       .catch((error) => {
         alert("통신불가");
       });
-  };
-
-  onLoginSuccess = () => {
-    this.setState({ isSuccessLogin: true }, () => {
-      this.props.closeSign();
-    });
   };
 
   onSignupSuccess = () => {

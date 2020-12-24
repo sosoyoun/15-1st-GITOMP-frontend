@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import "./AlbumDetail.scss";
+import CommuityHeadTitle from "../Community/CommuityHeadTitle";
 
 class AlbumDetail extends Component {
   state = {
     albumList: {},
   };
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
+    fetch(`http://3.36.48.224/albums/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ albumList: res }));
   }
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
+      fetch(`http://3.36.48.224/albums/${this.props.match.params.id}`)
         .then((res) => res.json())
         .then((res) => this.setState({ albumList: res }));
     }
@@ -54,11 +55,7 @@ class AlbumDetail extends Component {
     return (
       <div className="AlbumDetail">
         <div className="container">
-          <div className="headtitle">
-            <img src="/images/gitomp_bg.jpg" alt="bgimg" />
-            <h2>AlbumList</h2>
-            <span>깃톰프뮤직의 음악에 매료되어보세요.</span>
-          </div>
+          <CommuityHeadTitle />
           <article>
             <div className="album_content">
               <img src={image_url} alt="albumImg" />

@@ -21,7 +21,7 @@ class AlbumList extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/albums`)
+    fetch(`http://3.36.48.224/albums`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -32,7 +32,7 @@ class AlbumList extends Component {
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params !== this.props.match.params) {
-      fetch(`http://192.168.219.191:8000/albums?page=${this.state.currentPage}`)
+      fetch(`http://3.36.48.224/albums?page=${this.state.currentPage}`)
         .then((res) => res.json())
         .then((res) =>
           this.setState({ albumList: res.albums }, window.scroll(0, 0))
@@ -44,18 +44,18 @@ class AlbumList extends Component {
     const { selectYear, selectGenre, selectKey, searchInput } = this.state;
     e.preventDefault();
     this.setState({ isLoading: true });
-    this.state.filterAlbumList &&
-      fetch(
-        `http://192.168.219.191:8000/albums?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
+
+    fetch(
+      `http://3.36.48.224/albums?&page=1&year=${selectYear}&genre=${selectGenre}&search_key=${selectKey}&search=${searchInput}
         `
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          this.setState({ albumList: res.albums });
-        })
-        .catch((error) => {
-          console.log("에러발생!");
-        });
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ albumList: res.albums });
+      })
+      .catch((error) => {
+        console.log("에러발생!");
+      });
   };
 
   moveToPages = (e) => {
@@ -136,7 +136,7 @@ class AlbumList extends Component {
           </main>
           <div className="pages_number">
             <Link
-              className={currentPage == "1" ? "on" : ""}
+              className={currentPage === "1" ? "on" : ""}
               name="1"
               onClick={this.moveToPages}
             >

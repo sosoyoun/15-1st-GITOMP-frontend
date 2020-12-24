@@ -160,7 +160,7 @@ class Category extends Component {
             </div>
           </li>
           <li className="sub-plus">
-            <Link to="/Commuity">COMMUITY</Link>
+            <Link to="/boards">COMMUITY</Link>
             <div className="nav-bg"></div>
             <div className="sub-category sub-fiv">
               <div className="sub-intro">

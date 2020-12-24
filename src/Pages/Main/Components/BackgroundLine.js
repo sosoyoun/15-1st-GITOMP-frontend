@@ -4,7 +4,7 @@ import "./BackgroundLine.scss";
 class BackgroundLine extends React.Component {
   render() {
     return (
-      <div class="BackgroundLine">
+      <div className="BackgroundLine">
         <span className="grayBackground" />
         <span className="grayBackground" />
         <span className="grayBackground" />

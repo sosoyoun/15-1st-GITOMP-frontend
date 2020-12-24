@@ -2,8 +2,8 @@
 
 .backgroundOutline {
   width: 100%;
-  height: 88vh;
-  padding: 0 7%;
+  height: 86vh;
+  padding: 0 5%;
   background: url(./Images/visual_bg.jpg) no-repeat center center;
   background-size: cover;
   display: flex;
@@ -11,26 +11,21 @@
 
   .pianoImage {
     position: relative;
-    left: 33%;
-    width: 65%;
+    right: -40%;
+    width: 80%;
     height: 80%;
     background: url(./Images/piano.jpg) no-repeat center center;
     background-size: cover;
   }
 
   .visualTxt {
-    width: 35%;
-    height: 40vh;
-    position: absolute;
+    width: 55%;
+    height: 80%;
+    position: relative;
     top: 10vh;
+    left: -60%;
     line-height: 1.5;
     text-align: left;
-
-    p {
-      font-size: 25px;
-      font-weight: 100;
-      color: #dddddd;
-    }
 
     h2 {
       height: 180px;
@@ -39,6 +34,13 @@
       font-weight: bold;
       letter-spacing: 0.05em;
       color: #fff;
+    }
+
+    p {
+      padding-top: 10px;
+      font-size: 25px;
+      font-weight: 100;
+      color: #dddddd;
     }
 
     hr {
