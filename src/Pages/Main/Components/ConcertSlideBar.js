@@ -18,7 +18,7 @@ class ConcertSlideBar extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://3.36.48.224/concerts/upcomming"`)
+    fetch(`http://192.168.219.191:8000/concerts/upcomming`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
