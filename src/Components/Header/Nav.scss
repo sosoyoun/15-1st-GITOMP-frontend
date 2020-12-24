@@ -1,3 +1,5 @@
+@import "../../styles/common.scss";
+
 .Nav {
   position: fixed;
   width: 100%;
@@ -27,6 +29,34 @@
       display: flex;
       flex-direction: row;
 
+      .Nickname {
+        position: absolute;
+        top: 4.5rem;
+        right: 0.1rem;
+        display: flex;
+        justify-content: space-between;
+        transition: all ease 0.4s;
+
+        .user-nickname-icon {
+          color: rgb(122, 122, 122);
+        }
+
+        p {
+          width: 75px;
+          height: 50px;
+          margin: -1.9rem 0 10px 10px;
+          border-bottom: 1px solid rgb(195, 195, 195);
+          opacity: 0.8;
+
+          span {
+            display: inline-block;
+            margin: 30px 0 0 5px;
+            font-weight: 700;
+            font-family: $main-font;
+          }
+        }
+      }
+
       .search-bar {
         margin-top: 0.5rem;
         position: absolute;
@@ -43,14 +73,14 @@
       //햄버거 메뉴 아이콘
 
       .toggle-menu {
+        width: 46px;
+        height: 46px;
+        padding: 9px 0;
         position: absolute;
         top: 5px;
         right: 0;
         display: inline-block;
         text-align: center;
-        width: 46px;
-        height: 46px;
-        padding: 9px 0;
         border-radius: 100%;
         transition: all ease 0.4s;
         background: #000;
@@ -64,9 +94,9 @@
           }
 
           .line {
-            display: inline-block;
             width: 2px;
             height: 17px;
+            display: inline-block;
             background: #fff;
             border-radius: 6px;
             transition: transform 0.3s ease;
@@ -90,8 +120,48 @@
     }
   }
 }
-@media only screen and (max-width: 1200px) {
+
+@media only all and (max-width: 1200px) {
   .Nav {
     height: 5.7rem;
+
+    .Nav-top {
+      .right-icon {
+        .Nickname {
+          position: absolute;
+          top: 1rem;
+          right: 8rem;
+          font-size: 1.5rem;
+          color: $nomal-color;
+          opacity: 1;
+
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only all and (max-width: 650px) {
+  .Nav {
+    .Nav-top {
+      .right-icon {
+        .Nickname {
+          display: none;
+        }
+        .search-bar {
+          display: none;
+        }
+
+        .toggle-menu {
+          padding: 9px 0;
+          position: absolute;
+          top: 5px;
+          right: -4.5rem;
+        }
+      }
+    }
   }
 }

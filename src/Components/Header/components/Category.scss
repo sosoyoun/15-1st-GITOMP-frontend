@@ -64,8 +64,8 @@
       .sub-for,
       .sub-fiv,
       .sub-six {
-        transition: all ease 0.4s;
         height: 0;
+        transition: all ease 0.4s;
         z-index: 101;
         overflow: hidden;
       }
