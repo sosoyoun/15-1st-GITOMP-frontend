@@ -8,6 +8,10 @@ import Commuity from "./Pages/Commuity/Commuity";
 import Nav from "./Components/Header/Nav";
 import HamMenu from "./Components/Header/components/HamMenu";
 import SignIn from "./Pages/Account/SignIn";
+import Community from "./Pages/Community/Community";
+import CommunityContent from "./Pages/Community/CommunityContent";
+import CommunityWrite from "./Pages/Community/CommunityWrite";
+import Footer from "./Components/Footer/Footer";
 import ConcertList from "./Pages/ConcertList/ConcertList";
 
 class Routes extends Component {

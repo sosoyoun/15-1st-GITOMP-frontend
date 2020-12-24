@@ -32,11 +32,11 @@ class AlbumSection extends React.Component {
   };
 
   handleRes = (e) => {
-    const { value } = e.target;
-    console.log(value);
+    const { alt } = e.target;
+    console.log(alt);
 
     this.setState({
-      resValue: value,
+      resValue: alt,
     });
   };
 
