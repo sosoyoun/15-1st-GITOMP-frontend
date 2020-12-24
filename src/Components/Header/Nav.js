@@ -3,10 +3,12 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import Category from "./components/Category";
 import SearchBar from "./SearchBox/SearchBar";
+import Nickname from "./components/Nickname";
 import "./Nav.scss";
 
 class Nav extends Component {
   render() {
+    const { handleSearchBox } = this;
     return (
       <div className="Nav bottom">
         <div className="Nav-top">
@@ -14,6 +16,7 @@ class Nav extends Component {
             <img src="/images/logo.gif" alt="GITOMP" />
           </Link>
           <div className="right-icon">
+            <Nickname />
             <SearchBar />
             <div
               className="toggle-menu"
@@ -31,7 +34,7 @@ class Nav extends Component {
             </div>
           </div>
         </div>
-        <Category onSearchBox={this.handleSearchBox} />
+        <Category onSearchBox={handleSearchBox} />
       </div>
     );
   }

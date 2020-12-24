@@ -4,30 +4,23 @@ import ConcertSlideBar from "./ConcertSlideBar";
 import rightArrow from "./Images/icons8-right-arrow-50.png";
 import endIcon from "./Images/icons8-end-96.png";
 import startIcon from "./Images/icons8-skip-to-start-96.png";
+import "swiper/swiper.scss";
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/scrollbar/scrollbar.scss";
 import "./ConcertSection.scss";
 
 class ConcertSection extends React.Component {
-  constructor(props) {
-    super(props);
-    this.testRef = React.createRef();
-  }
-
-  componentDidMount() {
-    console.log("refs");
-    console.log(this.testRef);
-  }
-
   render() {
     return (
       <>
         <BackgroundLine>
-          <div class="backgroundTxt">
+          <div className="backgroundTxt">
             <p>GITOMPMUSIC</p>
           </div>
         </BackgroundLine>
         <div className="ConcertSection">
           <div className="concertSlideOutline">
-            <div className="concertIntroduce" ref={this.testRef}>
+            <div className="concertIntroduce">
               <h2>
                 UPCOMING <br />
                 CONCERT
