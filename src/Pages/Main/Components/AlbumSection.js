@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import BackgroundLine from "./BackgroundLine";
 import SwiperCore, { Scrollbar, A11y, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -53,12 +54,27 @@ class AlbumSection extends React.Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          albumData: res[this.state.resValue],
+          albumData: res.Classic,
         });
       });
   }
 
+  componentDidUpdate(_, prevState) {
+    fetch(`http://3.36.48.224/albums/main-page`)
+      .then((res) => res.json())
+      .then((res) => {
+        if (
+          prevState.match.params.resValue !== this.state.match.params.resValue
+        ) {
+          this.setState({
+            albumData: res[this.state.resValue],
+          });
+        }
+      });
+  }
+
   render() {
+    console.log(this.state);
     const { iconList } = this.state;
     return (
       <>
@@ -172,4 +188,4 @@ class AlbumSection extends React.Component {
     );
   }
 }
-export default AlbumSection;
+export default withRouter(AlbumSection);
