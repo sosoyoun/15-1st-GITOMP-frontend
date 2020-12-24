@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "../Account/Account.scss";
-
 class Account extends Component {
   constructor() {
     super();
@@ -14,9 +13,9 @@ class Account extends Component {
       checkId: false,
       checkPassword: false,
       checkNickName: false,
+      isSuccessLogin: false,
     };
   }
-
   postSignUp = () => {
     fetch("http://192.168.219.191:8000/users/signup", {
       method: "POST",
@@ -30,11 +29,35 @@ class Account extends Component {
       }),
     })
       .then((res) => {
-        console.log(res.json());
+        console.log(res);
+        if (res.ok) {
+          this.onSignupSuccess();
+        } else {
+          alert("중복된 정보입니다. 확인해 주세요.");
+        }
       })
       .catch((error) => {
-        console.log("통신불가");
+        alert("통신불가");
       });
+  };
+
+  onLoginSuccess = () => {
+    this.setState({ isSuccessLogin: true }, () => {
+      this.props.closeSign();
+    });
+  };
+
+  onSignupSuccess = () => {
+    alert("회원가입 완료");
+    this.setState({ isSuccessLogin: true }, () => {
+      this.props.closeSign();
+    });
+  };
+
+  logout = () => {
+    localStorage.clear();
+    alert("로그아웃 완료");
+    this.setState({ isSuccessLogin: false });
   };
 
   fetchInfo = () => {
@@ -62,8 +85,8 @@ class Account extends Component {
   isVaildationIdPass = () => {
     const { email, password, nickname } = this.state;
     this.setState({
-      checkId: email.includes("@"),
-      checkPassword: password.length >= 8,
+      checkId: email.includes("@" && ".com"),
+      checkPassword: password.length >= 9,
       checkNickName: nickname.length >= 3,
     });
   };
@@ -71,6 +94,7 @@ class Account extends Component {
   handlechecked = () => {
     this.setState({ isCheckBoxConfirm: !this.state.isCheckBoxConfirm });
   };
+
   render() {
     const {
       isCheckBoxConfirm,
@@ -78,7 +102,7 @@ class Account extends Component {
       checkPassword,
       checkNickName,
     } = this.state;
-
+    const { closeSign } = this.props;
     return (
       <>
         <div className="Account">
@@ -107,7 +131,6 @@ class Account extends Component {
               ) : (
                 <FontAwesomeIcon className="fatimes times1" icon={faTimes} />
               )}
-
               <span>
                 패스워드 <span className="requried">*</span>
               </span>
@@ -124,7 +147,6 @@ class Account extends Component {
               ) : (
                 <FontAwesomeIcon className="fatimes times2" icon={faTimes} />
               )}
-
               <span>
                 닉네임 <span className="requried">*</span>
               </span>
@@ -228,7 +250,9 @@ class Account extends Component {
               <button className="send" onClick={this.fetchInfo}>
                 회원가입
               </button>
-              <button className="close">닫기</button>
+              <button className="close" onClick={closeSign} name="isSignUp">
+                닫기
+              </button>
             </div>
           </div>
         </div>
@@ -236,5 +260,4 @@ class Account extends Component {
     );
   }
 }
-
 export default Account;

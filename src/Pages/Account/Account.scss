@@ -4,18 +4,16 @@
   letter-spacing: -0.05em;
   font-family: $title-font;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  max-width: 40vw;
-  background: #fff;
+  top: 2%;
+  left: 30%;
+  background-color: #fff;
   border-radius: 6px;
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
   z-index: 10;
   box-sizing: border-box;
   padding: 40px;
-  transform: translate(-50%, -50%);
-
+  transform: scale(0.91);
+  max-width: 40vw;
   .container {
     margin: 0 auto;
     .head-title {
@@ -40,7 +38,7 @@
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    line-height: 4;
+    line-height: 3;
     span {
       font-size: 18px;
       display: inline;
@@ -77,12 +75,12 @@
   }
   .check1 {
     position: absolute;
-    top: 25.5vh;
+    top: 23.5vh;
     right: 4.25vw;
   }
   .times1 {
     position: absolute;
-    top: 25.5vh;
+    top: 23.5vh;
     right: 4.25vw;
   }
   .password-input {
@@ -90,12 +88,12 @@
   }
   .check2 {
     position: absolute;
-    top: 38.75vh;
+    top: 34.75vh;
     right: 4.25vw;
   }
   .times2 {
     position: absolute;
-    top: 38.75vh;
+    top: 34.75vh;
     right: 4.25vw;
   }
   .nickname-input {
@@ -103,12 +101,12 @@
   }
   .check3 {
     position: absolute;
-    top: 51.75vh;
+    top: 45.75vh;
     right: 4.25vw;
   }
   .times3 {
     position: absolute;
-    top: 51.75vh;
+    top: 45.75vh;
     right: 4.25vw;
   }
   .notice-info {

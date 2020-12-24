@@ -10,8 +10,9 @@ class SignIn extends Component {
     nickname: "",
     checkId: false,
     checkPassword: false,
+    isSuccessLogin: false,
   };
-  //백엔드 로그인 정보 가져오기
+
   fetchLogin = () => {
     fetch("http://192.168.219.191:8000/users/signin", {
       method: "POST",
@@ -26,22 +27,30 @@ class SignIn extends Component {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        if (res.TOKEN) {
-          localStorage.setItem("TOKEN", res.TOKEN);
-          console.log(res.TOKEN);
+        if (res.ACCESS_TOKEN) {
+          localStorage.setItem("TOKEN", res.ACCESS_TOKEN);
+          localStorage.setItem("NICKNAME", res.NICKNAME);
         }
+        this.onLoginSuccess();
       })
       .catch((error) => {
-        localStorage.setItem("TOKEN", "통신불가");
-        console.log("통신불가");
+        alert("통신불가");
       });
   };
+
   signIn = () => {
     const { checkId, checkPassword } = this.state;
     if (checkId && checkPassword) {
       this.fetchLogin();
     }
   };
+
+  onLoginSuccess = () => {
+    this.setState({ isSuccessLogin: true }, () => {
+      this.props.closeSign();
+    });
+  };
+
   handleIdPasswordInput = (e) => {
     const { value, name } = e.target;
     this.setState(
@@ -55,14 +64,14 @@ class SignIn extends Component {
   isVaildationIdPass = () => {
     const { email, password } = this.state;
     this.setState({
-      checkId: email.includes("@"),
-      checkPassword: password.length >= 8,
+      checkId: email.includes("@" && ".com"),
+      checkPassword: password.length >= 9,
     });
   };
 
   render() {
     const { checkId, checkPassword } = this.state;
-
+    const { closeSign } = this.props;
     return (
       <div className="SignIn">
         <div className="container">
@@ -89,7 +98,6 @@ class SignIn extends Component {
             ) : (
               <FontAwesomeIcon className="fatimes times1" icon={faTimes} />
             )}
-
             <span>
               패스워드 <span className="requried">*</span>
             </span>
@@ -107,17 +115,17 @@ class SignIn extends Component {
               <FontAwesomeIcon className="fatimes times2" icon={faTimes} />
             )}
           </form>
-
           <div className="box-area">
             <button className="send" onClick={this.signIn}>
               로그인
             </button>
-            <button className="close">닫기</button>
+            <button className="close" onClick={closeSign}>
+              닫기
+            </button>
           </div>
         </div>
       </div>
     );
   }
 }
-
 export default SignIn;
