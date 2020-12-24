@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import SwiperCore, { Pagination, Scrollbar, A11y, Mousewheel } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import NavBar from "./Components/NavBar";
 import GitompSection from "./Components/GitompSection";
 import ConcertSection from "./Components/ConcertSection";
 import AlbumSection from "./Components/AlbumSection";
@@ -17,10 +16,9 @@ class Main extends Component {
   render() {
     return (
       <div className="Outline">
-        <NavBar />
         <Swiper
           direction={"vertical"}
-          style={{ height: "88vh", width: "100%" }}
+          style={{ height: "86vh", width: "100%" }}
           spaceBetween={0}
           speed={700}
           mousewheel={true}
@@ -35,6 +33,9 @@ class Main extends Component {
           </SwiperSlide>
           <SwiperSlide>
             <AlbumSection />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Footer />
           </SwiperSlide>
         </Swiper>
       </div>

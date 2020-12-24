@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SwiperCore, { Scrollbar, A11y, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+// import SERVER from "../../../config";
 import "./ConcertSlideBar.scss";
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.scss";
@@ -17,7 +18,7 @@ class ConcertSlideBar extends Component {
   }
 
   componentDidMount() {
-    fetch("http://192.168.219.141:8000/concerts/upcomming")
+    fetch(`http://3.36.48.224/concerts/upcomming"`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -27,7 +28,6 @@ class ConcertSlideBar extends Component {
   }
 
   render() {
-    console.log(this.state.concertData);
     return (
       <div className="ConcertSlideBar">
         <Swiper
@@ -42,12 +42,12 @@ class ConcertSlideBar extends Component {
           scrollbar={{ draggable: true }}
         >
           <>
-            {this.state.concertData.map((el, index) => {
+            {this.state.concertData.map((contents, index) => {
               return (
                 <SwiperSlide>
                   <div className="ConcertContents" key={index}>
-                    <img src={el.thumbnail_url} alt="포스터" />
-                    <p>{el.title}</p>
+                    <img src={contents.thumbnail_url} alt="포스터" />
+                    <p>{contents.title}</p>
                   </div>
                 </SwiperSlide>
               );

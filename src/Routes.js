@@ -8,7 +8,6 @@ import Commuity from "./Pages/Commuity/Commuity";
 import Nav from "./Components/Header/Nav";
 import HamMenu from "./Components/Header/components/HamMenu";
 import SignIn from "./Pages/Account/SignIn";
-import Footer from "./Components/Footer/Footer";
 import ConcertList from "./Pages/ConcertList/ConcertList";
 
 class Routes extends Component {
@@ -28,7 +27,6 @@ class Routes extends Component {
           <Route exact path="/SignIn" component={SignIn} />
           <Route exact path="/Commuity" component={Commuity} />
         </Switch>
-        <Footer />
       </Router>
     );
   }
