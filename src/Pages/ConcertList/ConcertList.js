@@ -123,7 +123,7 @@ class ConcertList extends Component {
           <div className="pages_number">
             <Link
               name="1"
-              className={currentPage === "1" ? "on" : ""}
+              className={currentPage == "1" ? "on" : ""}
               onClick={moveToPages}
             >
               1
