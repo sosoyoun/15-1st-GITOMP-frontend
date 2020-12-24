@@ -7,14 +7,14 @@ class AlbumDetail extends Component {
     albumList: {},
   };
   componentDidMount() {
-    fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
+    fetch(`http://3.36.48.224/albums/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ albumList: res }));
   }
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
+      fetch(`http://3.36.48.224/albums/${this.props.match.params.id}`)
         .then((res) => res.json())
         .then((res) => this.setState({ albumList: res }));
     }

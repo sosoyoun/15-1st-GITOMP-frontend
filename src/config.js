@@ -6,3 +6,7 @@ export const SERVER = "http://3.36.48.224";
 //게시판 API
 export const COMMUNITYAPI = `${SERVER}/boards`;
 export const COMMUNITYFILTER = `${SERVER}/boards?&category`;
+
+//콘서트 API
+export const CONCERTAPI = `${SERVER}/concerts`;
+export const CONCERTAPIPAGE = `${SERVER}/concerts?page`;

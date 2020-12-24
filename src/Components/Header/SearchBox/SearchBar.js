@@ -22,7 +22,6 @@ class SearchBar extends Component {
     const { currentSearchWord } = this.state;
     const { showSearchBox, handleDelete } = this;
 
-    console.log(this.state.isSearchShown);
     return (
       <>
         <div className="search-bar" onClick={showSearchBox}>
