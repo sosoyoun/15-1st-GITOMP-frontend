@@ -18,26 +18,30 @@ class Main extends Component {
     return (
       <div className="Outline">
         <NavBar />
-        <Swiper
-          direction={"vertical"}
-          style={{ height: "88vh", width: "100%" }}
-          spaceBetween={0}
-          speed={700}
-          mousewheel={true}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-        >
-          <SwiperSlide>
-            <GitompSection />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ConcertSection />
-          </SwiperSlide>
-          <SwiperSlide>
-            <AlbumSection />
-          </SwiperSlide>
-        </Swiper>
-        <Footer />
+        <div className="swiper-container">
+          <Swiper
+            direction={"vertical"}
+            style={{ height: "88vh", width: "100%" }}
+            spaceBetween={0}
+            speed={700}
+            mousewheel={true}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+          >
+            <SwiperSlide>
+              <GitompSection />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ConcertSection />
+            </SwiperSlide>
+            <SwiperSlide>
+              <AlbumSection />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Footer />
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
     );
   }
