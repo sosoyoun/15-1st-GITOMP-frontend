@@ -136,7 +136,7 @@ class AlbumList extends Component {
           </main>
           <div className="pages_number">
             <Link
-              className={currentPage == "1" ? "on" : ""}
+              className={currentPage === "1" ? "on" : ""}
               name="1"
               onClick={this.moveToPages}
             >

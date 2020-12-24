@@ -36,12 +36,14 @@ class SignIn extends Component {
         console.log("통신불가");
       });
   };
+
   signIn = () => {
     const { checkId, checkPassword } = this.state;
     if (checkId && checkPassword) {
       this.fetchLogin();
     }
   };
+
   handleIdPasswordInput = (e) => {
     const { value, name } = e.target;
     this.setState(
@@ -62,7 +64,7 @@ class SignIn extends Component {
 
   render() {
     const { checkId, checkPassword } = this.state;
-
+    const { closeSign } = this.props;
     return (
       <div className="SignIn">
         <div className="container">
@@ -112,7 +114,9 @@ class SignIn extends Component {
             <button className="send" onClick={this.signIn}>
               로그인
             </button>
-            <button className="close">닫기</button>
+            <button className="close" onClick={closeSign}>
+              닫기
+            </button>
           </div>
         </div>
       </div>

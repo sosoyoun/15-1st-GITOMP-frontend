@@ -1,11 +1,12 @@
 @import "../../styles/common.scss";
 .SignIn {
+  width: 90%;
   letter-spacing: -0.05em;
   font-family: $title-font;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 90%;
+
   max-width: 30vw;
   background: #fff;
   border-radius: 6px;

@@ -78,7 +78,7 @@ class Account extends Component {
       checkPassword,
       checkNickName,
     } = this.state;
-
+    const { closeSign } = this.props;
     return (
       <>
         <div className="Account">
@@ -228,7 +228,9 @@ class Account extends Component {
               <button className="send" onClick={this.fetchInfo}>
                 회원가입
               </button>
-              <button className="close">닫기</button>
+              <button className="close" onClick={closeSign} name="isSignUp">
+                닫기
+              </button>
             </div>
           </div>
         </div>

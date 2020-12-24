@@ -39,7 +39,6 @@ class Routes extends Component {
           />
           <Route exact path="/Commuity" component={Commuity} />
         </Switch>
-        <Footer />
       </Router>
     );
   }
