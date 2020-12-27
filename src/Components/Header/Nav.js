@@ -24,13 +24,13 @@ class Nav extends Component {
                 this.props.history.push("HamMenu");
               }}
             >
-              <label className="menu-toggle" for="menu-toggle">
+              <label className="menu-toggle" htmlFor="menu-toggle">
                 <span className="line line-1"></span>
                 <span className="line line-2"></span>
                 <span className="line line-3"></span>
                 <span className="line line-4"></span>
               </label>
-              <label className="overlay" for="menu-toggle"></label>
+              <label className="overlay" htmlFor="menu-toggle"></label>
             </div>
           </div>
         </div>

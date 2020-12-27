@@ -17,7 +17,7 @@ class Account extends Component {
     };
   }
   postSignUp = () => {
-    fetch("http://3.36.48.224/users/signup", {
+    fetch("http://192.168.219.191:8000/users/signup", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,6 @@ class Account extends Component {
       }),
     })
       .then((res) => {
-        console.log(res);
         if (res.ok) {
           this.onSignupSuccess();
         } else {
@@ -46,12 +45,6 @@ class Account extends Component {
     this.setState({ isSuccessLogin: true }, () => {
       this.props.closeSign();
     });
-  };
-
-  logout = () => {
-    localStorage.clear();
-    alert("로그아웃 완료");
-    this.setState({ isSuccessLogin: false });
   };
 
   fetchInfo = () => {

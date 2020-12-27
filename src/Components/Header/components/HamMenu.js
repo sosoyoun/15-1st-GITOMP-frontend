@@ -18,25 +18,25 @@ class HamMenu extends Component {
       <div className="HamMenu">
         <ul className="sub-list">
           <li className="sub-list-one">
-            <span>GITOMPMUSIC</span>
+            <Link to="/HamMenu">GITOMPMUSIC</Link>
           </li>
           <li className="sub-list-two">
-            <span>CONCERT</span>
+            <Link to="/concerts">CONCERT</Link>
           </li>
           <li className="sub-list-three">
-            <span>ARTIST</span>
+            <Link to="/HamMenu">ARTIST</Link>
           </li>
           <li className="sub-list-for">
-            <span>ALBUM</span>
+            <Link to="/AlbumList">ALBUM</Link>
           </li>
           <li className="sub-list-fiv">
-            <span>COMMUITY</span>
+            <Link to="/boards">COMMUITY</Link>
           </li>
           <li className="sub-list-six">
-            <span>BUSINESS</span>
+            <Link to="/HamMenu">BUSINESS</Link>
           </li>
         </ul>
-        <p>기스톰프뮤직 공식채널</p>
+        <p>기톰프뮤직 공식채널</p>
         <ul className="sns-icon">
           <li>
             <Link>

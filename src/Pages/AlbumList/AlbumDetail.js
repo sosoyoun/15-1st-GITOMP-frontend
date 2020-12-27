@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import "./AlbumDetail.scss";
-import CommuityHeadTitle from "../Community/CommuityHeadTitle";
+import AlbumHeadTitle from "./AlbumHeadTitle";
 
 class AlbumDetail extends Component {
   state = {
     albumList: {},
   };
   componentDidMount() {
-    fetch(`http://3.36.48.224/albums/${this.props.match.params.id}`)
+    fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => this.setState({ albumList: res }));
   }
 
   componentDidUpdate(prevProps, _) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`http://3.36.48.224/albums/${this.props.match.params.id}`)
+      fetch(`http://192.168.219.191:8000/albums/${this.props.match.params.id}`)
         .then((res) => res.json())
         .then((res) => this.setState({ albumList: res }));
     }
@@ -55,7 +55,7 @@ class AlbumDetail extends Component {
     return (
       <div className="AlbumDetail">
         <div className="container">
-          <CommuityHeadTitle />
+          <AlbumHeadTitle />
           <article>
             <div className="album_content">
               <img src={image_url} alt="albumImg" />
@@ -103,8 +103,8 @@ class AlbumDetail extends Component {
               </div>
             </div>
             <div className="album_profile">
-              <p>{song}</p>
-              <p>{description_detail}</p>
+              <p className="album_profile_songs">{song}</p>
+              <p className="album_progile_detail">{description_detail}</p>
             </div>
           </article>
           <div className="content_prevnext">

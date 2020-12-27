@@ -1,54 +1,57 @@
 @import "../../styles/common.scss";
 
 .List {
-  border-bottom: 2px solid #ddd;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  width: 100%;
   padding: 40px 0;
+  border-bottom: 2px solid #ddd;
 
   img {
-    width: 340px;
+    width: 240px;
     height: auto;
     padding: 0 0 0 40px;
   }
 
-  .album_info {
+  .concert_info {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
 
-    .album_title {
+    .concert_title {
       margin-inline-start: 0;
       line-height: 1.6;
-      margin-top: 20px;
-      margin-bottom: 0;
+      margin: 20px 0;
       font-size: 27px;
-      font-weight: 700;
-      color: #000;
+      font-weight: 500;
+      color: $nomal-color;
     }
 
-    .album_info {
+    .concert_info {
+      margin: 10px 0 1rem 0;
       margin-inline-start: 0;
-      margin: 10px 0;
-      margin-bottom: 30px;
 
-      .album_subinfo {
+      .concert_subinfo {
         display: flex;
+        flex-direction: column;
 
         dl {
+          width: 18vw;
           display: flex;
           flex-direction: row;
-          margin-bottom: 15px;
           font-size: 17px;
-          width: 18vw;
+          line-height: 40px;
 
           dd {
-            margin-inline-start: 0;
-            font-family: "Noto Sans KR", Sans-serif;
-            color: #5b5b5b;
-            box-sizing: border-box;
             margin-bottom: 0;
+            margin-inline-start: 0;
+            font-family: $sub-font;
+            color: $nomal-color;
+
+            span {
+              padding-left: 5px;
+              color: #666;
+            }
           }
         }
       }
@@ -131,7 +134,7 @@
         span {
           display: inline-block;
           width: 145px;
-          background: url("./images/arr-icon-c.png") no-repeat center right 15px;
+          background: url("images/arr-icon-c.png") no-repeat center right 15px;
 
           &:after {
             box-sizing: inherit;

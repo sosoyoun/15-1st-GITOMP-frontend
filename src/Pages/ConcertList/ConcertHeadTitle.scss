@@ -1,20 +1,20 @@
 @import "../../styles/common.scss";
 
-.AlbumHeadTitle {
-  font-family: $main-font;
+.ConcertHeadTitle {
+  font-family: $title-font;
   width: 100%;
   height: 358px;
   text-align: center;
-  letter-spacing: -0.1em;
-  margin-top: 152px;
+  letter-spacing: 0.5px;
+
   img {
     position: absolute;
     left: 0;
-    top: 0px;
+    top: 152px;
     max-width: 100%;
     overflow: hidden;
-    z-index: -1;
     height: 358px;
+    z-index: -1;
   }
 
   .TitleAnimation {
@@ -22,7 +22,7 @@
 
     h2 {
       font-size: 70px;
-      font-weight: 1000;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -65,18 +65,13 @@
       span:nth-child(7) {
         animation-delay: 0.35s;
       }
-      span:nth-child(8) {
-        animation-delay: 0.4s;
-      }
-      span:nth-child(9) {
-        animation-delay: 0.45s;
-      }
     }
-  }
 
-  .title_sub {
-    font-family: $sub-font;
-    font-size: 27px;
-    color: #767676;
+    h3 {
+      margin-top: 0.5rem;
+      font-family: $sub-font;
+      font-size: 27px;
+      color: #767676;
+    }
   }
 }

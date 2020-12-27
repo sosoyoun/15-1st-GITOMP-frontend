@@ -12,7 +12,11 @@ class Nickname extends Component {
           className="user-nickname-icon"
         />
         <p>
-          <span>{/* {user_nickname} */} 님</span>
+          {localStorage.getItem("NICKNAME") ? (
+            <span>{localStorage.getItem("NICKNAME")} 님</span>
+          ) : (
+            <span>로그인을 해주세요</span>
+          )}
         </p>
       </div>
     );

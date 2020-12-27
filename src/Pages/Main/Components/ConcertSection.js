@@ -12,7 +12,7 @@ import "./ConcertSection.scss";
 class ConcertSection extends React.Component {
   render() {
     return (
-      <>
+      <div className="ConcertSection_bg">
         <BackgroundLine>
           <div className="backgroundTxt">
             <p>GITOMPMUSIC</p>
@@ -42,7 +42,7 @@ class ConcertSection extends React.Component {
             <ConcertSlideBar />
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

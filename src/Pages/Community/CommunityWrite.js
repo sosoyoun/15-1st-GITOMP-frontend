@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./CommunityWrite.scss";
 import { COMMUNITYAPI } from "../../config";
-const token =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.zs60cFZQH0YeZFIZnXTy2Gql8lpGAa3FlUauYpT0iZA";
 
 class CommunityWrite extends Component {
   state = {
@@ -19,7 +17,7 @@ class CommunityWrite extends Component {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          Authorization: token,
+          Authorization: localStorage.getItem("TOKEN"),
         },
         body: JSON.stringify({
           title: write_title,
@@ -77,7 +75,7 @@ class CommunityWrite extends Component {
                       <li>
                         <dl>
                           <dt>작성자 :</dt>
-                          <dd>seungjae</dd>
+                          <dd>{localStorage.getItem("NICKNAME")}</dd>
                         </dl>
                       </li>
                     </ul>

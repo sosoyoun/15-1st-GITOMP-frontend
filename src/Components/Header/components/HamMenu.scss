@@ -13,13 +13,14 @@
 
 .HamMenu {
   position: fixed;
+  top: 0;
   width: 100vw;
   height: 100vh;
-  padding-top: 10vh;
+  padding-top: 17vh;
   text-align: center;
   background: url("../images/hammenu_bg.jpg") center;
   background-size: cover;
-  z-index: 20000;
+  z-index: 1000;
 
   p {
     padding-top: 3rem;
@@ -30,7 +31,6 @@
 
   .sub-list {
     font-family: $title-font;
-    color: white;
     font-size: 3.5rem;
     font-weight: bold;
     letter-spacing: 3px;
@@ -39,10 +39,10 @@
 
     li {
       margin-bottom: 2rem;
-      opacity: 1;
 
-      span {
+      a {
         transition: all 1s ease;
+        color: white;
         cursor: pointer;
 
         &:hover {
@@ -64,7 +64,7 @@
     }
 
     &.active {
-      li {
+      a {
         opacity: 1;
         transform: translate(0);
       }
@@ -87,6 +87,10 @@
         transition-delay: 0.3s;
       }
     }
+  }
+
+  p {
+    letter-spacing: 1px;
   }
 
   .sns-icon {

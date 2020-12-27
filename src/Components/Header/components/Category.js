@@ -18,7 +18,7 @@ class Category extends Component {
                     <p>기톰프 소개</p>
                   </div>
                   <img
-                    src="./images/logo_bg.jpg"
+                    src="/images/logo_bg.jpg"
                     alt="GITOMPMUSIC"
                     className="sub-nav-img"
                   />
@@ -49,7 +49,7 @@ class Category extends Component {
                     <p>콘서트 소개</p>
                   </div>
                   <img
-                    src="./images/consert.jpg"
+                    src="/images/consert.jpg"
                     alt="콘서트 소개"
                     className="sub-nav-img"
                   />
@@ -95,7 +95,7 @@ class Category extends Component {
                     <p>아티스트 소개</p>
                   </div>
                   <img
-                    src="./images/artist.jpg"
+                    src="/images/artist.jpg"
                     alt="아티스트 소개"
                     className="sub-nav-img"
                   />
@@ -122,7 +122,7 @@ class Category extends Component {
                     <p>앨범 소개</p>
                   </div>
                   <img
-                    src="./images/album.jpg"
+                    src="/images/album.jpg"
                     alt="앨범 소개"
                     className="sub-nav-img"
                   />
@@ -170,7 +170,7 @@ class Category extends Component {
                     <p>커뮤니티</p>
                   </div>
                   <img
-                    src="./images/commuity.jpg"
+                    src="/images/commuity.jpg"
                     alt="COMMUITY"
                     className="sub-nav-img"
                   />
@@ -195,7 +195,7 @@ class Category extends Component {
                     <p>기톰프의 사업</p>
                   </div>
                   <img
-                    src="./images/logo_bg.jpg"
+                    src="/images/logo_bg.jpg"
                     alt="스톰프뮤직의 사업"
                     className="sub-nav-img"
                   />

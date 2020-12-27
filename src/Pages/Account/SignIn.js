@@ -26,7 +26,6 @@ class SignIn extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         if (res.ACCESS_TOKEN) {
           localStorage.setItem("TOKEN", res.ACCESS_TOKEN);
           localStorage.setItem("NICKNAME", res.NICKNAME);

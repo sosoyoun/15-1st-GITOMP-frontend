@@ -16,11 +16,19 @@ class GitompSection extends React.Component {
   openSignUp = () => {
     this.setState({ isSignUp: true });
   };
+
   openSignIn = () => {
     this.setState({ isSignIn: true });
   };
+
   closeSign = () => {
     this.setState({ isSignIn: false, isSignUp: false });
+  };
+
+  logout = () => {
+    localStorage.clear();
+    alert("로그아웃 완료");
+    this.setState({ isSuccessLogin: false });
   };
   render() {
     const snsList = [
@@ -30,7 +38,6 @@ class GitompSection extends React.Component {
       { img: youtube, alt: "유튜브 링크", url: "youtube.com" },
     ];
     const { isSignIn, isSignUp } = this.state;
-    console.log(this.state);
     return (
       <>
         {isSignIn && (
@@ -58,20 +65,29 @@ class GitompSection extends React.Component {
                 음악을 선사하겠습니다.
               </p>
               <div className="buttonOutline">
-                <button
-                  id="loginButton"
-                  onClick={this.openSignIn}
-                  name="isSignIn"
-                >
-                  LOG IN
-                </button>
-                <button
-                  className="signinButton"
-                  onClick={this.openSignUp}
-                  name="isSignUp"
-                >
-                  <span>REGISTER</span>
-                </button>
+                {!localStorage.getItem("TOKEN") && (
+                  <button
+                    id="loginButton"
+                    onClick={this.openSignIn}
+                    name="isSignIn"
+                  >
+                    LOG IN
+                  </button>
+                )}
+
+                {!localStorage.getItem("TOKEN") ? (
+                  <button
+                    className="signinButton"
+                    onClick={this.openSignUp}
+                    name="isSignUp"
+                  >
+                    <span>REGISTER</span>
+                  </button>
+                ) : (
+                  <button className="signinButton" onClick={this.logout}>
+                    <span>LOGOUT</span>
+                  </button>
+                )}
               </div>
               <div className="snsOutline">
                 {snsList.map((el, index) => {

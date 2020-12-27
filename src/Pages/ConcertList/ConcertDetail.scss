@@ -1,30 +1,46 @@
 @import "../../styles/common.scss";
-.AlbumDetail {
+
+.ConcertDetail {
+  width: 100%;
+  padding-top: 152px;
   font-family: $main-font;
   color: $nomal-color;
-  width: 100%;
   line-height: 1.5;
   letter-spacing: -0.05em;
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
+
     article {
-      .album_content {
+      .concert_content {
+        height: 600px;
         display: flex;
         flex-direction: row;
-        height: 600px;
         border-bottom: $nomal-border;
+
         img {
-          width: 397px;
-          height: 397px;
+          width: 385px;
+          height: 524px;
         }
+
         .detail_info {
           width: 50vw;
           padding-left: 4%;
-          .album_title {
+
+          .concert_title {
             padding: 1rem 0;
             margin-bottom: 2rem;
-            border-bottom: 1px solid #ddd;
+            border-bottom: $nomal-border;
+
+            .border_line {
+              position: relative;
+              top: 17px;
+              width: 10rem;
+              height: 0.5px;
+              background-color: $nomal-color;
+            }
+
             h3 {
               margin-right: 7px;
               font-size: 32px;
@@ -33,112 +49,104 @@
               color: $nomal-color;
             }
           }
+
           dl {
             padding: 8px 0;
             display: flex;
             flex-direction: row;
-            dt {
+
+            dd {
               padding-left: 5px;
               color: rgb(116, 116, 116);
               font-weight: bold;
+
+              span {
+                color: #ddd;
+                padding-right: 1rem;
+              }
+            }
+
+            dt {
               width: 6vw;
               font-weight: 600;
             }
           }
-          .album_summary {
-            margin-top: 30px;
-          }
-          .album_link {
-            margin-bottom: 40px;
-            h4 {
-              font-size: 18px;
-              font-weight: 500;
-              color: #000;
-              padding-left: 10px;
-              margin-top: 30px;
-            }
-            ul {
-              list-style: none;
-              display: flex;
-              flex-direction: row;
-              margin: 0;
-              padding: 0;
-              li {
-                width: 38px;
-                height: 38px;
-                margin-left: 30px;
-                img {
-                  width: 38px;
-                  height: 38px;
-                  padding: 10%;
-                  border-radius: 100%;
-                }
-              }
-            }
-          }
         }
       }
-      .album_profile {
-        margin: 0 auto;
-        width: 60%;
-        padding: 2rem 0;
 
-        .album_profile_songs {
-          font-size: 16px;
+      .concert_profile {
+        padding: 2rem 0 4rem;
+
+        .concert_profile-post {
+          font-size: 22px;
           font-weight: 600;
           color: #666;
-          text-align: center;
-          padding: 2rem 0 1rem;
         }
-        .album_progile_detail {
-          width: 100%;
-          height: auto;
+
+        img {
+          display: block;
+          padding: 2rem 0 3rem;
+          margin: 0 auto;
+        }
+
+        .concert_profile_detail {
+          width: 60%;
           margin: 0 auto;
           text-align: center;
-          letter-spacing: -0.5px;
-          line-height: 1.8em;
           font-size: 14px;
+          letter-spacing: -1px;
           color: #666;
-          padding-bottom: 1rem;
         }
       }
     }
+
     .content_prevnext {
-      border-top: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
+      border-top: $nomal-border;
+      border-bottom: $nomal-border;
+
+      .bottom {
+        border-bottom: 1px solid rgb(236, 236, 236);
+      }
+
       dl {
         padding: 18px 35px 16px;
         display: flex;
         flex-direction: row;
+
         dt {
-          float: left;
-          line-height: 1.6;
           padding-right: 30px;
           margin-right: 15px;
+          float: left;
           font-size: 13px;
-          color: #333;
+          line-height: 1.6;
+          color: $nomal-color;
           cursor: pointer;
         }
+
         dd {
           line-height: 1.6;
           font-size: 13px;
           color: #666;
+          cursor: pointer;
         }
       }
     }
   }
+
   .bottom_btn {
     display: inline-block;
-    width: 100%;
     margin: 20px 0 40px;
+    width: 100%;
     text-align: center;
+
     button {
       width: 112px;
       height: 44px;
-      background-color: $brown-color;
-      color: #fff;
       border: none;
+      background-color: $brown-color;
       font-size: 15px;
+      color: #fff;
+      cursor: pointer;
     }
   }
 }
