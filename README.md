@@ -98,10 +98,15 @@ _-_ **MainPage onClick**
 - Stack : React / Sass / Router
 - Works : ( 작업한 페이지 구현 )
 
-1.
-2.
-3.
-4.
+[메인페이지]
+
+- 메인 페이지 애니메이션 및 기능 구현
+- swiper 라이브러리를 통해 슬라이드 애니메이션 구현
+- 백엔드 Api를 가져와 앨범 섹션의 슬라이드에 구현
+
+후기글
+https://velog.io/@soral215/GITOMP-MUSIC-1%EC%B0%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9B%84%EA%B8%B0
+
 
 ---
 
